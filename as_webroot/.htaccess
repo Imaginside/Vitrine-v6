@@ -1,0 +1,29 @@
+
+## Bloquer l'arborescence des dossiers
+Options -Indexes
+
+## Activer URL Rewriting
+RewriteEngine On
+
+# Masquer les informations du serveur
+ServerSignature Off
+
+# Activation du suivi des liens symboliques
+Options +FollowSymLinks
+
+# BEGIN WordPress
+# RewriteEngine On
+# RewriteBase /
+# RewriteRule ^index\.php$ - [L]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule . /index.php [L]
+# END WordPress
+
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?File=$1 [L,QSA]
+</IfModule>
+
+
