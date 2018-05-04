@@ -1,31 +1,37 @@
 <?php
-/**
- * Paramétres par défaut
- */
-require dirname(__DIR__) . '/as_config/config.php';
-
+define('ROOT', dirname(__DIR__));
 
 /**
- * Récupère les chemins
+ * Charge les fichiers
  */
-require dirname(__DIR__) . '/as_config/paths.php';
+require ROOT . '/as_app/autoloader.php';
 
-
-/**
- * Router en fonction de l'URL
- */
-require dirname(__DIR__) . '/as_config/routes.php';
-
+$app = new Application();
 
 
 /**
  * Fichier de paramètrage du site
  */
-require CONFIG . 'data_website.php';
-require CONFIG . 'data_dev.php';
+// require CONFIG . 'data_website.php';
+// require CONFIG . 'data_dev.php';
 
 
 /**
  * Appelle des fichiers de mise en page du site
  */
-require dirname(__DIR__) . '/as_content/Layout/paramLayout.php';
+// require ROOT . DS . APP_DIR . DS .'Layout/ParamLayout.php';
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+<?php
+
