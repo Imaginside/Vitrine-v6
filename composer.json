@@ -1,0 +1,22 @@
+{
+    "name": "imageinside/base",
+    "type": "project",
+    "authors": [
+        {
+            "name": "David Adam",
+            "email": "hello@imaginside.com"
+        },
+        {
+            "name": "axelfarkas",
+            "email": "farkas.axel@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "II\\": "app"
+        }  
+    },
+    "require": {
+        "monolog/monolog": "^1.23"
+    }
+}
