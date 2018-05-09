@@ -39,4 +39,9 @@ class Views
         return ob_get_clean();
     }
 
+    protected function element($element)
+    {
+        return (new static($element, SITE .Configure::read('Paths.templates') . 'elements/'))->render();
+    }
+
 }
