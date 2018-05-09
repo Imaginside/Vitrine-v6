@@ -1,7 +1,9 @@
 <?php
 namespace II\Exceptions;
 
-class RouterException extends \Exception
+use II\Exceptions\NotFoundException;
+
+class RouterException extends NotFoundException
 {
 
 }

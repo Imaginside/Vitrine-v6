@@ -48,16 +48,7 @@ class App
     public function run()
     {
         
-        try
-        {
-            list($callable, $arguments) = $this->router->run();
-        }
-        catch(\II\Exceptions\RouterException $e)
-        {
-            throw new NotFoundException('La page demandée n\'éxiste pas', [
-                'message' => $e->getMessage()
-            ]);
-        }
+        list($callable, $arguments) = $this->router->run();
 
         $controller = &$callable[0];
         if(is_string($controller))
