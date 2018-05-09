@@ -64,7 +64,7 @@ class App
         $view = new \Views(preg_replace('/Controller$/', '', get_class($controller)) . '/' . $callable[1] . '.php');
         $pageContent = $view->render($viewVars);
 
-        $layout = new \Views(SITE . Configure::read('Paths.Themes') . $view->layout());
+        $layout = new \Views($view->layout(), SITE . Configure::read('Paths.themes'));
         $layoutContent = $layout->render([
             'content' => $pageContent,
             ] + $viewVars);

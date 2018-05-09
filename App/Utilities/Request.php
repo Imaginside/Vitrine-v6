@@ -21,13 +21,19 @@ class Request
         $init = true;
 
         static::$domain = static::fetchDomain();
-        static::$requestUri = $_SERVER['REQUEST_URI'];
+        static::$requestUri = static::fetchRequestUri();
         static::$uri = static::getRequestedFile(static::$requestUri);
         static::$uriGet = static::getGetParameters(static::$requestUri);
         static::$get = static::fetchGET();
         static::$post = static::fetchPOST();
         static::$files = static::fetchFILES();
         static::$httpMethod = static::fetchMethod();
+    }
+
+    protected static function fetchRequestUri()
+    {
+        $uri = preg_replace('/^' . str_replace('/','\/', BASE_URL) . '/', '', $_SERVER['REQUEST_URI']);
+        return $uri;
     }
 
     protected static function fetchDomain()
