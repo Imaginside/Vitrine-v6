@@ -9,11 +9,64 @@ class Views
     protected $template;
     protected $layout = 'default.php';
 
-    public function __construct($template, $templatesPath = null)
+    const TEMPLATES = 0;
+    const ELEMENTS = 1;
+    const LAYOUT = 2;
+    const ERROR = 3;
+
+    public function __construct($template, $type = 0)
     {   
-        $this->setTemplatesPath(is_string($templatesPath) ? $templatesPath : SITE . Configure::read('Paths.templates'));
+        switch($type)
+        {
+            case static::TEMPLATES:
+                $this->setPathAsTemplate($template);
+                break;
+            case static::ELEMENTS:
+                $this->setPathAsElement($template);
+                break;
+            case static::LAYOUT:
+                $this->setPathAsLayout($template);
+                break;
+            case static::ERROR:
+                $this->setPathAsError($template);
+                break;
+            default:
+                $this->setPathAsTemplate($template);
+                break;
+        }
         $this->template = $template;
     }
+
+    protected function setPathAsTemplate($file)
+    {
+        $path = SITE . Configure::read('Paths.themes') . Configure::read('theme') . '/' . Configure::read('Paths.templates');
+        if(!file_exists($path . $file))
+            $path = SITE . Configure::read('Paths.templates');
+        $this->setTemplatesPath($path);
+    }
+
+    protected function setPathAsElement($file)
+    {
+        $path = SITE . Configure::read('Paths.themes') . Configure::read('theme') . '/' . Configure::read('Paths.templates') . 'Elements/';
+        if(!file_exists($path . $file))
+            $path = SITE . Configure::read('Paths.templates') . 'Elements/';
+        $this->setTemplatesPath($path);
+    }
+
+    protected function setPathAsLayout($file)
+    {
+        $path = SITE . Configure::read('Paths.themes') . Configure::read('theme') . '/' . Configure::read('Paths.templates') . 'Layout/';
+        $this->setTemplatesPath($path);
+    }
+
+    protected function setPathAsError($file)
+    {
+        $path = SITE . Configure::read('Paths.themes') . Configure::read('theme') . '/' . Configure::read('Paths.templates') . 'Errors/';
+        if(!file_exists($path . $file))
+            $path = SITE . Configure::read('Paths.templates') . 'Errors/';
+        $this->setTemplatesPath($path);
+    }
+
 
     public function setLayout($layout)
     {
@@ -41,7 +94,7 @@ class Views
 
     protected function element($element)
     {
-        return (new static($element, SITE .Configure::read('Paths.templates') . 'elements/'))->render();
+        return (new static($element, static::ELEMENTS))->render();
     }
 
 }

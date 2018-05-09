@@ -18,11 +18,19 @@ class App
         set_exception_handler ( "II\Utilities\ExceptionManager::HandleAppException" );
 
         require_once 'Config/define.php';
+
         Configure::loadConfigurationFile(CORE_CONFIG . 'app.php');
         Configure::loadConfigurationFile(SITE . 'Config/app.php');
+
+        $themeConfigurationFile = SITE . '/' . Configure::read('Paths.themes') . '/' . Configure::read('theme') . '/variables.php';
+        if(file_exists($themeConfigurationFile))
+            Configure::loadConfigurationFile($themeConfigurationFile);
+
         Request::init();
+
         $router = Configure::read('Router');
         $this->setRouter(new $router(Request::getURI()));
+
         spl_autoload_register([$this, 'autoloader']);
     }
 
@@ -61,10 +69,14 @@ class App
         $viewVars = call_user_func_array($callable, $arguments);
         $viewVars = is_array($viewVars) ? $viewVars : [] + $controller->getViewVars();
 
-        $view = new \Views(preg_replace('/Controller$/', '', get_class($controller)) . '/' . $callable[1] . '.php');
+        $themeDir = SITE . Configure::read('Paths.themes') . Configure::read('theme') . '/';
+
+        $templateFileName = preg_replace('/Controller$/', '', get_class($controller)) . '/' . $callable[1] . '.php';
+
+        $view = new \Views($templateFileName, \Views::TEMPLATES);
         $pageContent = $view->render($viewVars);
 
-        $layout = new \Views($view->layout(), SITE . Configure::read('Paths.themes'));
+        $layout = new \Views($view->layout(), \Views::LAYOUT);
         $layoutContent = $layout->render([
             'content' => $pageContent,
             ] + $viewVars);
