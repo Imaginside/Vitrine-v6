@@ -13,5 +13,5 @@
 // define('ROUTES', ROOT . '/as_app/Config/routes.php');
 return [
     'PROD' => false,
-    'NAMETHEME' => 'mon_theme'
+    'NAMETHEME' => 'imaginside'
 ];
