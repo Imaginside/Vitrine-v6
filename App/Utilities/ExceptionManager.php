@@ -25,8 +25,6 @@ class ExceptionManager
         if (!$isCustomException) {
             throw new NotFoundException('Exception non gérée', ['exception' => $exceptionClass]);
         }
-
-        $e->handleException();
         
     }
 }
