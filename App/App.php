@@ -3,54 +3,74 @@ namespace II;
 
 use II\Utilities\Request;
 use II\Utilities\Configure;
-use II\Utilities\ConfigureCore;
+use II\Exceptions\NotFoundException;
 /**
  * Classe principale du framework
  */
 class App
 {
 
-    protected $routers = [];
+    protected $router = [];
 
     public function __construct()
     {
+
+        set_exception_handler ( "II\Utilities\ExceptionManager::HandleAppException" );
+
         require_once 'Config/define.php';
-        ConfigureCore::loadConfigurationFile(CONFIG . 'app.php');
-        ConfigureCore::loadConfigurationFile(SITES . 'sites.conf.php');
+        Configure::loadConfigurationFile(CORE_CONFIG . 'app.php');
+        Configure::loadConfigurationFile(SITE . 'Config/app.php');
         Request::init();
-
-        $siteConf = ConfigureCore::read('sites.default');
-        foreach(ConfigureCore::read('sites') as $site)
-        {
-            if(isset($site['domain']) && Request::getDomain() === $site['domain'])
-            {
-                $siteConf = array_merge($siteConf, $site);
-                break;
-            }
-        }
-
-        $this->addRouter(new $siteConf['Router']);
+        $router = Configure::read('Router');
+        $this->setRouter(new $router(Request::getURI()));
+        spl_autoload_register([$this, 'autoloader']);
     }
 
-    public function addRouter(\II\Utilities\Abstracts\Router $router)
+    protected function setRouter(\II\Utilities\Abstracts\Router $router)
     {
-        $this->routers = $router;
+        $this->router = $router;
+    }
+
+    protected function autoloader($classname)
+    {
+        if(file_exists(CORE_CLASSES . $classname . '.php'))
+            include CORE_CLASSES . $classname . '.php';
     }
 
     public function run()
     {
-        $match = $this->matchRoute();
-        var_dump($match);
-    }
-
-    protected function matchRoute()
-    {
-        foreach($this->routers as $router)
+        
+        try
         {
-            if($match = $router->match(Request::getURI()))
-                return $match;
+            list($callable, $arguments) = $this->router->run();
         }
-        return false;
+        catch(\II\Exceptions\RouterException $e)
+        {
+            throw new NotFoundException('La page demandée n\'éxiste pas', [
+                'message' => $e->getMessage()
+            ]);
+        }
+
+        $controller = &$callable[0];
+        if(is_string($controller))
+            $controller = new $controller;
+        
+        if(!($controller instanceof \Controllers))
+            throw new NotFoundException("Le Controller doit hériter de la classe \\Controllers", [get_class($controller)]);
+            
+
+        $viewVars = call_user_func_array($callable, $arguments);
+        $viewVars = is_array($viewVars) ? $viewVars : [] + $controller->getViewVars();
+
+        $view = new \Views(preg_replace('/Controller$/', '', get_class($controller)) . '/' . $callable[1] . '.php');
+        $pageContent = $view->render($viewVars);
+
+        $layout = new \Views(Configure::read('Paths.layout') . $view->layout());
+        $layoutContent = $layout->render([
+            'content' => $pageContent,
+            ] + $viewVars);
+
+        return $layoutContent;
     }
 
 }

@@ -6,9 +6,9 @@ return [
         'username' => 'root',
         'password' => ''
     ],
-    'sites' => [
-        'default' => [
-            'Router' => '\\II\\Utilities\\Router',
-        ],
-    ],
+    'Router' => '\\II\\Utilities\\Router',
+    'Paths' => [
+        'templates' => 'Templates/',
+        'layout'    => 'layout/'
+    ]
 ];

@@ -42,7 +42,7 @@ class Configure
         }
 
         if(isset($writeTo[$name]) && is_array($writeTo[$name]))
-            $writeTo[$name] = $writeTo[$name] + $value;
+            $writeTo[$name] = $value + $writeTo[$name];
         else
             $writeTo[$name] = $value;
         
@@ -58,6 +58,7 @@ class Configure
         if($dotPos = strpos($name, '.'))
         {
             $_name = substr($name, 0, $dotPos);
+            if(!isset($readFrom[$_name])) return null;
             return static::_read(substr($name, $dotPos + 1), $readFrom[$_name]);
         }
         return isset($readFrom[$name]) ? $readFrom[$name] : null;

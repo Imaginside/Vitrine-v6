@@ -109,4 +109,14 @@ class Request
         return static::$domain;
     }
 
+    public static function getURI()
+    {
+        return static::$uri;
+    }
+
+    public static function getHttpMethod()
+    {
+        return static::$httpMethod;
+    }
+
 }
