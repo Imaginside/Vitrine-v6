@@ -42,7 +42,6 @@ class Router extends RouterAbstract
             
         if(!method_exists($controller, $action))
             throw new RouterException('Métode ' . $controller . '::' . $action . ' inexistante');
-
             
         $methodReflection = new \ReflectionMethod($controller, $action);
         $countArguments = count($arguments);

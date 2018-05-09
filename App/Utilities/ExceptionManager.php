@@ -10,7 +10,7 @@ class ExceptionManager
         $exceptionClass = get_class($e);
 
         $isCustomException  = $e instanceof \II\Exceptions\CustomException;
-
+        
         $exceptionArray = [
             "code" => $e->getCode(),
             "message" => $e->getMessage()
@@ -26,5 +26,6 @@ class ExceptionManager
             throw new NotFoundException('Exception non gérée', ['exception' => $exceptionClass]);
         }
         
+        $e->handleException();
     }
 }
