@@ -1,5 +1,0 @@
-[2018-05-09 18:10:53] debug_log.ERROR: Exception II\Exceptions\NotFoundException {"code":1,"message":"La page demandée n'éxiste pas","data":{"message":"Métode PagesController::Vitrine-v6 inexistante"}} []
-[2018-05-09 18:21:33] debug_log.ERROR: Exception II\Exceptions\ViewsException {"code":1,"message":"Inclusion du fichier de template impossible","data":["H:/wamp64/www/Vitrine-v6/site/Templates/H:/wamp64/www/Vitrine-v6/site/default.php"]} []
-[2018-05-09 18:22:19] debug_log.ERROR: Exception II\Exceptions\ViewsException {"code":1,"message":"Inclusion du fichier de template impossible","data":["H:/wamp64/www/Vitrine-v6/site/default.php"]} []
-[2018-05-09 18:23:34] debug_log.ERROR: Exception II\Exceptions\ViewsException {"code":1,"message":"Inclusion du fichier de template impossible","data":["H:/wamp64/www/Vitrine-v6/site/default.php"]} []
-[2018-05-09 18:27:19] debug_log.ERROR: Exception II\Exceptions\NotFoundException {"code":1,"message":"La page demandée n'éxiste pas","data":{"message":"Métode PagesController::testt inexistante"}} []
