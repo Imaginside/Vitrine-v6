@@ -9,6 +9,7 @@ return [
     'Router' => '\\II\\Utilities\\Router',
     'Paths' => [
         'templates' => 'Templates/',
-        'layout'    => 'layout/'
+        'layout'    => 'Layout',
+        'themes'    => 'Themes/'
     ]
 ];

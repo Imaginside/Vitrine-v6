@@ -58,14 +58,13 @@ class App
         if(!($controller instanceof \Controllers))
             throw new NotFoundException("Le Controller doit hériter de la classe \\Controllers", [get_class($controller)]);
             
-
         $viewVars = call_user_func_array($callable, $arguments);
         $viewVars = is_array($viewVars) ? $viewVars : [] + $controller->getViewVars();
 
         $view = new \Views(preg_replace('/Controller$/', '', get_class($controller)) . '/' . $callable[1] . '.php');
         $pageContent = $view->render($viewVars);
 
-        $layout = new \Views(Configure::read('Paths.layout') . $view->layout());
+        $layout = new \Views(SITE . Configure::read('Paths.Themes') . $view->layout());
         $layoutContent = $layout->render([
             'content' => $pageContent,
             ] + $viewVars);
