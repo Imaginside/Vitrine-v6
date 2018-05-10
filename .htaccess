@@ -1,6 +1,9 @@
 <IfModule mod_rewrite.c>
     RewriteEngine on
-    RewriteRule    ^(\.well-known/.*)$ $1 [L]
-    RewriteRule    ^$    as_webroot/    [L]
-    RewriteRule    (.*) as_webroot/$1    [L]
+
+    RewriteCond %{DOCUMENT_ROOT}/sites%{REQUEST_URI} -f
+    RewriteRule .* /sites%{REQUEST_URI} [QSA,L]
+
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-f
+    RewriteRule .* index.php [QSA,L]
 </IfModule>
