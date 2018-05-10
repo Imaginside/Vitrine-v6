@@ -8,7 +8,7 @@ class NotFoundException extends CustomException
 {
     public function handleException()
     {
-        $view = new Views('Errors/404.html');
+        $view = new Views('Errors/404.php');
         print $view->render();
         die();
     }
