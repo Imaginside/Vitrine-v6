@@ -6,6 +6,10 @@ return [
     'logo-dark' => BASE_URL . IMAGES . 'logo-imaginside-dark.png',
     'logo-light' => BASE_URL . IMAGES . 'logo-imaginside.png',
 
+    'Site' => [
+        'date_mise_en_ligne' => '2015',
+    ],
+
     'Society' => [
         'Name'      => 'Imag\'Inside',
         'Baseline'  => 'Location de site vitrine à 39€ /mois',
@@ -19,7 +23,6 @@ return [
         'Mail'      => 'hello@imaginside.com',
     ],
 
-    
     'SocialNetwork' => [
         'Activate'  => '1', // 1 = activé | 0 = désactivé
         'Facebook'  => '#',

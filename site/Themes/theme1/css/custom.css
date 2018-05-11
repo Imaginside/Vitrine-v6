@@ -53,3 +53,10 @@ Custom theme
   background-color: #a90831;
   border-color: #a90831;
 }
+
+
+
+/* FOOTER */
+.copyright-text {
+  padding-top:0;
+}

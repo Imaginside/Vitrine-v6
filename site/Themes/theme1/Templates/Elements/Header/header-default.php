@@ -62,7 +62,7 @@ use II\Utilities\Configure;
             <!--end: Navigation Resposnive Trigger-->
             
             <?php 
-            echo $this->element('nav.php');
+            echo $this->element('Nav/nav-primary-1.php');
             ?>
 
         </div>

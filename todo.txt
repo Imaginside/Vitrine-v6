@@ -1,0 +1,27 @@
+
+
+
+A voir / Vérifier / Questions
+- Mes fichiers : Est-ce que j'ai bien fais de mettre les footer, header,.., dans Templates/Elements ?
+- Dans "site/Themes/theme1/", j'ai créé des dossiers "css", "js", "img". J'ai bien fait ?
+- Vérifier ce que j'ai fais dans "site/Config/app.php"
+- Dans le theme1, dans le fichier base.php, j'ai appelé les fichiers CSS / JS en "/site/Themes/theme1/css/plugins.css". Il n'y a pas un moyen plus rapide d'appeler les fichiers ? Idem dans "site/Templates/Pages/index.php" avec "/site/Themes/theme1/img/slider/dummy.png"
+
+
+
+Prochainement :
+- Voir pour renommer l'URL "/index/" par "/accueil/"
+- Pouvoir mettre des variables dans chaque page. Ex. : $title = "Accueil" / $title = "Contactez-nous", etc.. Est-ce déjà prévu ?
+- Eviter d'intégrer à chaque fois le "use II\Utilities\Configure;"
+- Permettre des URL en "/mentions-legales/"
+- Système de fil d'ariane
+- Système d'envoi de mail -> Page contact
+
+
+
+Plus tard, et avec beaucoup de courage :
+- Système multilingue. Je pense qu'il faut adapter les URL des pages en fonction de la langue. Ex. : "Contactez-nous" en FR, "Contact-us" en EN, que les contenus appelé soit identique (image, etc..) mais que le texte s'adapte. Mettre les textes en "variable" ? I don't know ^^
+- Système de blog / articles
+- Backoffice vision client (oO") - Gestion des "modules" et options, modification des informations de contact (tel, mail, adresse), statistique de fréquentation simple, visualisation des paiements effectués, à effectuer, rappel de paiement, ...
+- Backoffice général pour nous (OO") - Gestion des clients, visualisation des paiements, statistiques divers et varier
+- Module Newsletter ?

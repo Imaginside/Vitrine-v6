@@ -92,9 +92,10 @@ class Views
         return ob_get_clean();
     }
 
-    protected function element($element)
+    protected function element($element, array $variables = [])
     {
-        return (new static($element, static::ELEMENTS))->render();
+        return (new static($element, static::ELEMENTS))->render($variables);
     }
+    
 
 }
