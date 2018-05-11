@@ -83,7 +83,7 @@ class App
             throw new NotFoundException("Le Controller doit hériter de la classe \\Controllers", [get_class($controller)]);
         
         // Execution de la route (Controller::action) matchée
-        // et récupération des variables définies par cette métode
+        // et récupération des variables définies par cette méthode
         $viewVars = call_user_func_array($callable, $arguments);
         $viewVars = is_array($viewVars) ? $viewVars : [] + $controller->getViewVars();
 

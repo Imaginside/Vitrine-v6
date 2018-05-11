@@ -38,15 +38,15 @@ class Router extends RouterAbstract
         require_once SITE . '/Controllers/' . $controller . '.php';
         
         if(!class_exists($controller))
-            throw new RouterException('Le controller ' . $controller . ' n\'éxiste pas');
+            throw new RouterException('Le controller ' . $controller . ' n\'existe pas');
             
         if(!method_exists($controller, $action))
-            throw new RouterException('Métode ' . $controller . '::' . $action . ' inexistante');
+            throw new RouterException('méthode ' . $controller . '::' . $action . ' inexistante');
             
         $methodReflection = new \ReflectionMethod($controller, $action);
         $countArguments = count($arguments);
         if($countArguments > $methodReflection->getNumberOfParameters() || $countArguments < $methodReflection->getNumberOfRequiredParameters())
-            throw new RouterException('Nombre de paramêtres (' . $countArguments . ') incorrecte pour la métode ' . $controller . '::' . $action . '. ');
+            throw new RouterException('Nombre de paramètres (' . $countArguments . ') incorrecte pour la méthode ' . $controller . '::' . $action . '. ');
 
         return [
             [new $controller, $action],
