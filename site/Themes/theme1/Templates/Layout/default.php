@@ -39,8 +39,8 @@ use II\Utilities\Configure;
     <div id="wrapper">
 
         <?php
-        include_once 'site/Themes/theme1/inc/topbar.php';
-        include_once 'site/Themes/theme1/inc/header.php';
+        echo $this->element('topbar.php');
+        echo $this->element('header.php');
         ?>
 
 
@@ -53,7 +53,7 @@ use II\Utilities\Configure;
 
 
         <?php
-        include_once 'site/Themes/theme1/inc/footer.php';
+        echo $this->element('footer.php');
         ?>
 
     

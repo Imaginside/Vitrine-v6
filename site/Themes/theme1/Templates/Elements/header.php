@@ -60,8 +60,10 @@ use II\Utilities\Configure;
                 <button class="lines-button x"> <span class="lines"></span> </button>
             </div>
             <!--end: Navigation Resposnive Trigger-->
-
-            <?php include 'nav.php' ?>
+            
+            <?php 
+            echo $this->element('nav.php');
+            ?>
 
         </div>
     </div>
