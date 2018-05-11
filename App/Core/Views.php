@@ -7,7 +7,7 @@ class Views
 
     protected $templatesPath;
     protected $template;
-    protected $layout = 'default.php';
+    protected $layout = 'base.php';
 
     const TEMPLATES = 0;
     const ELEMENTS = 1;
