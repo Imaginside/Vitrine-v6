@@ -2,6 +2,12 @@
 return [
     'theme' => 'theme1', // default
 
+    // Gestion de l'affichage // 1 = activé | 0 = désactivé
+    'Activate' => [
+        'SocialNetwork'  => '1', // Icônes des réseaux sociaux
+        'Breadcrumb' => '1', // Fil d'ariane
+    ],
+
     'logo-default' => BASE_URL . IMAGES . 'logo-imaginside.png',
     'logo-dark' => BASE_URL . IMAGES . 'logo-imaginside-dark.png',
     'logo-light' => BASE_URL . IMAGES . 'logo-imaginside.png',

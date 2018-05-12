@@ -28,6 +28,16 @@ Custom theme
 }
 
 
+/* PAGE TITLE */
+#page-title.color .page-title > h1 {
+  color: #DF0A40; }
+#page-title.color .page-title > span {
+  color: #DF0A40; }
+#page-title.color .breadcrumb ul li + li:before {
+  background-color: #DF0A40; }
+#page-title.color .breadcrumb ul li a {
+  color: #DF0A40; }
+
 
 /* BREADCRUMB */
 #page-title .breadcrumb.light ul li a {

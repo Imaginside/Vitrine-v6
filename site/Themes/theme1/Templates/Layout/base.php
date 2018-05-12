@@ -43,8 +43,8 @@ use II\Utilities\Configure;
         echo $this->element('Header/header-1.php');
         ?>
 
-
-
+        <?= 'NamePage base.php : ' . $NamePage . '<br>' ?>
+        
         <?php
         // print '<img src="'.Configure::read('logo-default').'">';
         ?>

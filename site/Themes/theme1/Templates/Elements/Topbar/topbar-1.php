@@ -2,10 +2,17 @@
 use II\Utilities\Configure;
 ?>
 <div id="topbar" class="topbar-colored topbar-fullwidth dark visible-md visible-lg">
+<!--
+    Possiblité d'ajouter des classes à la div topbar :
+    - dark | light
+    - Transparent : topbar-transparent dark | topbar-transparent
+    - Coloré : topbar-colored
+    - Largeur : topbar-fullwidth
+-->
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <!-- ul class="top-menu">
+                <!-- <ul class="top-menu">
                     <li><a href="#">About</a></li>
                     <li><a href="#">Features</a></li>
                     <li><a href="#">Pricing</a></li>
@@ -26,7 +33,7 @@ use II\Utilities\Configure;
             <div class="col-sm-6 hidden-xs">
                 
                 <?php
-                if(Configure::read('SocialNetwork.Activate') == 1) {
+                if(Configure::read('Activate.SocialNetwork') == 1) {
                     echo '<div class="social-icons social-icons-colored-hover">';
                     echo $this->element('Blocs/SocialNetwork.php');
                     echo '</div>';

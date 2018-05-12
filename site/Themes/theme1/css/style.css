@@ -3174,14 +3174,6 @@ top: 50%;
     background-color: #252525; }
   #page-title.dark .breadcrumb ul li a {
     color: #252525; }
-  #page-title.color .page-title > h1 {
-    color: #DF0A40; }
-  #page-title.color .page-title > span {
-    color: #DF0A40; }
-  #page-title.color .breadcrumb ul li + li:before {
-    background-color: #DF0A40; }
-  #page-title.color .breadcrumb ul li a {
-    color: #DF0A40; }
 
 @media (max-width: 991px) {
   #page-title,
