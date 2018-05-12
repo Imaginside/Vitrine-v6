@@ -2,13 +2,13 @@
 use II\Utilities\Configure;
 ?>
 <div id="topbar" class="topbar-colored topbar-fullwidth dark visible-md visible-lg">
-<!--
-    Possiblité d'ajouter des classes à la div topbar :
-    - dark | light
-    - Transparent : topbar-transparent dark | topbar-transparent
-    - Coloré : topbar-colored
-    - Largeur : topbar-fullwidth
--->
+<?php
+// Possiblité d'ajouter des classes à la div topbar :
+// - dark | light
+// - Transparent : topbar-transparent dark | topbar-transparent
+// - Coloré : topbar-colored
+// - Largeur : topbar-fullwidth
+?>
     <div class="container">
         <div class="row">
             <div class="col-sm-6">

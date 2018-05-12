@@ -3,11 +3,11 @@ use II\Utilities\Configure;
 ?>
 <!-- Page title -->
 <section id="page-title" class="dark" style="background: url(/site/Themes/theme1/img/pattern/pattern10.png)">
-<!--
-    Possibilité d'ajouter des classes à la section :
-    - Alignement : page-title-center | page-title-right | page-title-left
-    - Color : dark | light | color
--->
+<?php
+// Possibilité d'ajouter des classes à la section :
+// - Alignement : page-title-center | page-title-right | page-title-left
+// - Color : dark | light | color
+?>
     <div class="container">
         
         <!-- Breadcrumb -->

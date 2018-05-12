@@ -1,9 +1,9 @@
 <!--Navigation-->
 <div id="mainMenu" class="light">
-<!--
-    Possiblité d'ajouter des classes à la div mainMenu :
-    - menu-left | menu-right | menu-center
--->
+<?php
+// Possiblité d'ajouter des classes à la div mainMenu :
+// - menu-left | menu-right | menu-center
+?>
     <div class="container">
         <nav>
             <ul>

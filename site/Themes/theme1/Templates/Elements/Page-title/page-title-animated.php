@@ -3,11 +3,11 @@ use II\Utilities\Configure;
 ?>
 <!-- Page title -->
 <section id="page-title" data-parallax-image="/site/Themes/theme1/img/parallax/5.jpg">
-<!--
-    Possibilité d'ajouter des classes à la section :
-    - Alignement : page-title-center | page-title-right | page-title-left
-    - Color : dark | light | color
--->
+<?php
+// Possibilité d'ajouter des classes à la section :
+// - Alignement : page-title-center | page-title-right | page-title-left
+// - Color : dark | light | color
+?>
     <div class="parallax-container" data-velocity="-.090" style="background: url(/site/Themes/theme1/img/parallax/5.jpg)"></div>
     <div class="container">
         
