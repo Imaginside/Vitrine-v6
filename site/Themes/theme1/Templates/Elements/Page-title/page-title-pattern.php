@@ -12,7 +12,7 @@ use II\Utilities\Configure;
         
         <!-- Breadcrumb -->
         <?php
-        if(Configure::read('Activate.Breadcrumb') == 1) {
+        if(Configure::read('Activate.Breadcrumb') === true) {
             echo $this->element('Breadcrumb/breadcrumb.php');
         }
         ?>

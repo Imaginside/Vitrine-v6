@@ -4,8 +4,11 @@ return [
 
     // Gestion de l'affichage // 1 = activé | 0 = désactivé
     'Activate' => [
-        'SocialNetwork'  => '1', // Icônes des réseaux sociaux
-        'Breadcrumb' => '1', // Fil d'ariane
+        'SocialNetwork' => [ // Icônes des réseaux sociaux
+            'TopBar' => true,
+            'Footer' => true,
+        ],
+        'Breadcrumb' => true, // Fil d'ariane
     ],
 
     'logo-default' => BASE_URL . IMAGES . 'logo-imaginside.png',
@@ -29,8 +32,7 @@ return [
         'Mail'      => 'hello@imaginside.com',
     ],
 
-    'SocialNetwork' => [
-        'Activate'  => '1', // 1 = activé | 0 = désactivé
+    'SocialNetwork' => [ // Ici les URLs
         'Facebook'  => '#',
         'Twitter'   => '#',
         'GooglePlus'=> '#',

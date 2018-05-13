@@ -1,6 +1,35 @@
-<!-- hello world <?= $test ?> -->
 
-<?= 'NamePage index.php : ' . $NamePage . '<br>' ?>
+<?php
+
+echo $this->element('Page-title/page-title.php', [
+    'PageTitleClassesSection' => 'page-title-center light', 
+    // - Style : EMPTY | page-title-classic
+    // - Alignement : EMPTY => page-title-left | page-title-center | page-title-right |
+    // - Color : dark | light | color
+
+    'PageTitleH1' => 'Votre site professionnel<br>à partir 39€/mois !', // Titre de la page
+        'PageTitleH1Classes' => 'text-primary', // text-muted | text-dark | text-light | text-primary | ... css bootstrap
+    'PageTitleSubTitle' => '<strong>Bienvenue sur le site de démonstration de l\'offre Vitrine</strong>.<br>
+    Découvrez tous les avantages de cette offre ci-dessous.', // Sous titre
+
+    // Choix du background du page-title
+    'PageTitleImg' => '/site/Medias/img/header.jpg', // Lien vers l'image.  Vide si pas d'image. Ex. : /site/Medias/img/header.jpg
+    'PageTitleImgSpeedParallax' => '-.170', // Vitesse du paralax -.170
+    'PageTitlePattern' => '/site/Medias/pattern/pattern-exemple.png', // Lien vers l'image du pattern. Vide si pas de pattern. Ex. : /site/Medias/pattern/pattern-exemple.png
+    'PageTitleBgColor' => '#DF0A40', // Couleur de fond - Vide si pas de couleur. Ex. : #DF0A40
+    'PageTitleVideo' => '/site/Medias/video/We-Work-We-Wait', // Lien vers la vidéo SANS EXTENSION. Ex. : /site/Medias/video/presentation
+
+    'PageTitleBreadcrumb' => false, // Affiche ou non du fil d'ariane => true | false | '' => '' vide pour laisser la configuration par défault via app.php
+    'PageTitleScroller' => true, // Activer le bouton scroller
+        'PageTitleScrollerClasses' => 'light circle-color', // Style du scroller : [light | dark | color] && [circle-light | circle-dark | circle-color]
+        'PageTitleScrollerLink' => '#portfolio', // Lien du scroller. Ex. : #portfolio
+]);
+
+echo 'Le nom de la page, géré via PageController, est : --> ' . $NamePage . ' <--';
+
+?>
+
+<!-- <?= 'NamePage index.php : ' . $NamePage . '<br>' ?> -->
 
 <!-- REVOLUTION SLIDER -->
 <div id="slider">

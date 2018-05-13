@@ -35,12 +35,15 @@ use II\Utilities\Configure;
                                 <br>Dimanche: <strong>Fermé</strong>
                             </li>
                         </ul>
-                        <!-- Social icons -->
-                        <div class="social-icons social-icons-border float-left m-t-20">
-                            <?php 
-                            echo $this->element('Blocs/SocialNetwork.php');
-                            ?>
-                        </div>
+                        
+                        <?php
+                        if(Configure::read('Activate.SocialNetwork.Footer') === true) {
+                        // Social icons
+                        echo '<div class="social-icons social-icons-border float-left m-t-20">
+                            ' . $this->element('Blocs/SocialNetwork.php') . '
+                        </div>';
+                        }
+                        ?>
                         <!-- end: Social icons -->
                     </div>
                     <!-- end: Footer widget area 1 -->

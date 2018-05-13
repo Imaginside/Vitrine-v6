@@ -33,7 +33,7 @@ use II\Utilities\Configure;
             <div class="col-sm-6 hidden-xs">
                 
                 <?php
-                if(Configure::read('Activate.SocialNetwork') == 1) {
+                if(Configure::read('Activate.SocialNetwork.TopBar') === true) {
                     echo '<div class="social-icons social-icons-colored-hover">';
                     echo $this->element('Blocs/SocialNetwork.php');
                     echo '</div>';
