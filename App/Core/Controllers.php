@@ -14,7 +14,7 @@ class Controllers
             }
             return $this;
         }
-        $this->data[$name] = $value;
+        $this->viewVars[$name] = $value;
         return $this;
     }
 
@@ -22,5 +22,8 @@ class Controllers
     {
         return $this->viewVars;
     }
+
+    public function preprocess(){}
+    public function postprocess(){}
 
 }

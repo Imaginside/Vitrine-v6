@@ -2,6 +2,7 @@
 
 
 A voir / Vérifier / Questions
+- Je n'arrive pas à afficher une variable dans un element, alors que la variable est défini dans le PageConctroller
 - Mes fichiers : Est-ce que j'ai bien fais de mettre les footer, header,.., dans Templates/Elements ?
 - Dans "site/Themes/theme1/", j'ai créé des dossiers "css", "js", "img". J'ai bien fait ?
 - Vérifier ce que j'ai fais dans "site/Config/app.php"
@@ -11,11 +12,11 @@ A voir / Vérifier / Questions
 
 Prochainement :
 - Voir pour renommer l'URL "/index/" par "/accueil/"
-- Pouvoir mettre des variables dans chaque page. Ex. : $title = "Accueil" / $title = "Contactez-nous", etc.. Est-ce déjà prévu ?
 - Eviter d'intégrer à chaque fois le "use II\Utilities\Configure;"
-- Permettre des URL en "/mentions-legales/"
+- Permettre des URLs en "/mentions-legales/", avec un tiret
 - Système de fil d'ariane
 - Système d'envoi de mail -> Page contact
+- Système d'acceptation des cookies
 
 
 

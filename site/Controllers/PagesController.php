@@ -1,8 +1,19 @@
 <?php
 class PagesController extends Controllers
 {
+    public function preprocess()
+    {
+        // $this->Breadcrumb->add('Jeux');
+    }
+
+    public function postprocess()
+    {
+    }
+
     public function index()
     {
+        // $this->Breadcrumb->add('jeux à bulles');
+        
         $this->set('NamePage', 'Accueil');
         $this->set('DescPage', 'Site vitrine professionnel d\'exemple, à partir de 39€ /mois seulement');
     }

@@ -1,4 +1,5 @@
 <?php
+
 // Affichage grand, type page d'accueil
 echo $this->element('Page-title/page-title.php', [
     'PageTitleClassesSection' => 'page-title-center light', 
@@ -6,7 +7,7 @@ echo $this->element('Page-title/page-title.php', [
     // - Alignement : EMPTY => page-title-left | page-title-center | page-title-right |
     // - Color : dark | light | color
 
-    'PageTitleH1' => 'Titre de la page', // Titre de la page
+    'PageTitleH1' => $NamePage, // Titre de la page
         'PageTitleH1Classes' => 'text-primary', // text-muted | text-dark | text-light | text-primary | ... css bootstrap
     'PageTitleSubTitle' => 'Grand affichage du titre de la page, avec image parallax.', // Sous titre
 
@@ -22,6 +23,7 @@ echo $this->element('Page-title/page-title.php', [
         'PageTitleScrollerClasses' => 'dark circle-color', // Style du scroller : [light | dark | color] && [circle-light | circle-dark | circle-color]
         'PageTitleScrollerLink' => '#portfolio', // Lien du scroller. Ex. : #portfolio
 ]);
+
 
 // Affichage classic
 echo $this->element('Page-title/page-title.php', [
@@ -49,7 +51,7 @@ echo $this->element('Page-title/page-title.php', [
 
 // Affichage vidéo
 echo $this->element('Page-title/page-title.php', [
-    'PageTitleClassesSection' => 'dark', 
+    'PageTitleClassesSection' => 'color', 
     // - Style : EMPTY | page-title-classic
     // - Alignement : EMPTY => page-title-left | page-title-center | page-title-right |
     // - Color : dark | light | color

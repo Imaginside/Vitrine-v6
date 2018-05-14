@@ -82,10 +82,14 @@ class App
         if(!($controller instanceof Controllers))
             throw new NotFoundException("Le Controller doit hériter de la classe \\Controllers", [get_class($controller)]);
         
+        $preprocess = call_user_func_array([$controller, 'preprocess'], $arguments);
+
         // Execution de la route (Controller::action) matchée
         // et récupération des variables définies par cette méthode
         $viewVars = call_user_func_array($callable, $arguments);
         $viewVars = is_array($viewVars) ? $viewVars : [] + $controller->getViewVars();
+
+        $postprocess = call_user_func_array([$controller, 'postprocess'], $arguments);
 
         // Création du nom du fichier de template
         $templateFileName = preg_replace('/Controller$/', '', get_class($controller)) . '/' . $callable[1] . '.php';
