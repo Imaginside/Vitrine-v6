@@ -2,8 +2,6 @@
 namespace II\Utilities;
 
 use II\Utilities\Abstracts\Router as RouterAbstract;
-use II\Utilities\Configure;
-use II\Utilities\Request;
 use II\Exceptions\RouterException;
 
 class Router extends RouterAbstract
@@ -45,9 +43,11 @@ class Router extends RouterAbstract
         
         // camelize
         $action = implode('', array_map(function($value) {
+            static $i = 0; $i++;
+            if($i === 1) return strtolower($value);
             return strtoupper(substr($value, 0, 1)) . strtolower(substr($value, 1));
         }, explode(' ', preg_replace('/[^a-zA-Z0-9_]+|\s+/', ' ', strtolower($action)))));
-
+        
         // pour la nomenclature des controllers, on ajoute le mot 'Controller' à la fin
         // par exemple pour le controller Pages, le fichier et la classe sont PagesController
         $controller .= 'Controller';
