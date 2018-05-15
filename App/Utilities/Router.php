@@ -8,12 +8,40 @@ class Router extends RouterAbstract
 {
 
     private $url;
+    protected $controllerInflector;
+    protected $actionInflector;
 
-    public function __construct($url){
+    public function __construct($url)
+    {
         $this->url = trim($url, '/');
+        $this->setcontrollerInflector([$this, 'controllerInflector']);
+        $this->setActionInflector([$this, 'actionInflector']);
     }
 
-    public function run(){
+    public function setControllerInflector($inflector)
+    {
+        $this->controllerInflector = $inflector;
+        return $this;
+    }
+
+    public function setActionInflector($inflector)
+    {
+        $this->actionInflector = $inflector;
+        return $this;
+    }
+
+    protected function controllerInflector($controller)
+    {
+        return $controller;
+    }
+
+    protected function actionInflector($action)
+    {
+        return $action;
+    }
+
+    public function run()
+    {
         
         // récupération de l'url sous forme de tableau
         $params = explode('/', $this->url);
@@ -41,12 +69,8 @@ class Router extends RouterAbstract
             $arguments = array_slice($params, 2);    
         }
         
-        // camelize
-        $action = implode('', array_map(function($value) {
-            static $i = 0; $i++;
-            if($i === 1) return strtolower($value);
-            return strtoupper(substr($value, 0, 1)) . strtolower(substr($value, 1));
-        }, explode(' ', preg_replace('/[^a-zA-Z0-9_]+|\s+/', ' ', strtolower($action)))));
+        // On passe l'action dans une fonction pour l'adapter
+        $action = call_user_func_array($this->actionInflector, [$action]);
         
         // pour la nomenclature des controllers, on ajoute le mot 'Controller' à la fin
         // par exemple pour le controller Pages, le fichier et la classe sont PagesController
