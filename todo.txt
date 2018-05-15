@@ -13,7 +13,7 @@ A voir / Vérifier / Questions
 Prochainement :
 - Voir pour renommer l'URL "/index/" par "/accueil/"
 - Eviter d'intégrer à chaque fois le "use II\Utilities\Configure;"
-- Permettre des URLs en "/mentions-legales/", avec un tiret
+# - Permettre des URLs en "/mentions-legales/", avec un tiret // /mentions-legales/ => Pages::mentionsLegales()
 - Système de fil d'ariane
 - Système d'envoi de mail -> Page contact
 - Système d'acceptation des cookies
