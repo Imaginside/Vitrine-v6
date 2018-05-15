@@ -17,6 +17,7 @@
         }  
     },
     "require": {
-        "monolog/monolog": "^1.23"
+        "monolog/monolog": "^1.23",
+        "icanboogie/inflector": "^1.4"
     }
 }
