@@ -40,7 +40,11 @@ class App
 
         // Récupère la classe choisie pour le router et l'ajoute comme router de l'application
         $router = Configure::read('Router');
-        $this->setRouter(new $router(Request::getURI()));
+        $router = (new $router(Request::getURI()))
+            ->setControllerInflector('II\\Utilities\\Inflector::camelize')
+            ->setActionInflector('II\\Utilities\\Inflector::camelize');
+
+        $this->setRouter($router);
 
         // un petit autoloader pour charger les classes utilisables dans le dossier /site/
         // comme Controllers ou Views
