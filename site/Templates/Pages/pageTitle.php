@@ -2,7 +2,7 @@
 
 // Affichage grand, type page d'accueil
 echo $this->element('Page-title/page-title.php', [
-    'PageTitleClassesSection' => 'page-title-center light', 
+    'PageTitleClassesSection' => 'page-title-center light',
     // - Style : EMPTY | page-title-classic
     // - Alignement : EMPTY => page-title-left | page-title-center | page-title-right |
     // - Color : dark | light | color

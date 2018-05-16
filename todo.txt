@@ -11,12 +11,15 @@ A voir / Vérifier / Questions
 
 
 Prochainement :
+- Helpers html (image, css, lien, ...)
+- Vues : Permettre d'appeler des variables en fonction de page, qui ne seront utilisées que dans le thème
 - Voir pour renommer l'URL "/index/" par "/accueil/"
+- Système de mise en maintenance du site. Système de code caché (via un GET ?) qui permet d'accéder au site malgré le mode maintenance. Défini dans site/Config/app.php.
 - Eviter d'intégrer à chaque fois le "use II\Utilities\Configure;"
 # - Permettre des URLs en "/mentions-legales/", avec un tiret // /mentions-legales/ => Pages::mentionsLegales()
 - Système de fil d'ariane
 - Système d'envoi de mail -> Page contact
-- Système d'acceptation des cookies
+- Système d'acceptation des cookies. Défini dans site/Config/app.php.
 
 
 

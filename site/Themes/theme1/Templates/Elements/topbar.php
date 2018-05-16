@@ -1,14 +1,8 @@
 <?php
 use II\Utilities\Configure;
 ?>
-<div id="topbar" class="topbar-colored topbar-fullwidth dark visible-md visible-lg">
-<?php
-// Possiblité d'ajouter des classes à la div topbar :
-// - dark | light
-// - Transparent : topbar-transparent dark | topbar-transparent
-// - Coloré : topbar-colored
-// - Largeur : topbar-fullwidth
-?>
+<div id="topbar" class="<?= $classesTopbar; ?>">
+
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
@@ -20,13 +14,13 @@ use II\Utilities\Configure;
                 </ul> -->
                 <ul class="top-menu">
 
-                    <li class="CompagnyBaseline"><?php echo Configure::read('Society.Name');
+                    <li class="CompagnyBaseline"><?= Configure::read('Society.Name');
 
                     if (Configure::read('Society.Baseline') != '' ) {
                         echo ', ' . Configure::read('Society.Baseline');
                     }
                     ?>
-                    </li><span class="CompagnyBaseline">|</span><li><?php echo Configure::read('Society.Adress') . ' - ' . Configure::read('Society.Zipcode') . ' ' . Configure::read('Society.Town')?></li>
+                    </li><span class="CompagnyBaseline">|</span><li><?= Configure::read('Society.Adress') . ' - ' . Configure::read('Society.Zipcode') . ' ' . Configure::read('Society.Town') ?></li>
                     
                 </ul>
             </div>

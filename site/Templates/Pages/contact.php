@@ -2,6 +2,31 @@
 use II\Utilities\Configure;
 ?>
 
+<?= 
+$this->element('Page-title/page-title.php', [
+    'PageTitleClassesSection' => 'dark', 
+    // - Style : EMPTY | page-title-classic
+    // - Alignement : EMPTY => page-title-left | page-title-center | page-title-right |
+    // - Color : dark | light | color
+
+    'PageTitleH1' => $NamePage, // Titre de la page
+        'PageTitleH1Classes' => 'text-primary', // text-muted | text-dark | text-light | text-primary | ... css bootstrap
+    'PageTitleSubTitle' => 'Rentrons en contact !', // Sous titre
+
+    // Choix du background du page-title
+    'PageTitleImg' => '', // Lien vers l'image.  Vide si pas d'image. Ex. : /site/Medias/img/header.jpg
+    'PageTitleImgSpeedParallax' => '-.170', // Vitesse du paralax -.170
+    'PageTitlePattern' => '/site/Medias/pattern/pattern-exemple.png', // Lien vers l'image du pattern. Vide si pas de pattern. Ex. : /site/Medias/pattern/pattern-exemple.png
+    'PageTitleBgColor' => '', // Couleur de fond - Vide si pas de couleur. Ex. : #DF0A40
+    'PageTitleVideo' => '', // Lien vers la vidéo SANS EXTENSION. Ex. : /site/Medias/video/presentation
+
+    'PageTitleBreadcrumb' => true, // Affiche ou non du fil d'ariane => true | false | '' => '' vide pour laisser la configuration par défault via app.php
+    'PageTitleScroller' => false, // Activer le bouton scroller
+        'PageTitleScrollerClasses' => 'light circle-color', // Style du scroller : [light | dark | color] && [circle-light | circle-dark | circle-color]
+        'PageTitleScrollerLink' => '#portfolio', // Lien du scroller. Ex. : #portfolio
+]);
+?>
+
 <!-- CONTENT -->
 <section>
     <div class="container">
@@ -32,10 +57,16 @@ use II\Utilities\Configure;
                             <textarea type="text" name="widget-contact-form-message" rows="5" class="form-control required" placeholder="Entrez votre message"></textarea>
                         </div>
 
+                        <?php
+                        if(Configure::read('Activate.Google-reCaptcha-sitekey') !== '' && Configure::read('Activate.Google-reCaptcha-secretkey') !== '') {
+                            echo '
                             <div class="form-group">
-                            <script src="https://www.google.com/recaptcha/api.js"></script>
-                            <div class="g-recaptcha" data-sitekey="6LddCxAUAAAAAKOg0-U6IprqOZ7vTfiMNSyQT2-M"></div>
-                        </div>
+                                <script src="https://www.google.com/recaptcha/api.js"></script>
+                                <div class="g-recaptcha" data-sitekey="' . Configure::read('Activate.Google-reCaptcha-sitekey') . '"></div>
+                            </div>
+                            ';
+                        }
+                        ?>
 
                         <button class="btn btn-icon-holder btn-shadow btn-light-hover btn-light-hover" type="submit" id="form-submit">Envoyer le message<i class="fa fa-paper-plane"></i></button>
 

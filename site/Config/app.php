@@ -4,6 +4,12 @@ return [
 
     // Gestion de l'affichage // 1 = activé | 0 = désactivé
     'Activate' => [
+        'Maintenance' => true, // "true" => mode maintenance activé
+        'Google-TagManager' => '', // GTM-XXXXXXX
+        'Google-reCaptcha-sitekey' => '',
+        'Google-reCaptcha-secretkey' => '',
+        'Cookies' => true, // 'true' affichera le bandeau sur le site
+
         'SocialNetwork' => [ // Icônes des réseaux sociaux
             'TopBar' => true,
             'Footer' => true,
@@ -16,7 +22,7 @@ return [
     'logo-light' => BASE_URL . IMAGES . 'logo-imaginside.png',
 
     'Site' => [
-        'date_mise_en_ligne' => '2015',
+        'date_mise_en_ligne' => '2018',
     ],
 
     'Society' => [

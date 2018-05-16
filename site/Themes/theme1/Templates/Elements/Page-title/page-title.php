@@ -63,11 +63,11 @@ if(isset($PageTitleImg) && $PageTitleImg != '') {
     echo '<div class="container">';    
         // Breadcrumb
         if ($PageTitleBreadcrumb === true) {
-            echo $this->element('Breadcrumb/breadcrumb.php', ['PageTitleH1' => $PageTitleH1]);
+            echo $this->element('breadcrumb.php', ['PageTitleH1' => $PageTitleH1]);
         }
         else {
             if(Configure::read('Activate.Breadcrumb') === true && $PageTitleBreadcrumb !== false) {
-                echo $this->element('Breadcrumb/breadcrumb.php');
+                echo $this->element('breadcrumb.php');
             }
         }
 

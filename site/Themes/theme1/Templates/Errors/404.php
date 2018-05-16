@@ -39,8 +39,8 @@ use II\Utilities\Configure;
     <div id="wrapper">
 
         <?php
-        echo $this->element('Topbar/topbar-1.php');
-        echo $this->element('Header/header-1.php');
+        echo $this->element('topbar.php');
+        echo $this->element('header.php');
         ?>
 
 
@@ -69,7 +69,7 @@ use II\Utilities\Configure;
 
 
         <?php
-        echo $this->element('Footer/footer-1.php');
+        echo $this->element('footer.php');
         ?>
 
     
