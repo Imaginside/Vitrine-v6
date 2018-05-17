@@ -1,0 +1,111 @@
+/*
+
+Custom theme
+
+*/
+
+/* TOPBAR */
+#topbar span {
+  padding: 0 10px;
+}
+.topbar-colored {
+  color:#FFF;
+  font-size: 0.9em;
+}
+.top-menu.right {
+  float: right;
+}
+.top-menu.right a {
+  margin-right:0 !important;
+}
+
+
+.text-shadow-white {
+  text-shadow:1px 1px 0 #FFF;
+}
+.text-shadow-black {
+  text-shadow:1px 1px 0 #000;
+}
+.text-primary {
+  color:#DF0A40 !important;
+}
+a.text-primary:hover,a.text-primary:focus {
+  color:#a90831 !important;
+}
+
+
+/* PAGE TITLE */
+#page-title.color .page-title > h1 {
+  color: #DF0A40; }
+#page-title.color .page-title > span {
+  color: #DF0A40; }
+#page-title.color .breadcrumb ul li + li:before {
+  background-color: #DF0A40; }
+#page-title.color .breadcrumb ul li a {
+  color: #DF0A40; }
+#page-title .page-title,
+#page-title.page-title-center .page-title {
+  margin-bottom: 0;
+}
+#page-title .page-title > span {
+  font-size:17px;
+}
+#page-title.dark .page-title > span {
+  opacity:.8;
+  text-shadow:1px 1px 1px rgba(255,255,255,1);
+}
+
+#page-title.page-title-classic .container div:first-child:not(.breadcrumb) {
+  width: 100%;
+}
+#page-title.scroller {
+  padding-bottom:100px;
+}
+#page-title .scroller {
+  margin-top:30px;
+  text-align:left;
+}
+#page-title .scroller.dark .rev-scroll-btn { border-color: #252525; }
+#page-title .scroller.light .rev-scroll-btn { border-color: #FFF; }
+#page-title .scroller.color .rev-scroll-btn { border-color: #DF0A40; }
+
+#page-title .scroller.circle-dark .rev-scroll-btn span { background: #252525; }
+#page-title .scroller.circle-light .rev-scroll-btn span { background: #FFF; }
+#page-title .scroller.circle-color .rev-scroll-btn span { background: #DF0A40; }
+
+#page-title.page-title-right .scroller { text-align:right; }
+#page-title.page-title-center .scroller { text-align:center; }
+
+
+
+/* BREADCRUMB */
+#page-title .breadcrumb.light ul li a {
+  color:#FFF;
+  text-shadow:1px 1px 0 rgba(0,0,0,0.8);
+}
+#page-title .breadcrumb.light ul li + li::before {
+  background-color:#FFF;
+}
+#page-title .breadcrumb.dark ul li a {
+  color:#333;
+  text-shadow:1px 1px 0 rgba(255,255,255,0.8);
+}
+#page-title .breadcrumb.dark ul li + li::before {
+  background-color:#333;
+}
+
+
+
+
+/* BUTTON */
+.btn:hover, .btn:focus, .btn:active, .btn.active {
+  background-color: #a90831;
+  border-color: #a90831;
+}
+
+
+
+/* FOOTER */
+.copyright-text {
+  padding-top:0;
+}
