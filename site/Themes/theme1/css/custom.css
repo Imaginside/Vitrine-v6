@@ -97,6 +97,24 @@ a.text-primary:hover,a.text-primary:focus {
 
 
 
+
+.icon-box.text-center,
+.icon-box.center {
+  width:100%;
+}
+.service-box .row > div {
+  height:270px;
+}
+.icon-box h3,
+.icon-box h5 {
+  font-size:25px;
+  font-weight:300;
+}
+.icon-box.border .icon {
+  border-color:#DF0A40;
+}
+
+
 /* BUTTON */
 .btn:hover, .btn:focus, .btn:active, .btn.active {
   background-color: #a90831;

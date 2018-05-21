@@ -2166,7 +2166,7 @@ Side Push Panel
       left: 0;
       right: auto; }
     .side-panel.side-panel-active.side-panel-slide-in #wrapper {
-      cursor: url(../images/close.png), auto; }
+      cursor: url(../img/close.png), auto; }
       .side-panel.side-panel-active.side-panel-slide-in #wrapper:after {
         opacity: 1;
         width: 100%;
@@ -2184,7 +2184,7 @@ Side Push Panel
       right: auto; }
     .side-panel.side-panel-active.side-panel-push #wrapper {
       left: 300px;
-      cursor: url(../images/close.png), auto; }
+      cursor: url(../img/close.png), auto; }
       .side-panel.side-panel-active.side-panel-push #wrapper:after {
         opacity: 1;
         width: 100%;
@@ -2740,7 +2740,7 @@ HEADER: Responsive
         right: auto; }
       .side-panel.side-panel-active.side-panel-static #wrapper {
         left: 300px;
-        cursor: url(../images/close.png), auto; }
+        cursor: url(../img/close.png), auto; }
         .side-panel.side-panel-active.side-panel-static #wrapper:after {
           width: 100%;
           height: 100%;
@@ -8165,7 +8165,7 @@ body.device-xxs hr.space-xxlg, body.device-xs hr.space-xxlg {
   top: -13px !important; }
 
 .triangle-divider-bottom {
-  background-image: url("../images/triangle-divider-down.png");
+  background-image: url("../img/triangle-divider-down.png");
   background-position: left center;
   background-repeat: repeat-x;
   bottom: 0;
@@ -8174,7 +8174,7 @@ body.device-xxs hr.space-xxlg, body.device-xs hr.space-xxlg {
   width: 100%; }
 
 .triangle-divider-top {
-  background-image: url("../images/triangle-divider-top.png");
+  background-image: url("../img/triangle-divider-top.png");
   background-position: left center;
   background-repeat: repeat-x;
   top: 0;
@@ -8332,7 +8332,7 @@ select {
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
   appearance: none !important;
-  background-image: url(../images/dropdown-arrow.png);
+  background-image: url(../img/dropdown-arrow.png);
   background-repeat: no-repeat;
   background-position: right center;
   padding: 6px 18px;
@@ -9601,7 +9601,7 @@ Breadcrumbs
   height: auto !important;
   margin-top: 10px; }
 .popover-content iframe {
-  background: url(../images/loading.gif) center center no-repeat; }
+  background: url(../img/loading.gif) center center no-repeat; }
 
 /*# sourceMappingURL=tooltop-popover.css.map */
 
@@ -12186,7 +12186,7 @@ body.device-xxs .text-medium-light {
   opacity: 0.8; }
 
 .background-overlay:before {
-  background: url("../images/overlay-pattern/overlay-pattern-1.png");
+  background: url("../img/overlay-pattern/overlay-pattern-1.png");
   position: absolute;
   top: 0;
   right: 0;
@@ -13095,7 +13095,7 @@ a.toggle-item:active {
 .image-hover-zoom {
   position: relative;
   overflow: hidden;
-  cursor: url("../images/expand.png"), default;
+  cursor: url("../img/expand.png"), default;
   /*hover state*/ }
   .image-hover-zoom img {
     transition: all .4s ease;
