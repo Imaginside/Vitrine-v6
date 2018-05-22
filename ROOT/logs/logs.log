@@ -1,1 +1,0 @@
-[2018-05-16 09:39:49] debug_log.ERROR: Exception TypeError {"code":0,"message":"Argument 1 passed to II\\Utilities\\Configure::loadConfiguration() must be of the type array, boolean given, called in C:\\wamp64\\www\\Vitrine-v6\\App\\Utilities\\Configure.php on line 12"} []
