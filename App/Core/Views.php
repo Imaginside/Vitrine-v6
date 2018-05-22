@@ -5,15 +5,17 @@ use II\Exceptions\ViewsException;
 
 class Views
 {
+    
+    const TEMPLATES = 0;
+    const ELEMENTS = 1;
+    const LAYOUT = 2;
+    const ERROR = 3;
 
     protected $templatesPath;
     protected $template;
     protected $layout = 'base.php';
 
-    const TEMPLATES = 0;
-    const ELEMENTS = 1;
-    const LAYOUT = 2;
-    const ERROR = 3;
+    private $viewVars = [];
 
     public function __construct($template, $type = 0)
     {   
@@ -23,7 +25,7 @@ class Views
             $hcname = substr($helper, strrpos($helper, '/') + 1,  - 4);
             $hname = substr($hcname, 0, -6);
             $hcname = 'II\\Utilities\\Helpers\\' . $hcname;
-            include $helper;
+            require_once $helper;
             $this->$hname = new $hcname;
         }
 
@@ -47,6 +49,12 @@ class Views
         }
         $this->template = $template;
     }
+
+    public function preprocess(){}
+    public function postprocess(){}
+
+    public function prelayout(){}
+    public function postlayout(){}
 
     protected function setPathAsTemplate($file)
     {
@@ -106,6 +114,25 @@ class Views
     protected function element($element, array $variables = [])
     {
         return (new static($element, static::ELEMENTS))->render($variables);
+    }
+
+    protected function set($name, $value)
+    {
+        if(is_array($name))
+        {
+            foreach($name as $_name => $_value)
+            {
+                $this->set($_name, $value);
+            }
+            return $this;
+        }
+        $this->viewVars[$name] = $value;
+        return $this;
+    }
+
+    public function getViewVars()
+    {
+        return $this->viewVars;
     }
     
 

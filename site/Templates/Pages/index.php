@@ -1,8 +1,3 @@
-
-<?= $this->Url->link(['c' => 'Pages', 'a' => 'mentionsLegales']) ?>
-<br>
-<?= $this->Url->link(['hello', 'world']) ?>
-
 <?= 
 $this->element('Page-title/page-title.php', [
     'PageTitleClassesSection' => 'page-title-center light', 

@@ -86,27 +86,66 @@ class App
         if(!($controller instanceof Controllers))
             throw new NotFoundException("Le Controller doit hériter de la classe \\Controllers", [get_class($controller)]);
         
-        $preprocess = call_user_func_array([$controller, 'preprocess'], $arguments);
+        $view = preg_replace('/Controller$/', 'View', get_class($controller));
+        $siteViewsDir = SITE . Configure::read('Paths.themes') . '/Views/';
+        $themeViewsDir = SITE . Configure::read('Paths.themes') . Configure::read('theme') . '/Views/';
+
+        if(file_exists($themeViewsDir . $view . '.php'))
+        {
+            include $themeViewsDir . $view . '.php';
+        }
+        else if(file_exists($siteViewsDir . $view . '.php'))
+        {
+            include $siteViewsDir . $view . '.php';
+        }
+        else
+        {
+            $view = 'Views';
+        }
+
+        call_user_func_array([$controller, 'preprocess'], $arguments);
 
         // Execution de la route (Controller::action) matchée
         // et récupération des variables définies par cette méthode
         $viewVars = call_user_func_array($callable, $arguments);
-        $viewVars = is_array($viewVars) ? $viewVars : [] + $controller->getViewVars();
+        $viewVars = is_array($viewVars) ? $viewVars : [];
+        
+        $viewVars = $viewVars + $controller->getViewVars();
 
-        $postprocess = call_user_func_array([$controller, 'postprocess'], $arguments);
+        call_user_func_array([$controller, 'postprocess'], $arguments);
 
         // Création du nom du fichier de template
         $templateFileName = preg_replace('/Controller$/', '', get_class($controller)) . '/' . $callable[1] . '.php';
 
         // Appel à la classe de vue pour générer le contenu à partir du template
-        $view = new Views($templateFileName, Views::TEMPLATES);
+        $view = new $view($templateFileName, Views::TEMPLATES);
+        
+        if(!($view instanceof Views))
+            throw new NotFoundException("La classe de vue doit hériter de la classe \\Views", [get_class($view)]);
+
+        call_user_func_array([$view, 'preprocess'], $arguments);
+
+        if(method_exists($view, $callable[1]))
+        {
+            $viewsViewVars = call_user_func_array([$view, $callable[1]], $arguments);
+            $viewsViewVars = is_array($viewsViewVars) ? $viewsViewVars : [];
+            $viewVars = $viewVars + $viewsViewVars + $view->getViewVars();
+        }
+
         $pageContent = $view->render($viewVars);
 
+        call_user_func_array([$view, 'postprocess'], $arguments);
+        
         // Appel à la classe de vue pour générer le layout
-        $layout = new Views($view->layout(), Views::LAYOUT);
+        $layout = new $view($view->layout(), Views::LAYOUT);
+
+        call_user_func_array([$layout, 'prelayout'], $arguments);
+
         $layoutContent = $layout->render([
         'content' => $pageContent,
         ] + $viewVars);
+
+        call_user_func_array([$layout, 'postlayout'], $arguments);
         
         // On retourne le contenu créé (layout + contenu)
         return $layoutContent;
