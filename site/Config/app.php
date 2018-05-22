@@ -5,7 +5,7 @@ return [
     // Gestion de l'affichage // 1 = activé | 0 = désactivé
     'Activate' => [
         'Maintenance' => true, // "true" => mode maintenance activé
-        'Google-TagManager' => '', // GTM-XXXXXXX
+        'Google-TagManager' => 'GTM-KJ7MDZ3', // GTM-XXXXXXX
         'Google-reCaptcha-sitekey' => '',
         'Google-reCaptcha-secretkey' => '',
         'Cookies' => true, // 'true' affichera le bandeau sur le site

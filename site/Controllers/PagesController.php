@@ -60,4 +60,17 @@ class PagesController extends Controllers
         $this->set('NamePage', 'Mentions légales');
         $this->set('DescPage', 'Mentions légales');
     }
+
+    public function cookies()
+    {
+        $this->set('MetaRobot', 'noindex, nofollow');
+        $this->set('NamePage', 'Cookies');
+        $this->set('DescPage', 'Cookies');
+    }
+    public function politiqueDeConfidentialite()
+    {
+        $this->set('MetaRobot', 'noindex, nofollow');
+        $this->set('NamePage', 'Politique de confidentialité');
+        $this->set('DescPage', 'Politique de confidentialité');
+    }
 }
