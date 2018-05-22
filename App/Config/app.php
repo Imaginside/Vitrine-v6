@@ -10,5 +10,8 @@ return [
     'Paths' => [
         'templates' => 'Templates/',
         'themes'    => 'Themes/',
+    ],
+    'default' => [
+        'action' => 'accueil'
     ]
 ];

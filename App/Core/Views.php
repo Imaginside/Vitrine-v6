@@ -1,5 +1,6 @@
 <?php
 use II\Utilities\Configure;
+use II\Utilities\Inflector;
 use II\Exceptions\ViewsException;
 
 class Views
@@ -16,6 +17,16 @@ class Views
 
     public function __construct($template, $type = 0)
     {   
+
+        foreach(glob(CORE_HELPERS . '*.php') as $helper)
+        {
+            $hcname = substr($helper, strrpos($helper, '/') + 1,  - 4);
+            $hname = substr($hcname, 0, -6);
+            $hcname = 'II\\Utilities\\Helpers\\' . $hcname;
+            include $helper;
+            $this->$hname = new $hcname;
+        }
+
         switch($type)
         {
             case static::TEMPLATES:
