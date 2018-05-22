@@ -50,6 +50,15 @@ class Views
         $this->template = $template;
     }
 
+    // processors:
+    // 1 - __constructor => nouvelle instance pour générer le contenu à partir du template
+    // 2 - preprocess // "execution" sur l'instance créé en "1"
+    // 3 - rendu du template php
+    // 4 - postprocess // "execution" sur l'instance créé en "1"
+    // 5 - __constructor => nouvelle instance pour générer le layout à partir du template et du contenu créé en "1"
+    // 6 - prelayout // execution du l'instance créé en "5"
+    // 7 - rendu du template du layout
+    // 8 - postlayout // execution du l'instance créé en "5"
     public function preprocess(){}
     public function postprocess(){}
 
