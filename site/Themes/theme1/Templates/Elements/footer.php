@@ -114,7 +114,7 @@ use II\Utilities\Configure;
                 if (Configure::read('Society.Baseline') != '' ) {
                     echo ' - ' . Configure::read('Society.Baseline') . ' | ';
                 }
-                echo 'Tous droits réservés | <a href="/mentions-legales/">Mentions légales</a>';
+                echo 'Tous droits réservés | <a href="/mentions-legales/">Mentions légales</a> | <a href="/cookies/">Cookies</a> | <a href="/politique-de-confidentialite/">Politique de confidentialité</a>';
                 ?>
                 </div>
                 <div class="copyright-text text-center">
