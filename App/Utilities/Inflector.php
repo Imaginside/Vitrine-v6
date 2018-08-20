@@ -13,7 +13,17 @@ class Inflector
         if(!(static::$inflector instanceof InflectorClass))
             static::$inflector = InflectorClass::get(InflectorClass::DEFAULT_LOCALE);
         return static::$inflector;
-    }
+	}
+	
+	/**
+	 * {@link camelize()} option to downcase the first letter.
+	 */
+	const DOWNCASE_FIRST_LETTER = true;
+
+	/**
+	 * {@link camelize()} option to keep the first letter as is.
+	 */
+	const UPCASE_FIRST_LETTER = false;
 
     /**
 	 * Returns the plural form of the word in the string.
@@ -81,7 +91,7 @@ class Inflector
 	 *
 	 * @return string
 	 */
-	public static function camelize($term, $downcase_first_letter = InflectorClass::DOWNCASE_FIRST_LETTER)
+	public static function camelize($term, $downcase_first_letter = self::DOWNCASE_FIRST_LETTER)
 	{
         $inflector = static::loadInflector();
         return $inflector->camelize($term, $downcase_first_letter);
