@@ -1,9 +1,10 @@
 <IfModule mod_rewrite.c>
     RewriteEngine on
 
-    RewriteCond %{DOCUMENT_ROOT}/sites%{REQUEST_URI} -f
-    RewriteRule .* /sites%{REQUEST_URI} [QSA,L]
+    RewriteCond %{DOCUMENT_ROOT}/site%{REQUEST_URI} -f
+    RewriteRule .* /site%{REQUEST_URI} [QSA,L]
 
-    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-f
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-f [OR]
+    RewriteCond %{REQUEST_URI} \.(php|html|exe|cmd)$
     RewriteRule .* index.php [QSA,L]
 </IfModule>
