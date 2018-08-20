@@ -5820,7 +5820,7 @@ span.rec-by {
       padding: 14px;
       width: 30px; }
       .btn.btn-slide.btn-xs > i {
-        left: 10px;
+        left: 9px;
         top: 8px; }
       .btn.btn-slide.btn-xs > span {
         left: 28px;
@@ -6145,7 +6145,7 @@ span.rec-by {
       top: -12px; }
 
 .heading {
-  margin-bottom: 100px;
+  margin-bottom: 70px;
   text-align: center; }
   .heading > h1,
   .heading > h2 {
@@ -7792,17 +7792,22 @@ span.highlight {
     .team-members .team-member .team-image > img {
       width: 100%;
       border-radius: 4px; }
-  .team-members .team-member .team-desc > h3 {
-    font-size: 16px;
-    line-height: 22px;
-    margin-bottom: 0; }
-  .team-members .team-member .team-desc > span {
-    font-size: 13px;
-    color: #9d9d9d;
-    line-height: 18px; }
-  .team-members .team-member .team-desc > p {
-    margin-top: 10px;
-    font-size: 14px; }
+  .team-members .team-member .team-desc {
+      padding:0 10px;
+      margin-bottom:20px; }
+    .team-members .team-member .team-desc > h3 {
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 0; }
+    .team-members .team-member .team-desc > span {
+      font-size: 13px;
+      color: #9d9d9d;
+      line-height: 18px; }
+    .team-members .team-member .team-desc > p {
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom : 1em; }
 .team-members.team-members-circle .team-member {
   background-color: transparent;
   padding: 20px; }
@@ -9020,7 +9025,7 @@ img.mfp-img {
     margin-left: 20px; }
   .list-icon i {
     font-size: 15px;
-    margin-right: 14px;
+    margin-right: 8px;
     margin-left: -20px; }
   .list-icon.icon-list-colored li:before, .list-icon.icon-list-colored i {
     color: #DF0A40; }

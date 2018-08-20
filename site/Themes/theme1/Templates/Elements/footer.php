@@ -13,8 +13,7 @@ use II\Utilities\Configure;
                             <ul class="list-icon">
                                 <li><i class="fa fa-map-marker"></i>
                                 <?php
-                                echo Configure::read('Society.Name');
-                                echo Configure::read('Society.Adress') . '<br>' . Configure::read('Society.Zipcode') . ' ' . Configure::read('Society.Town');
+                                echo Configure::read('Society.Name') . '<br>' . Configure::read('Society.Adress') . '<br>' . Configure::read('Society.Zipcode') . ' ' . Configure::read('Society.Town');
                                 ?>
                                 </li>
 

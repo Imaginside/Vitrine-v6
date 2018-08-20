@@ -1,8 +1,14 @@
+﻿Bug à corriger :
+- Ajouter une class dans le body, correspondant à la page (pour les styles spécifiques). Ex.: <body class="accueil">
+Ajouter "$this->set('BodyPage', 'accueil');" dans "PagesController.php", puis appeler $BodyPage ?
+- Dans app.php (paramétrage du site), ajouter    "     'Viadeo'  => '',     "
+- Bug sur le survol d'un élément du sous menu du menu principal : Tous les liens changent de couleur (fichier style.css du thème, ligne 1301 : A commenter ou supprimer)
+- Dans "base.ctp" et "footer.php", mettre en variable le theme -> <?php echo Configure::read('theme'); ?>
 
 
 
 A voir / Vérifier / Questions
-- Je n'arrive pas à afficher une variable dans un element, alors que la variable est défini dans le PageConctroller
+- Je n'arrive pas à afficher une variable dans un element, alors que la variable est défini dans le PageController
 - Mes fichiers : Est-ce que j'ai bien fais de mettre les footer, header,.., dans Templates/Elements ?
 - Dans "site/Themes/theme1/", j'ai créé des dossiers "css", "js", "img". J'ai bien fait ?
 - Vérifier ce que j'ai fais dans "site/Config/app.php"

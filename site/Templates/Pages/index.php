@@ -17,20 +17,21 @@ $this->element('Page-title/page-title.php', [
     'PageTitleBgColor' => '#DF0A40', // Couleur de fond - Vide si pas de couleur. Ex. : #DF0A40
     'PageTitleVideo' => '/site/Medias/video/We-Work-We-Wait', // Lien vers la vidéo SANS EXTENSION. Ex. : /site/Medias/video/presentation
 
-    'PageTitleBreadcrumb' => true, // Affiche ou non du fil d'ariane => true | false | '' => '' vide pour laisser la configuration par défault via app.php
+    'PageTitleBreadcrumb' => false, // Affiche ou non du fil d'ariane => true | false | '' => '' vide pour laisser la configuration par défault via app.php
     'PageTitleScroller' => true, // Activer le bouton scroller
         'PageTitleScrollerClasses' => 'light circle-color', // Style du scroller : [light | dark | color] && [circle-light | circle-dark | circle-color]
-        'PageTitleScrollerLink' => '#portfolio', // Lien du scroller. Ex. : #portfolio
+        'PageTitleScrollerLink' => '#les-raisons-de-choisir-notre-site-vitrine', // Lien du scroller. Ex. : #portfolio
 ]);
 ?>
 
 
 
-<section class="service-box">
+
+<section class="service-box" id="les-raisons-de-choisir-notre-site-vitrine">
 	<div class="container">
 		<div class="heading heading-center">
 			<h2>Les raisons de choisir notre offre de site vitrine</h2>
-			<p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+			<p>Un site web de qualité - Une prestation professionnelle - Une offre exclusive</p>
 		</div>
         <div class="row">
             <?php
@@ -258,87 +259,87 @@ $this->element('Page-title/page-title.php', [
             <?php
             echo $this->element('Clients/list-client-only.php', [
                 'ToggleActivate' => true,
-                'ToggleDataContent' => 'Notre client fait des superbes choses.',
-                'ToggleTitle' => 'Le client',
-                'ClientName' => 'Le client',
-                'ClientImage' => '1.png',
+                'ToggleDataContent' => 'Maison familiale depuis 1960, au cœur de la vallée de la Marne, à Dormans, sur les coteaux de Soilly.',
+                'ToggleTitle' => 'Champagne Hugues Huttinot',
+                'ClientName' => 'Champagne Hugues Huttinot',
+                'ClientImage' => 'champagne-hugues-huttinot.png',
             ]);
             echo $this->element('Clients/list-client-only.php', [
                 'ToggleActivate' => true,
-                'ToggleDataContent' => 'Notre client fait des superbes choses.',
-                'ToggleTitle' => 'Le client',
-                'ClientName' => 'Le client',
-                'ClientImage' => '2.png',
+                'ToggleDataContent' => 'H.M prestige VTC est spécialisée dans les navettes aéroports, navettes gares et transport de personnes, 24h/24 et 7j/7.',
+                'ToggleTitle' => 'H.M Prestige VTC',
+                'ClientName' => 'H.M Prestige VTC',
+                'ClientImage' => 'hm-prestige-vtc.png',
             ]);
             echo $this->element('Clients/list-client-only.php', [
                 'ToggleActivate' => true,
-                'ToggleDataContent' => 'Notre client fait des superbes choses.',
-                'ToggleTitle' => 'Le client',
-                'ClientName' => 'Le client',
-                'ClientImage' => '3.png',
+                'ToggleDataContent' => 'Aménagement et entretien paysager, entretien des milieux aquatiques.',
+                'ToggleTitle' => 'Edivert',
+                'ClientName' => 'Edivert',
+                'ClientImage' => 'edivert.png',
             ]);
             echo $this->element('Clients/list-client-only.php', [
                 'ToggleActivate' => true,
-                'ToggleDataContent' => 'Notre client fait des superbes choses.',
-                'ToggleTitle' => 'Le client',
-                'ClientName' => 'Le client',
-                'ClientImage' => '4.png',
+                'ToggleDataContent' => 'Le Sourire de Reims, spécialiste de la dragée Médicis depuis 1929, est le complice de toutes vos cérémonies et de votre envie de partager.',
+                'ToggleTitle' => 'Le Sourire de Reims',
+                'ClientName' => 'Le Sourire de Reims',
+                'ClientImage' => 'le-sourire-de-reims.png',
             ]);
             echo $this->element('Clients/list-client-only.php', [
                 'ToggleActivate' => true,
-                'ToggleDataContent' => 'Notre client fait des superbes choses.',
-                'ToggleTitle' => 'Le client',
-                'ClientName' => 'Le client',
-                'ClientImage' => '5.png',
+                'ToggleDataContent' => 'Actuel Paysage crée, aménage et entretient des espaces verts de tous types : parcs, jardins, terrasses...',
+                'ToggleTitle' => 'Actuel Paysage',
+                'ClientName' => 'Actuel Paysage',
+                'ClientImage' => 'actuel-paysage.png',
             ]);
             echo $this->element('Clients/list-client-only.php', [
                 'ToggleActivate' => true,
-                'ToggleDataContent' => 'Notre client fait des superbes choses.',
-                'ToggleTitle' => 'Le client',
-                'ClientName' => 'Le client',
-                'ClientImage' => '6.png',
+                'ToggleDataContent' => 'Un Dj à Reims qui vous conseille et vous écoute.',
+                'ToggleTitle' => 'Sound Lights Diffusion',
+                'ClientName' => 'Sound Lights Diffusion',
+                'ClientImage' => 'sound-lights-diffusion.png',
             ]);
             echo $this->element('Clients/list-client-only.php', [
                 'ToggleActivate' => true,
-                'ToggleDataContent' => 'Notre client fait des superbes choses.',
-                'ToggleTitle' => 'Le client',
-                'ClientName' => 'Le client',
-                'ClientImage' => '7.png',
+                'ToggleDataContent' => 'Concepteur 3D, gestion et aménagement d\'intérieur.',
+                'ToggleTitle' => 'Agence Fourmis Bleues',
+                'ClientName' => 'Agence Fourmis Bleues',
+                'ClientImage' => 'agence-fourmis-bleues.png',
             ]);
             echo $this->element('Clients/list-client-only.php', [
                 'ToggleActivate' => true,
-                'ToggleDataContent' => 'Notre client fait des superbes choses.',
-                'ToggleTitle' => 'Le client',
-                'ClientName' => 'Le client',
-                'ClientImage' => '8.png',
+                'ToggleDataContent' => 'Chambres d\'hôtes de charme en Champagne.',
+                'ToggleTitle' => 'Le Mas Champenois',
+                'ClientName' => 'Le Mas Champenois',
+                'ClientImage' => 'le-mas-champenois.png',
             ]);
             echo $this->element('Clients/list-client-only.php', [
                 'ToggleActivate' => true,
-                'ToggleDataContent' => 'Notre client fait des superbes choses.',
-                'ToggleTitle' => 'Le client',
-                'ClientName' => 'Le client',
-                'ClientImage' => '9.png',
+                'ToggleDataContent' => 'Votre restaurant Indien en plein coeur de Châlons-en-Champagne.',
+                'ToggleTitle' => 'Namaste India',
+                'ClientName' => 'Namaste India',
+                'ClientImage' => 'namaste-india.png',
             ]);
             echo $this->element('Clients/list-client-only.php', [
                 'ToggleActivate' => true,
-                'ToggleDataContent' => 'Notre client fait des superbes choses.',
-                'ToggleTitle' => 'Le client',
-                'ClientName' => 'Le client',
-                'ClientImage' => '10.png',
+                'ToggleDataContent' => 'Méca-Passions vous propose plusieurs services mécaniques autour des 4x4 raid, des voitures anciennes et des voitures américaines.',
+                'ToggleTitle' => 'Méca Pasions',
+                'ClientName' => 'Méca Pasions',
+                'ClientImage' => 'meca-passions.png',
             ]);
             echo $this->element('Clients/list-client-only.php', [
                 'ToggleActivate' => true,
-                'ToggleDataContent' => 'Notre client fait des superbes choses.',
-                'ToggleTitle' => 'Le client',
-                'ClientName' => 'Le client',
-                'ClientImage' => '3.png',
+                'ToggleDataContent' => 'Bubble Best oeuvre dans l\'initiation et l\'animation de jeux et structures gonflables.',
+                'ToggleTitle' => 'Bubble Best',
+                'ClientName' => 'Bubble Best',
+                'ClientImage' => 'bubble-best.png',
             ]);
             echo $this->element('Clients/list-client-only.php', [
                 'ToggleActivate' => true,
-                'ToggleDataContent' => 'Notre client fait des superbes choses.',
-                'ToggleTitle' => 'Le client',
-                'ClientName' => 'Le client',
-                'ClientImage' => '5.png',
+                'ToggleDataContent' => 'Coach sportif et remise en forme à Reims.',
+                'ToggleTitle' => 'Sport Santé & You',
+                'ClientName' => 'Sport Santé & You',
+                'ClientImage' => 'sport-sante-and-you.png',
             ]);
             ?>
 		</ul>
@@ -364,27 +365,35 @@ $this->element('Page-title/page-title.php', [
 <section class="background-grey">
     <div class="container">
         <div class="heading heading-center">
-            <h2>NOTRE EQUIPE</h2>
-            <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+            <h2>NOTRE ÉQUIPE</h2>
+            <p>On se plie en 4 pour vous offrir un site vitrine de qualité !</p>
         </div>
         <div class="row team-members">
             <div class="col-md-offset-3 col-md-3">
                 <div class="team-member">
                     <div class="team-image">
-                        <img src="/site/Themes/theme1/img/team/6.jpg">
+                        <img src="/site/Medias/img/team/david-adam.jpg">
                     </div>
                     <div class="team-desc">
                         <h3>David ADAM</h3>
-                        <span>Développer Web</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing tristique hendrerit laoreet. </p>
+                        <span>Gérant, Web Designer, Infographiste</span>
+                        <p>Un site beau, fonctionnel et optimisé, il n'y a que ça de vrai pour garder un internaute !</p>
                         <div class="align-center">
-                            <a class="btn btn-xs btn-slide btn-light" href="https://www.facebook.com/imaginside.communication">
+                            <a class="btn btn-xs btn-slide btn-light" href="https://www.facebook.com/imaginside.communication" target="_blank">
                                 <i class="fa fa-facebook"></i>
                                 <span>Facebook</span>
                             </a>
-                            <a class="btn btn-xs btn-slide btn-light" href="https://twitter.com/ImagInside" data-width="100">
+                            <a class="btn btn-xs btn-slide btn-light" href="https://twitter.com/ImagInside" data-width="100" target="_blank">
                                 <i class="fa fa-twitter"></i>
                                 <span>Twitter</span>
+                            </a>
+                            <a class="btn btn-xs btn-slide btn-light" href="https://www.instagram.com/imaginside/" data-width="118" target="_blank">
+                                <i class="fa fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a class="btn btn-xs btn-slide btn-light" href="https://www.linkedin.com/in/davadam/" data-width="100" target="_blank">
+                                <i class="fa fa-linkedin"></i>
+                                <span>LinkedIn</span>
                             </a>
                             <a class="btn btn-xs btn-slide btn-light" href="mailto:hello@imaginside.com" data-width="80">
                                 <i class="fa fa-envelope"></i>
@@ -397,26 +406,23 @@ $this->element('Page-title/page-title.php', [
             <div class="col-md-3">
                 <div class="team-member">
                     <div class="team-image">
-                        <img src="/site/Themes/theme1/img/team/7.jpg">
+                        <img src="/site/Medias/img/team/axel-farkas.jpg">
                     </div>
                     <div class="team-desc">
                         <h3>Axel FARKAS</h3>
-                        <span>Développer Web</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing tristique hendrerit laoreet. </p>
+                        <span>Web Developer</span>
+                        <!-- <p><strong>Axel</strong> : "Oui mais non, regarde, c'est facile en fait ! Si tu $this->element avant le $MaVar, ça ne marche pas !"<br><strong>David</strong> : "Bah oui, j'suis bête..."</p> -->
+                        <p>Développeur fou...<br>Même fatigué, ça fuse dans son cerveau !</p>
                         <div class="align-center">
-                            <a class="btn btn-xs btn-slide btn-light" href="#">
-                                <i class="fa fa-facebook"></i>
-                                <span>Facebook</span>
-                            </a>
-                            <a class="btn btn-xs btn-slide btn-light" href="#" data-width="100">
+                            <a class="btn btn-xs btn-slide btn-light" href="#" data-width="100" target="_blank">
                                 <i class="fa fa-twitter"></i>
                                 <span>Twitter</span>
                             </a>
-                            <a class="btn btn-xs btn-slide btn-light" href="#" data-width="118">
-                                <i class="fa fa-instagram"></i>
-                                <span>Instagram</span>
+                            <a class="btn btn-xs btn-slide btn-light" href="https://www.linkedin.com/in/axel-farkas-87b18b105/" data-width="100" target="_blank">
+                                <i class="fa fa-linkedin"></i>
+                                <span>LinkedIn</span>
                             </a>
-                            <a class="btn btn-xs btn-slide btn-light" href="mailto:#" data-width="80">
+                            <a class="btn btn-xs btn-slide btn-light" href="mailto:hello@imaginside.com" data-width="80">
                                 <i class="fa fa-envelope"></i>
                                 <span>Mail</span>
                             </a>
