@@ -17,7 +17,7 @@ class Views
 
     private $viewVars = [];
 
-    public function __construct($template, $type = 0)
+    public function __construct($template, $type = self::TEMPLATES)
     {   
 
         foreach(glob(CORE_HELPERS . '*.php') as $helper)

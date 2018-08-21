@@ -1,37 +1,71 @@
-﻿Bug à corriger :
-- Ajouter une class dans le body, correspondant à la page (pour les styles spécifiques). Ex.: <body class="accueil">
-Ajouter "$this->set('BodyPage', 'accueil');" dans "PagesController.php", puis appeler $BodyPage ?
-- Dans app.php (paramétrage du site), ajouter    "     'Viadeo'  => '',     "
-- Bug sur le survol d'un élément du sous menu du menu principal : Tous les liens changent de couleur (fichier style.css du thème, ligne 1301 : A commenter ou supprimer)
-- Dans "base.ctp" et "footer.php", mettre en variable le theme -> <?php echo Configure::read('theme'); ?>
+﻿
+===========================
+===== BUG A CORRIGER ======
+===========================
+
+-   David : Ajouter une class dans le body, correspondant à la page (pour les styles spécifiques). Ex.: <body class="accueil">
+    Ajouter "$this->set('BodyPage', 'accueil');" dans "PagesController.php", puis appeler $BodyPage ?
+
+-   David : Dans app.php (paramétrage du site), ajouter    "     'Viadeo'  => '',     "
+    ## Assigné à David.
+
+-   David : Bug sur le survol d'un élément du sous menu du menu principal.
+    Tous les liens changent de couleur (fichier style.css du thème, ligne 1301 : A commenter ou supprimer)
+    ## Assigné à David.
+
+-   David : Dans "base.ctp" et "footer.php", mettre en variable le theme -> <?php echo Configure::read('theme'); ?>
+    ## Assigné à David.
+
+-   David : Dans Bubble Best, j'ai un problème avec la vidéo en bg dans le title. Elle n'est pas 100%
 
 
 
-A voir / Vérifier / Questions
-- Je n'arrive pas à afficher une variable dans un element, alors que la variable est défini dans le PageController
-- Mes fichiers : Est-ce que j'ai bien fais de mettre les footer, header,.., dans Templates/Elements ?
-- Dans "site/Themes/theme1/", j'ai créé des dossiers "css", "js", "img". J'ai bien fait ?
-- Vérifier ce que j'ai fais dans "site/Config/app.php"
-- Dans le theme1, dans le fichier base.php, j'ai appelé les fichiers CSS / JS en "/site/Themes/theme1/css/plugins.css". Il n'y a pas un moyen plus rapide d'appeler les fichiers ? Idem dans "site/Templates/Pages/index.php" avec "/site/Themes/theme1/img/slider/dummy.png"
+=========================================
+===== A VOIR / VERIFIER / QUESTIONS =====
+=========================================
+
+-   Je n'arrive pas à afficher une variable dans un element, alors que la variable est défini dans le PageController
+
+-   Mes fichiers : Est-ce que j'ai bien fais de mettre les footer, header,.., dans Templates/Elements ?
+
+-   Dans "site/Themes/theme1/", j'ai créé des dossiers "css", "js", "img". J'ai bien fait ?
+
+-   Vérifier ce que j'ai fais dans "site/Config/app.php"
+
+-   Dans le theme1, dans le fichier base.php, j'ai appelé les fichiers CSS / JS en "/site/Themes/theme1/css/plugins.css".
+    Il n'y a pas un moyen plus rapide d'appeler les fichiers ? Idem dans "site/Templates/Pages/index.php" avec "/site/Themes/theme1/img/slider/dummy.png"
 
 
 
-Prochainement :
-- Helpers html (image, css, lien, ...)
-- Vues : Permettre d'appeler des variables en fonction de page, qui ne seront utilisées que dans le thème
-- Voir pour renommer l'URL "/index/" par "/accueil/"
-- Système de mise en maintenance du site. Système de code caché (via un GET ?) qui permet d'accéder au site malgré le mode maintenance. Défini dans site/Config/app.php.
-- Eviter d'intégrer à chaque fois le "use II\Utilities\Configure;"
-# - Permettre des URLs en "/mentions-legales/", avec un tiret // /mentions-legales/ => Pages::mentionsLegales()
-- Système de fil d'ariane
-- Système d'envoi de mail -> Page contact
-- Système d'acceptation des cookies. Défini dans site/Config/app.php.
+=========================
+===== A DEVELOPPER ======
+=========================
 
+-   Renommer l'URL "/index/" par "/accueil/"
 
+-   Helpers html (image, css, lien, ...)
 
-Plus tard, et avec beaucoup de courage :
-- Système multilingue. Je pense qu'il faut adapter les URL des pages en fonction de la langue. Ex. : "Contactez-nous" en FR, "Contact-us" en EN, que les contenus appelé soit identique (image, etc..) mais que le texte s'adapte. Mettre les textes en "variable" ? I don't know ^^
-- Système de blog / articles
-- Backoffice vision client (oO") - Gestion des "modules" et options, modification des informations de contact (tel, mail, adresse), statistique de fréquentation simple, visualisation des paiements effectués, à effectuer, rappel de paiement, ...
-- Backoffice général pour nous (OO") - Gestion des clients, visualisation des paiements, statistiques divers et varier
-- Module Newsletter ?
+-   Vues : Permettre d'appeler des variables en fonction de page, qui ne seront utilisées que dans le thème
+
+-   Formulaire de contact + envoi de mail
+
+-   Maintenance du site. Système avec un mot de passe qui permet d'acceder au site (via une var GET ?) malgré le mode maintenance. Mot de passe défini dans site/Config/app.php.
+
+-   Système de grande bannière, par exemple, sur la page d'accueil dans le title
+
+-   Permettre de ne pas intégrer à chaque fois le "use II\Utilities\Configure;"
+
+-   Système d'acceptation des cookies. Défini dans site/Config/app.php.
+
+-   Système multilingue. Je pense qu'il faut adapter les URL des pages en fonction de la langue. Ex. : "Contactez-nous" en FR, "Contact-us" en EN, que les contenus appelé soit identique (image, etc..) mais que le texte s'adapte. Mettre les textes en "variable" ? I don't know ^^
+
+-   Backoffice vision client
+    Gestion des "modules" et options, modification des informations de contact (tel, mail, adresse), statistique de fréquentation simple, visualisation des paiements effectués, à effectuer, rappel de paiement, ...
+
+-   Backoffice général pour nous - Gestion des clients, visualisation des paiements, statistiques divers et varier
+
+-   Système de fil d'ariane
+
+-   Système de blog / articles + instant article Facebook
+
+-   Module Newsletter
