@@ -1,5 +1,5 @@
 <?php
-namespace II\Utilities;
+namespace II\Utilities\Forms;
 
 use II\Utilities\Inflector;
 
@@ -13,6 +13,7 @@ class Form {
     protected $templates = [
         // Champs
         'input' => '<input type=":type" name=":name" id=":id" :attributes>',
+        'textarea' => '<textarea name=":name" id=":id" :attributes></textarea>',
         // Groupes
         'formGroup' => '<div class=":groupClasses"> <label for=":inputId">:title</label> :input </div>',
         'formGroup--div' => ':input',
@@ -21,8 +22,7 @@ class Form {
     ];
 
     public function __construct ($formName = null)
-    {   
-        
+    {
         if(is_numeric($formName) || !is_string($formName))
             $formName = (new \ReflectionClass($this))->getShortName();
             
@@ -125,9 +125,11 @@ class Form {
             return $this->templates[$needle];
 
         $needle = [
-            
+            // Mettre ici les exeptions pour chercher un template qui ne
+            // correspond pas à $needle
+            // ex : radios => 'radio-single'
         ][$needle] ?: 'input';
-        
+
         return $this->templates[$needle];
     }
 
@@ -137,7 +139,9 @@ class Form {
             return $this->templates['formGroup--' . $needle];
 
         $needle = [
-            
+                // Mettre ici les exeptions pour chercher un template qui ne
+                // correspond pas à $needle
+                // ex : radios => 'radio-single'
         ][$needle] ?: 'input';
 
         return $this->templates['formGroup--' . $needle] ?: $this->templates['formGroup'];

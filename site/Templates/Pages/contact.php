@@ -1,5 +1,6 @@
 <?php
 use II\Utilities\Configure;
+use II\Forms\ContactForm;
 ?>
 
 <?= 
@@ -35,6 +36,12 @@ $this->element('Page-title/page-title.php', [
                 <h3 class="text-uppercase">Contactez-nous !</h3>
                 <p>Téléphonez-nous ou envoyez-nous un email, nous reviendrons vers vous dès que possible !</p>
                 <div class="m-t-30">
+                    <?php
+                    $form = new ContactForm();
+                    print $form->mainForm();
+                    die('---');
+                    ?>
+
                     <form class="widget-contact-form" action="include/contact-form.php" role="form" method="post">
                         <div class="row">
                             <div class="form-group col-sm-6">
