@@ -130,6 +130,7 @@ class ContactForm extends Form{
             'type' => 'radios',
             'name' => 'helloRadios[]',
             'class' => '',
+            'radiosGroupClasses' => '',
             'labelClasses' => '',
             'groupClasses' => 'radio',
             'options' => [
@@ -143,6 +144,7 @@ class ContactForm extends Form{
             'type' => 'checkboxes',
             'name' => 'helloCheckboxes[]',
             'class' => '',
+            'checkboxesGroupClasses' => '',
             'labelClasses' => '',
             'groupClasses' => 'checkbox',
             'options' => [

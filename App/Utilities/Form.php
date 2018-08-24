@@ -46,9 +46,9 @@ class Form {
         // - Template pour le wrapper des éléments input[type=checkbox]
         'formGroup--checkbox' => '<div class="{{ groupClasses }}"><label class="{{ labelClasses }}" for="{{ inputId }}">{{ input }}{{ title }}</label></div>',
         // - Template pour le wrapper lors de la création de multiples radios. Contient tous les input[type=radio] du même groupe
-        'formGroup--radios' => '<div class="{{ groupClasses }}"> <div class="label">{{ title }}</div> {{ radios }} </div>',
+        'formGroup--radios' => '<div class="{{ radiosGroupClasses }}"> <label>{{ title }}</label> {{ radios }} </div>',
         // - Template pour le wrapper lors de la création de multiples checkboxes. Contient tous les input[type=checkbox] du même groupe
-        'formGroup--checkboxes' => '<div class="{{ groupClasses }}"> <div class="label">{{ title }}</div> {{ checkboxes }} </div>',
+        'formGroup--checkboxes' => '<div class="{{ checkboxesGroupClasses }}"> <label>{{ title }}</label> {{ checkboxes }} </div>',
         'formGroup--div' => '{{ input }}', // affichage directement de l'input, sans wrapper
         'formGroup--submit' => '{{ input }}', // affichage directement de l'input, sans wrapper
         'formGroup--hidden' => '{{ input }}', // affichage directement de l'input, sans wrapper
@@ -263,7 +263,7 @@ class Form {
             $attr['title'] = $title;
             $attr['value'] = $value;
             $attr['id'] = $attributes['id'] . '--' . Inflector::hyphenate($value);
-
+            
             if(!empty($default) && $default === $value)
                 $attr['checked'] = true;
 
