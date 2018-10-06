@@ -3,19 +3,6 @@
 ===== BUG A CORRIGER ======
 ===========================
 
--   David : Ajouter une class dans le body, correspondant à la page (pour les styles spécifiques). Ex.: <body class="accueil">
-    Ajouter "$this->set('BodyPage', 'accueil');" dans "PagesController.php", puis appeler $BodyPage ?
-
--   David : Dans app.php (paramétrage du site), ajouter    "     'Viadeo'  => '',     "
-    ## Assigné à David.
-
--   David : Bug sur le survol d'un élément du sous menu du menu principal.
-    Tous les liens changent de couleur (fichier style.css du thème, ligne 1301 : A commenter ou supprimer)
-    ## Assigné à David.
-
--   David : Dans "base.ctp" et "footer.php", mettre en variable le theme -> <?php echo Configure::read('theme'); ?>
-    ## Assigné à David.
-
 -   David : Dans Bubble Best, j'ai un problème avec la vidéo en bg dans le title. Elle n'est pas 100%
 
 
@@ -69,3 +56,30 @@
 -   Système de blog / articles + instant article Facebook
 
 -   Module Newsletter
+
+
+
+
+
+
+========================
+===== BUG CORRIGE ======
+========================
+
+-   OK - David : Ajouter une class dans le body, correspondant à la page (pour les styles spécifiques). Ex.: <body class="accueil">
+    Ajouter "$this->set('BodyPage', 'accueil');" dans "PagesController.php", puis appeler $BodyPage ?
+    ## Assigné à David.
+    ## Fait le 06/10/2018
+
+-   OK - David : Dans app.php (paramétrage du site), ajouter    "     'Viadeo'  => '',     "
+    ## Assigné à David.
+    ## Fait le 06/10/2018
+
+-   OK - David : Bug sur le survol d'un élément du sous menu du menu principal.
+    Tous les liens changent de couleur (fichier style.css du thème, ligne 1301 : A commenter ou supprimer)
+    ## Assigné à David.
+    ## Pas de problème si li a utilisé correctement
+
+-   OK - David : Dans "base.ctp" et "footer.php", mettre en variable le theme -> <?php echo Configure::read('theme'); ?>
+    ## Assigné à David.
+    ## Fait le 06/10/2018

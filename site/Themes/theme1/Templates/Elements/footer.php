@@ -8,7 +8,7 @@ use II\Utilities\Configure;
                 <div class="row">
                     <div class="col-md-4">
                         <!-- Footer widget area 1 -->
-                        <div class="widget clearfix widget-contact-us" style="background-image: url('/site/Themes/theme1/img/world-map-dark.png'); background-position: 50% 20px; background-repeat: no-repeat">
+                        <div class="widget clearfix widget-contact-us" style="background-image: url('/site/Themes/<?php echo Configure::read('theme'); ?>/img/world-map-dark.png'); background-position: 50% 20px; background-repeat: no-repeat">
                             <h4>Contact</h4>
                             <ul class="list-icon">
                                 <li><i class="fa fa-map-marker"></i>
@@ -113,7 +113,7 @@ use II\Utilities\Configure;
                 if (Configure::read('Society.Baseline') != '' ) {
                     echo ' - ' . Configure::read('Society.Baseline') . ' | ';
                 }
-                echo 'Tous droits réservés | <a href="/mentions-legales/">Mentions légales</a> | <a href="/cookies/">Cookies</a> | <a href="/politique-de-confidentialite/">Politique de confidentialité</a>';
+                echo 'Tous droits réservés | <a href="/mentions-legales/">Mentions légales</a> | <a href="/cookies/">Cookies</a> | <a href="/politique-de-protection-des-donnees/">Politique de protection des données</a>';
                 ?>
                 </div>
                 <div class="copyright-text text-center">
@@ -133,29 +133,29 @@ use II\Utilities\Configure;
 <a id="goToTop"><i class="fa fa-angle-up top-icon"></i><i class="fa fa-angle-up"></i></a>
 
 <!--Plugins-->
-<script src="/site/Themes/theme1/js/jquery.js"></script>
-<script src="/site/Themes/theme1/js/plugins.js"></script>
+<script src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/jquery.js"></script>
+<script src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins.js"></script>
 
 <!--Template functions-->
-<script src="/site/Themes/theme1/js/functions.js"></script>
+<script src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/functions.js"></script>
 
 <!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
-<link rel="stylesheet" type="text/css" href="/site/Themes/theme1/js/plugins/revolution/css/settings.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/site/Themes/theme1/js/plugins/revolution/css/layers.css">
-<link rel="stylesheet" type="text/css" href="/site/Themes/theme1/js/plugins/revolution/css/navigation.css">
+<link rel="stylesheet" type="text/css" href="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/css/settings.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/css/layers.css">
+<link rel="stylesheet" type="text/css" href="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/css/navigation.css">
 
-<script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
 
-<script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-<script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-<script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-<script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script type="text/javascript" src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+<script type="text/javascript" src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+<script type="text/javascript" src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script type="text/javascript" src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+<script type="text/javascript" src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script type="text/javascript" src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+<script type="text/javascript" src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
 
 <script type="text/javascript">
     var tpj = jQuery;
@@ -167,7 +167,7 @@ use II\Utilities\Configure;
         } else {
             revapi30 = tpj("#rev_slider_30_1").show().revolution({
                 sliderType: "standard",
-                jsFileLocation: "/site/Themes/theme1/js/plugins/revolution/js/",
+                jsFileLocation: "/site/Themes/<?php echo Configure::read('theme'); ?>/js/plugins/revolution/js/",
                 sliderLayout: "fullscreen",
                 dottedOverlay: "none",
                 delay: 9000,

@@ -41,13 +41,18 @@ use II\Utilities\Configure;
 
         <!-- Stylesheets & Fonts -->
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
-        <link href="/site/Themes/theme1/css/plugins.css" rel="stylesheet">
-        <link href="/site/Themes/theme1/css/style.css" rel="stylesheet">
-        <link href="/site/Themes/theme1/css/responsive.css" rel="stylesheet">
-        <link href="/site/Themes/theme1/css/custom.css" rel="stylesheet">
+        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/plugins.css" rel="stylesheet">
+        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/style.css" rel="stylesheet">
+        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/responsive.css" rel="stylesheet">
+        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/custom.css" rel="stylesheet">
     </head>
 
-    <body class="<?php if(Configure::read('PageLoader') === false) echo 'no-page-loader'; ?>">
+    <body class="
+        <?php
+        if(isset($ClassesBody) && $ClassesBody != NULL) echo $ClassesBody . ' ';
+        if(Configure::read('PageLoader') === false) echo 'no-page-loader ';
+        ?>
+    ">
 
         <?php
         if(Configure::read('Activate.Google-TagManager') !== '') {

@@ -5,7 +5,7 @@ use II\Utilities\Configure;
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1>Politique de Confidentialité</h1>
+				<h1>Politique de protection des données</h1>
 
 				<h2>Qui sommes-nous ?</h2>
 
@@ -26,10 +26,7 @@ use II\Utilities\Configure;
 				Site internet : <a href="' . Configure::read('Society.WebsiteURL') . '" target="_blank">' . Configure::read('Society.Website') . '</a><br><br>';
 				?>
 				
-
-
 				<br><br><br>
-
 
 				<h2>Utilisation des données personnelles collectées</h2>
 				<h3>Formulaires de contact</h3>
