@@ -52,6 +52,30 @@ class PagesController extends Controllers
     {
         $this->set('NamePage', 'Contactez-nous');
         $this->set('DescPage', 'Contactez-nous pour obtenir un site vitrine professionnel et de qualité !');
+
+        $form = new \II\Forms\ContactForm();
+        
+        if($form->isSubmitted())
+        {
+            $errors = $form->validate();
+            if(!empty($errors))
+            {   
+                $this->set([
+                    'success' => false,
+                    'errors' => $errors,
+                ]);
+            }
+            else
+            {
+                $this->set('success', true);
+                // Gérer la soumission du formulaire ici
+            }
+
+        }
+
+        $this->set([
+            'form' => $form
+        ]);
     }
 
     public function mentionsLegales()

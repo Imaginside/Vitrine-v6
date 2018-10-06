@@ -4,13 +4,13 @@ class Controllers
 
     private $viewVars = [];
 
-    protected function set($name, $value)
+    protected function set($name, $value = null)
     {
         if(is_array($name))
         {
             foreach($name as $_name => $_value)
             {
-                $this->set($_name, $value);
+                $this->set($_name, $_value);
             }
             return $this;
         }

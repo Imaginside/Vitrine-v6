@@ -35,6 +35,11 @@ $this->element('Page-title/page-title.php', [
                 <h3 class="text-uppercase">Contactez-nous !</h3>
                 <p>Téléphonez-nous ou envoyez-nous un email, nous reviendrons vers vous dès que possible !</p>
                 <div class="m-t-30">
+
+                    <?php
+                    print $form;
+                    /* ?>
+
                     <form class="widget-contact-form" action="include/contact-form.php" role="form" method="post">
                         <div class="row">
                             <div class="form-group col-sm-6">
@@ -71,6 +76,7 @@ $this->element('Page-title/page-title.php', [
                         <button class="btn btn-icon-holder btn-shadow btn-light-hover btn-light-hover" type="submit" id="form-submit">Envoyer le message<i class="fa fa-paper-plane"></i></button>
 
                     </form>
+                    <?php /**/ ?>
                     
                 </div>
             </div>
