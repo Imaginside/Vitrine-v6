@@ -48,7 +48,7 @@ return [
         ],
     ],
 
-
+    // La partie juridique est reprise dans les mentions légales et Politique de protection des données
     'Juridique' => [
         'Name'              => 'Imag\'Inside',
         'Adress'            => '52 Rue Cérès',
@@ -66,14 +66,15 @@ return [
         ],
     ],
 
-
+    // Réglementation Générale sur le Protection des Données
+    // General Data Protection Regulation
     'GDPR' => [
         'DPO'               => 'M. David ADAM',
-        'Mail'              => 'hello@imaginside.com',
+        'Mail'              => 'hello@imaginside.com', // Mail du DPO
     ],
 
-
-    'SocialNetwork' => [ // Ici les URLs
+    // Liens des réseaux sociaux
+    'SocialNetwork' => [
         'Facebook'  => '#',
         'Twitter'   => '#',
         'GooglePlus'=> '#',
@@ -87,6 +88,8 @@ return [
         'Instagram' => '#',
     ],
 
+
+    // Les développeurs, repris dans les mentions légales.
     'Developer' => [
         'Name'              => 'Imag\'Inside',
         'Baseline'          => 'Création de sites internet à Reims',
