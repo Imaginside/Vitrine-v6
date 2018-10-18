@@ -1,11 +1,9 @@
-<!-- Section -->
 <section>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 
                 <h1>Les cookies</h1>
-
 
                 <h2>Cookies strictement nécessaires à l’utilisation du service demandé.</h2>
                 <p>Ils permettent l’utilisation des principales fonctionnalités du site, comme le cas échéant l’accès à votre compte personnel, ou encore de mémoriser les préférences d'affichage de votre terminal (langue, paramètres d'affichage) et d'en tenir compte lors de vos visites, selon la charte graphique et les logiciels de visualisation ou de lecture de votre terminal. Ils peuvent inclure des cookies de réseaux sociaux lorsque vous interagissez avec ces derniers. Ils nous permettent aussi de lier entre elles les différentes pages consultées pour vous assurer une navigation fluide.</p>
@@ -96,4 +94,3 @@
 		</div>
 	</div>
 </section>
-<!-- end: Section -->

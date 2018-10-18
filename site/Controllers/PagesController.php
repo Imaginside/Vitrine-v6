@@ -44,17 +44,21 @@ class PagesController extends Controllers
         
         $this->set('NamePage', 'Accueil');
         $this->set('DescPage', 'Votre site vitrine professionnel, à partir de 39€ /mois seulement');
+        $this->set('ClassesBody', 'accueil');
     }
     public function pageTitle()
     {
         $this->set('NamePage', 'Titre de page');
         $this->set('DescPage', 'Exemple d\'affichage de titre des pages');
+        $this->set('ClassesBody', '');
+        $this->set('ClassesBody', 'page-title');
     }
 
     public function contact()
     {
         $this->set('NamePage', 'Contactez-nous');
         $this->set('DescPage', 'Contactez-nous pour obtenir un site vitrine professionnel et de qualité !');
+        $this->set('ClassesBody', 'contact');
 
         $form = new \II\Forms\ContactForm();
         
@@ -93,6 +97,7 @@ class PagesController extends Controllers
         $this->set('MetaRobot', 'noindex, nofollow');
         $this->set('NamePage', 'Mentions légales');
         $this->set('DescPage', 'Mentions légales');
+        $this->set('ClassesBody', 'mentions-legales');
     }
 
     public function cookies()
@@ -100,11 +105,13 @@ class PagesController extends Controllers
         $this->set('MetaRobot', 'noindex, nofollow');
         $this->set('NamePage', 'Cookies');
         $this->set('DescPage', 'Cookies');
+        $this->set('ClassesBody', 'cookies');
     }
-    public function politiqueDeConfidentialite()
+    public function politiqueDeProtectionDesDonnees()
     {
         $this->set('MetaRobot', 'noindex, nofollow');
-        $this->set('NamePage', 'Politique de confidentialité');
-        $this->set('DescPage', 'Politique de confidentialité');
+        $this->set('NamePage', 'Politique de protection des données');
+        $this->set('DescPage', 'Politique de protection des données');
+        $this->set('ClassesBody', 'Politique de protection des données');
     }
 }

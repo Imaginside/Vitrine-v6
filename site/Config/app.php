@@ -9,6 +9,7 @@ return [
         'Google-reCaptcha-sitekey' => '',
         'Google-reCaptcha-secretkey' => '',
         'Cookies' => true, // 'true' affichera le bandeau sur le site
+        'Favicons' => true, // 'true' affichera les favicons -> /site/Medias/img/favicon/ -> https://www.favicon-generator.org/
 
         'SocialNetwork' => [ // Icônes des réseaux sociaux
             'TopBar' => true,
@@ -25,18 +26,52 @@ return [
         'date_mise_en_ligne' => '2018',
     ],
 
+    
     'Society' => [
-        'Name'      => 'Imag\'Inside',
-        'Baseline'  => 'Location de site vitrine à 39€ /mois',
-        'Adress'    => '52, Rue Cérès',
-        'Zipcode'   => '51100',
-        'Town'      => 'Reims',
-        'Phone1'    => '06 30 56 18 46',
+        'Name'              => 'Imag\'Inside',
+        'Baseline'          => 'Location de site vitrine à 39€ /mois',
+        'Adress'            => '52 Rue Cérès',
+        'Zipcode'           => '51100',
+        'Town'              => 'Reims',
+        'Country'           => 'France',
+        'Phone1'            => '06 30 56 18 46',
             'Phone1Link'    => '+33630561846',
-        'Phone2'    => '03 00 00 00 00',
+        'Phone2'            => '03 00 00 00 00',
             'Phone2Link'    => '+33300000000',
-        'Mail'      => 'hello@imaginside.com',
+        'Mail'              => 'hello@imaginside.com',
+        'Website'           => 'www.imaginside.com',
+            'WebsiteURL'    => 'https://www.imaginside.com/',
+
+        'Gerant' => [
+            'Nom'           => 'ADAM',
+            'Prenom'        => 'David',
+        ],
     ],
+
+
+    'Juridique' => [
+        'Name'              => 'Imag\'Inside',
+        'Adress'            => '52 Rue Cérès',
+        'Zipcode'           => '51100',
+        'Town'              => 'Reims',
+        'Country'           => 'France',
+        'StatutJuridique'   => 'SASU (Société par Actions Simplifiée Unipersonnelle)',
+        'Capital'           => '5 500',
+        'NSiren'            => '802 341 354',
+        'TVA'               => 'FR17802341354',
+        'IRCS'              => 'Reims',
+        'Publication' => [
+            'Dir'           => 'M. David ADAM',
+            'Mail'          => 'hello@imaginside.com',
+        ],
+    ],
+
+
+    'GDPR' => [
+        'DPO'               => 'M. David ADAM',
+        'Mail'              => 'hello@imaginside.com',
+    ],
+
 
     'SocialNetwork' => [ // Ici les URLs
         'Facebook'  => '#',
@@ -45,9 +80,24 @@ return [
         'Pinterest' => '#',
         'Vimeo'     => '#',
         'Linkedin'  => '#',
+        'Viadeo'    => '#',
         'Dribbble'  => '#',
         'YouTube'   => '#',
         'RSS'       => '#',
+        'Instagram' => '#',
+    ],
+
+    'Developer' => [
+        'Name'              => 'Imag\'Inside',
+        'Baseline'          => 'Création de sites internet à Reims',
+        'Adress'            => '52 Rue Cérès - 51100 Reims - France',
+        'Dev'               => 'Développement - Design Web - Intégration : Axel FARKAS & David ADAM<br>',
+        'Phone'             => '06 30 56 18 46',
+            'PhoneLink'     => '+33630561846',
+        'Mail'              => 'hello@imaginside.com',
+        'Website'           => 'www.imaginside.com',
+            'WebsiteURL'    => 'https://www.imaginside.com/',
+        'Hebergement'       => 'OVH SAS<br>140 Quai du Sartel<br>59100 Roubaix - France<br>RCS Roubaix - Tourcoing 424 761 419',
     ],
 
 ];
