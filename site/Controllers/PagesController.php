@@ -66,7 +66,7 @@ class PagesController extends Controllers
         {
             $errors = $form->validate();
             if(!empty($errors))
-            {   
+            {
                 $this->set([
                     'success' => false,
                     'errors' => $errors,

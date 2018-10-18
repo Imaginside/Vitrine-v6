@@ -102,10 +102,17 @@ return [
 
     'Mails' => [
         'default' => [
-            'From'      => 'hello@imaginside.com',
-            'FromName'  => 'Imag\'Inside',
-            'template'  => 'default.php',
-        ]
+            'From'          => 'hello@imaginside.com', // Envoyé depuis MAIL
+            'FromName'      => 'Imag\'Inside',  // Envoyé de NOM
+            'ReplyTo'       => 'hello@imaginside.com', // Répondre à MAIL
+            'ReplyToName'   => 'Coucou', // Répondre à NOM
+            
+            'template'      => 'default.php', // Template mail pour internaute
+        ],
+        // 'gerant' => [
+        //     'template'  => 'gerant.php',
+        //     'to'        => 'gerant@site.com'
+        // ],
     ]
 
 ];
