@@ -100,4 +100,12 @@ return [
         'Hebergement'       => 'OVH SAS<br>140 Quai du Sartel<br>59100 Roubaix - France<br>RCS Roubaix - Tourcoing 424 761 419',
     ],
 
+    'Mails' => [
+        'default' => [
+            'From'      => 'hello@imaginside.com',
+            'FromName'  => 'Imag\'Inside',
+            'template'  => 'default.php',
+        ]
+    ]
+
 ];
