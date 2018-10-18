@@ -1,4 +1,7 @@
 <?php
+
+use II\Utilities\Mailer;
+
 class PagesController extends Controllers
 {
     public function preprocess()
@@ -68,6 +71,13 @@ class PagesController extends Controllers
             else
             {
                 $this->set('success', true);
+                var_dump($form->getData());
+
+                $mailer = new Mailer();
+
+                var_dump($mailer);
+
+                die();
                 // Gérer la soumission du formulaire ici
             }
 

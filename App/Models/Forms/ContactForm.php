@@ -46,6 +46,10 @@ class ContactForm extends Form{
                     ],
                 ],
             ],
+            'sujet-grouptest' => [
+                'type' => 'html',
+                'content' => '<h1>Hello</h1>'
+            ],
             'sujet-group' => [
                 'type' => 'div',
                 'class' => 'row',
