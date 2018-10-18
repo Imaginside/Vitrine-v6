@@ -1,4 +1,7 @@
 <?php
+
+use II\Utilities\Mailer;
+
 class PagesController extends Controllers
 {
     public function preprocess()
@@ -63,7 +66,7 @@ class PagesController extends Controllers
         {
             $errors = $form->validate();
             if(!empty($errors))
-            {   
+            {
                 $this->set([
                     'success' => false,
                     'errors' => $errors,
@@ -72,6 +75,15 @@ class PagesController extends Controllers
             else
             {
                 $this->set('success', true);
+                $submitted = $form->getData();
+
+                $mailer = new Mailer(/* entrer le nom d'une configuration présente dans Config/app.php dans le tableau "Mails". Si vide : default*/);
+                $mailer->addAddress('farkas.axel@gmail.com');
+                $html = $mailer->send([
+                    'test' => 'coucou' // Passer des variables au template (element) Html
+                ], $debug = true); // $debug = true permet de renvoyer le contenu HTML plutot que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.
+                var_dump($html);
+                die();
                 // Gérer la soumission du formulaire ici
             }
 

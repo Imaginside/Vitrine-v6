@@ -32,6 +32,7 @@ class Form {
          * Autres
          */
         'div' => '<div class="{{ class }}">{{ fields }}</div>',
+        'html' => '{{ content }}',
         'recaptcha' => '<div class="{{ class }}" data-sitekey="{{ data }}-sitekey">{{ fields }}</div>',
         /**
          * Form
@@ -50,6 +51,7 @@ class Form {
         // - Template pour le wrapper lors de la création de multiples checkboxes. Contient tous les input[type=checkbox] du même groupe
         'formGroup--checkboxes' => '<div class="{{ checkboxesGroupClasses }}"> <label>{{ title }}</label> {{ checkboxes }} </div>',
         'formGroup--div' => '{{ input }}', // affichage directement de l'input, sans wrapper
+        'formGroup--html' => '{{ input }}', // affichage directement de l'input, sans wrapper
         'formGroup--submit' => '{{ input }}', // affichage directement de l'input, sans wrapper
         'formGroup--hidden' => '{{ input }}', // affichage directement de l'input, sans wrapper
         'formGroup--select' => '<div class="{{ groupClasses }}"><label for="{{ inputId }}">{{ title }}</label>{{ input }}</div>', // affichage directement de l'input, sans wrapper
@@ -119,15 +121,20 @@ class Form {
         return $form;
     }
 
-    protected function renderField($name, $attributes = [])
+    protected function fieldGetDefaultAttributes($name, $attributes = [])
     {
-            
         $defaultAttributes = [];
-
         $defaultAttributes['type'] = 'text';
         $defaultAttributes['name'] = Inflector::hyphenate($name);
         $defaultAttributes['title'] = Inflector::humanize($name);
         $defaultAttributes['id'] = $this->formAttributes['id'] . '--' . Inflector::hyphenate($name);
+        return $defaultAttributes;
+    }
+
+    protected function renderField($name, $attributes = [])
+    {
+            
+        $defaultAttributes = $this->fieldGetDefaultAttributes($name, $attributes);
 
         $type = strtolower($attributes['type']);
 
@@ -217,6 +224,13 @@ class Form {
     protected function attributesDiv(array $attributes)
     {
         $attributes['fields'] = $this->_render($attributes['fields']);
+        return $attributes;
+    }
+
+    protected function attributesHtml(array $attributes)
+    {
+        if(isset($attributes['escape']) && $attributes['escape'] === true)
+            $attributes['content'] = htmlentities($attributes['content']);
         return $attributes;
     }
 
@@ -319,6 +333,7 @@ class Form {
                 $data = $_POST;
                 break;
         }
+        
         return $data ?: [];
     }
 

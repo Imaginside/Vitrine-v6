@@ -18,8 +18,8 @@ class Views
     private $viewVars = [];
 
     public function __construct($template, $type = self::TEMPLATES)
-    {   
-
+    {
+        
         foreach(glob(CORE_HELPERS . '*.php') as $helper)
         {
             $hcname = substr($helper, strrpos($helper, '/') + 1,  - 4);
@@ -122,7 +122,7 @@ class Views
 
     protected function element($element, array $variables = [])
     {
-        return (new static($element, static::ELEMENTS))->render($variables);
+        return (new self($element, static::ELEMENTS))->render($variables);
     }
 
     protected function set($name, $value)

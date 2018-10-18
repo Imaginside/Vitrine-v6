@@ -23,6 +23,7 @@ class ExceptionManager
 
         // S'il s'agit d'une exception personnalisée, on rajoute les données personnalisées au log.
         if (!$isCustomException) {
+            var_dump($exceptionArray);
             throw new NotFoundException('Exception non gérée', ['exception' => $exceptionClass]);
         }
         
