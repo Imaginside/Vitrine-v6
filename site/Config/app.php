@@ -9,6 +9,7 @@ return [
         'Google-reCaptcha-sitekey' => '',
         'Google-reCaptcha-secretkey' => '',
         'Cookies' => true, // 'true' affichera le bandeau sur le site
+        'Favicons' => true, // 'true' affichera les favicons -> /site/Medias/img/favicon/ -> https://www.favicon-generator.org/
 
         'SocialNetwork' => [ // Icônes des réseaux sociaux
             'TopBar' => true,
