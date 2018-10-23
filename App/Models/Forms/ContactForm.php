@@ -4,7 +4,7 @@ namespace II\Forms;
 use II\Utilities\Configure;
 use II\Utilities\Form;
 
-class ContactForm extends Form{
+class ContactForm extends Form {
     
     protected $formName = 'widget-contact-form';
     protected $action = null;
@@ -27,13 +27,19 @@ class ContactForm extends Form{
                     'nom' => [
                         'type' => 'text',
                         'name' => 'widget-contact-form-name',
-                        'title' => 'Nom',
-                        'placeholder' => 'Entrez votre nom',
+                        'title' => 'Nom / Prénom',
+                        'placeholder' => 'Entrez votre nom et prénom',
                         'class' => 'form-control required name',
                         'aria-required' => 'true',
-                        'groupClasses' => 'form-group col-sm-6',
+                        'groupClasses' => 'form-group col-sm-12',
                         'required' => true,
                     ],
+                ],
+            ],
+            'email-tel-group' => [
+                'type' => 'div',
+                'class' => 'row',
+                'fields' => [
                     'email' => [
                         'type' => 'email',
                         'name' => 'widget-contact-form-email',
@@ -44,7 +50,21 @@ class ContactForm extends Form{
                         'groupClasses' => 'form-group col-sm-6',
                         'required' => true,
                     ],
+                    'phone' => [
+                        'type' => 'phone',
+                        'name' => 'widget-contact-form-tel',
+                        'title' => 'Téléphone',
+                        'placeholder' => 'Entrez votre numéro de téléphone',
+                        'class' => 'form-control required phone',
+                        'aria-required' => 'true',
+                        'groupClasses' => 'form-group col-sm-6',
+                        'required' => true,
+                    ],
                 ],
+            ],
+            'mention-blotel' => [
+                'type' => 'html',
+                'content' => '<p class="mention-legale"><strong>Opposition au démarchage téléphonique</strong> : Si vous ne souhaitez pas faire l\'objet de prospection commerciale téléphonique, vous pouvez vous inscrire gratuitement sur la liste d\'opposition au démarchage téléphonique Bloctel. Pour en savoir plus sur les modalités d\'inscription, consultez le site Internet <a href="www.bloctel.gouv.fr" target="_blank">www.bloctel.gouv.fr</a>. Les consommateurs inscrits sur cette liste ne pourront plus être démarchés téléphoniquement par un professionnel, sauf en cas de relations contractuelles préexistantes avec ce professionnel lors du démarchage téléphonique.</p>',
             ],
             'sujet-group' => [
                 'type' => 'div',

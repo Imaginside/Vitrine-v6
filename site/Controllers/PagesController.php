@@ -78,7 +78,9 @@ class PagesController extends Controllers
                 $submitted = $form->getData();
 
                 $mailer = new Mailer(/* entrer le nom d'une configuration présente dans Config/app.php dans le tableau "Mails". Si vide : default*/);
-                $mailer->addAddress('farkas.axel@gmail.com');
+                $mailer->addAddress('dvd.chester@gmail.com');
+                // $mailer->addAddress(Configure::read('Mails.Default.From'));
+                
                 $html = $mailer->send([
                     'test' => 'coucou' // Passer des variables au template (element) Html
                 ], $debug = true); // $debug = true permet de renvoyer le contenu HTML plutot que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.

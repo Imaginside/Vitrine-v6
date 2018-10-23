@@ -6,7 +6,7 @@ tagAnalyticsCNIL.CookieConsent = function() {
 	// Désactive le tracking si le cookie d’Opt-out existe déjà.
 	var disableStr = 'ga-disable-' + gaProperty;
 	var firstCall = false;
-	var domaineName = 'www.vitrine.lo';
+	var domaineName = 'www.ma-vitrine.lo';
 
 	//Cette fonction retourne la date d’expiration du cookie de consentement 
 
