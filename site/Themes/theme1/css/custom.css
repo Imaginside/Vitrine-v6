@@ -123,6 +123,13 @@ a.text-primary:hover,a.text-primary:focus {
 
 
 
+/* reCaptcha */
+.g-recaptcha div {
+  margin:auto;
+  margin-bottom:20px;
+}
+
+
 /* FOOTER */
 .copyright-text {
   padding-top:0;

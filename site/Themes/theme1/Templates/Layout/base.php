@@ -46,6 +46,14 @@ use II\Utilities\Configure;
         <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/responsive.css" rel="stylesheet">
         <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/custom.css" rel="stylesheet">
 
+        <?php /* -- reCaptcha Google -- */ ?>
+        <?php
+        if(Configure::read('Activate.Google-reCaptcha-sitekey') !== '' && Configure::read('Activate.Google-reCaptcha-secretkey') !== '') {
+        echo '
+            <script src="https://www.google.com/recaptcha/api.js"></script>';
+        }
+        ?>
+
         <?php /* -- Favicon : https://www.favicon-generator.org/ -- */ ?>
         <?php
         if(Configure::read('Activate.Favicons') === true) {
@@ -94,6 +102,19 @@ use II\Utilities\Configure;
             <?php
             echo $this->element('topbar.php', ['classesTopbar' => $ClassesTopBar]);
             echo $this->element('header.php', ['classesHeader' => $ClassesHeader]);
+            ?>
+
+            <?php
+            if(isset($success) && $success === false)
+            {
+                ?>
+                <div class="errors">
+                    <ul>
+                        <li>Une erreur est survenue</li></li>
+                    </ul>
+                </div>
+                <?php
+            }
             ?>
 
             <?= $content; ?>

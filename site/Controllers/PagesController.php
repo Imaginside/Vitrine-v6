@@ -1,6 +1,7 @@
 <?php
 
 use II\Utilities\Mailer;
+use II\Utilities\Configure;
 
 class PagesController extends Controllers
 {
@@ -77,16 +78,25 @@ class PagesController extends Controllers
                 $this->set('success', true);
                 $submitted = $form->getData();
 
-                $mailer = new Mailer(/* entrer le nom d'une configuration présente dans Config/app.php dans le tableau "Mails". Si vide : default*/);
-                $mailer->addAddress('dvd.chester@gmail.com');
-                // $mailer->addAddress(Configure::read('Mails.Default.From'));
+                $mailer = new Mailer('gestionnaire');
+                // $mailer->addAddress('dvd.chester@gmail.com'); // Envoyé à
+                // var_dump($submitted);
                 
                 $html = $mailer->send([
-                    'test' => 'coucou' // Passer des variables au template (element) Html
+                    'data' => $submitted, // Récupére toutes les données du formulaire
+                    // '_DateEnvoi' => strftime('%A %d %B, %Ih%M'),
+                    '_DayEnvoi' => strftime('%A %d %B'),
+                    '_HourEnvoi' => strftime('%Ih%M'),
+                    '_NomSite' => Configure::read('Society.Name'),
+                    '_URLSite' => Configure::read('Society.WebsiteURL'),
+                    '_WebSite' => Configure::read('Society.Website'),
+                    '_LogoSite' => Configure::read('logo-default'),
                 ], $debug = true); // $debug = true permet de renvoyer le contenu HTML plutot que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.
-                var_dump($html);
+                print $html;
                 die();
                 // Gérer la soumission du formulaire ici
+
+
             }
 
         }

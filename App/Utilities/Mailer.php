@@ -13,15 +13,14 @@ class Mailer extends Views{
 
     function __construct($config = [], $sup = [])
     {
+        
         if(is_string($config))
         {
             $config = Configure::read('Mails.' . $config);
             $config = $config + $sup;
         }
-        else
-        {
-            $config = $config + Configure::read('Mails.default');
-        }
+        $config = $config + Configure::read('Mails.default');
+        
 
         $this->config = $config;
 

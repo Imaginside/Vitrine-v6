@@ -64,7 +64,7 @@ class ContactForm extends Form {
             ],
             'mention-blotel' => [
                 'type' => 'html',
-                'content' => '<p class="mention-legale"><strong>Opposition au démarchage téléphonique</strong> : Si vous ne souhaitez pas faire l\'objet de prospection commerciale téléphonique, vous pouvez vous inscrire gratuitement sur la liste d\'opposition au démarchage téléphonique Bloctel. Pour en savoir plus sur les modalités d\'inscription, consultez le site Internet <a href="www.bloctel.gouv.fr" target="_blank">www.bloctel.gouv.fr</a>. Les consommateurs inscrits sur cette liste ne pourront plus être démarchés téléphoniquement par un professionnel, sauf en cas de relations contractuelles préexistantes avec ce professionnel lors du démarchage téléphonique.</p>',
+                'content' => '<p class="mentions-legales"><strong>Opposition au démarchage téléphonique</strong> : Si vous ne souhaitez pas faire l\'objet de prospection commerciale téléphonique, vous pouvez vous inscrire gratuitement sur la liste d\'opposition au démarchage téléphonique Bloctel. Pour en savoir plus sur les modalités d\'inscription, consultez le site Internet <a href="www.bloctel.gouv.fr" target="_blank">www.bloctel.gouv.fr</a>. Les consommateurs inscrits sur cette liste ne pourront plus être démarchés téléphoniquement par un professionnel, sauf en cas de relations contractuelles préexistantes avec ce professionnel lors du démarchage téléphonique.</p>',
             ],
             'sujet-group' => [
                 'type' => 'div',
@@ -96,8 +96,34 @@ class ContactForm extends Form {
                         'required' => true,
                     ]
                 ]
-            ]
+            ],
+            'checkmention' => [
+                'type' => 'checkbox',
+                'name' => 'hellocheckbox',
+                'class' => 'required',
+                'labelClasses' => '',
+                'groupClasses' => 'checkbox',
+                'value' => 'Exploitation des informations',
+                'title' => 'En soumettant ce formulaire, j\'accepte que les informations saisies soient exploitées dans le cadre d\'une demande de contact et de la relation commerciale qui peut en découler. Elles sont conservées pendant toute la durée de la relation d’affaires.<br>',
+                'required' => true,
+            ],
+            'mention-traitement-donnees' => [
+                'type' => 'html',
+                'content' => '<p class="mentions-legales">Vous disposez d’un droit d’accès, de rectification et de suppression relatif aux données personnelles vous concernant ainsi que de celui de vous opposer à ce que ces données fassent l’objet d’un traitement, que vous pouvez exercer en écrivant à : ' . Configure::read('Society.Name') . ' - ' . Configure::read('Society.Adress') . ' - ' . Configure::read('Society.Zipcode') . ' ' . Configure::read('Society.Town') . '.</p>',
+            ],
         ];
+
+
+        // $fields['checkbox'] = [
+        //     'type' => 'checkbox',
+        //     'name' => 'hellocheckbox',
+        //     'class' => 'required',
+        //     'labelClasses' => '',
+        //     'groupClasses' => 'checkbox',
+        //     'value' => 'Exploitation des informations',
+        //     'title' => 'En soumettant ce formulaire, j\'accepte que les informations saisies soient exploitées dans le cadre d\'une demande de contact et de la relation commerciale qui peut en découler. Elles sont conservées pendant toute la durée de la relation d’affaires.<br><p class="mentions-legales">Vous disposez d’un droit d’accès, de rectification et de suppression relatif aux données personnelles vous concernant ainsi que de celui de vous opposer à ce que ces données fassent l’objet d’un traitement, que vous pouvez exercer en écrivant à : ' . Configure::read('Society.Name') . ' - ' . Configure::read('Society.Adress') . ' - ' . Configure::read('Society.Zipcode') . ' ' . Configure::read('Society.Town') . '.</p>',
+        //     'required' => true,
+        // ];
 
         $rsitekey = Configure::read('Activate.Google-reCaptcha-sitekey');
         $rsecret = Configure::read('Activate.Google-reCaptcha-secretkey');
@@ -111,7 +137,7 @@ class ContactForm extends Form {
                     'g-recaptcha' => [
                         'type' => 'recaptcha',
                         'class' => 'g-recaptcha',
-                        'data-sitekey' => $rsitekey
+                        'data' => $rsitekey
                     ],
                 ],
             ];
@@ -119,76 +145,90 @@ class ContactForm extends Form {
         }
 
         $fields['envoyer'] = [
-            'type' => 'submit',
-            'title' => 'Envoyer le message <i class="fa fa-paper-plane"></i>',
-            'id' => 'form-submit',
-            'class' => 'btn btn-icon-holder btn-shadow btn-light-hover btn-light-hover',
-            'name' => 'submit',
+            'type' => 'div',
+            'class' => 'row text-center',
+            'fields' => [
+                'envoyer' => [
+                    'type' => 'submit',
+                    'title' => 'Envoyer le message <i class="fa fa-paper-plane"></i>',
+                    'id' => 'form-submit',
+                    'class' => 'btn btn-icon-holder btn-shadow btn-light-hover btn-light-hover',
+                    'name' => 'submit',
+                ],
+            ],
         ];
 
-        $fields['radio'] = [
-            'type' => 'radio',
-            'name' => 'helloRadio',
-            'class' => '',
-            'labelClasses' => '',
-            'groupClasses' => 'radio',
-            'value' => 'hello world',
-            'title' => 'Hello radio'
-        ];
+        // $fields['envoyer'] = [
+        //     'type' => 'submit',
+        //     'title' => 'Envoyer le message <i class="fa fa-paper-plane"></i>',
+        //     'id' => 'form-submit',
+        //     'class' => 'btn btn-icon-holder btn-shadow btn-light-hover btn-light-hover',
+        //     'name' => 'submit',
+        // ];
 
-        $fields['checkbox'] = [
-            'type' => 'checkbox',
-            'name' => 'hellocheckbox',
-            'class' => '',
-            'labelClasses' => '',
-            'groupClasses' => 'checkbox',
-            'value' => 'hello world',
-            'title' => 'Hello checkbox'
-        ];
+        // $fields['radio'] = [
+        //     'type' => 'radio',
+        //     'name' => 'helloRadio',
+        //     'class' => '',
+        //     'labelClasses' => '',
+        //     'groupClasses' => 'radio',
+        //     'value' => 'hello world',
+        //     'title' => 'Hello radio'
+        // ];
 
-        $fields['radios'] = [
-            'type' => 'radios',
-            'name' => 'helloRadios[]',
-            'class' => '',
-            'radiosGroupClasses' => '',
-            'labelClasses' => '',
-            'groupClasses' => 'radio',
-            'options' => [
-                'r1' => 'Radio 1',
-                'r2' => 'Radio 2',
-                'r3' => 'Radio 3',
-            ]
-        ];
+        // $fields['checkbox'] = [
+        //     'type' => 'checkbox',
+        //     'name' => 'hellocheckbox',
+        //     'class' => '',
+        //     'labelClasses' => '',
+        //     'groupClasses' => 'checkbox',
+        //     'value' => 'hello world',
+        //     'title' => 'Hello checkbox'
+        // ];
 
-        $fields['checkboxes'] = [
-            'type' => 'checkboxes',
-            'name' => 'helloCheckboxes[]',
-            'class' => '',
-            'checkboxesGroupClasses' => '',
-            'labelClasses' => '',
-            'groupClasses' => 'checkbox',
-            'options' => [
-                'r1' => 'Checkbox 1',
-                'r2' => 'Checkbox 2',
-                'r3' => 'Checkbox 3',
-            ]
-        ];
+        // $fields['radios'] = [
+        //     'type' => 'radios',
+        //     'name' => 'helloRadios[]',
+        //     'class' => '',
+        //     'radiosGroupClasses' => '',
+        //     'labelClasses' => '',
+        //     'groupClasses' => 'radio',
+        //     'options' => [
+        //         'r1' => 'Radio 1',
+        //         'r2' => 'Radio 2',
+        //         'r3' => 'Radio 3',
+        //     ]
+        // ];
 
-        $fields['select'] = [
-            'type' => 'select',
-            'title' => 'Sélectionner une option',
-            'name' => 'select[]',
-            'class' => 'form-control',
-            'labelClasses' => '',
-            'groupClasses' => '',
-            'default' => 'r2',
-            'options' => [
-                '' => '',
-                'r1' => 'Option 1',
-                'r2' => 'Option 2',
-                'r3' => 'Option 3',
-            ]
-        ];
+        // $fields['checkboxes'] = [
+        //     'type' => 'checkboxes',
+        //     'name' => 'helloCheckboxes[]',
+        //     'class' => '',
+        //     'checkboxesGroupClasses' => '',
+        //     'labelClasses' => '',
+        //     'groupClasses' => 'checkbox',
+        //     'options' => [
+        //         'r1' => 'Checkbox 1',
+        //         'r2' => 'Checkbox 2',
+        //         'r3' => 'Checkbox 3',
+        //     ]
+        // ];
+
+        // $fields['select'] = [
+        //     'type' => 'select',
+        //     'title' => 'Sélectionner une option',
+        //     'name' => 'select[]',
+        //     'class' => 'form-control',
+        //     'labelClasses' => '',
+        //     'groupClasses' => '',
+        //     'default' => 'r2',
+        //     'options' => [
+        //         '' => '',
+        //         'r1' => 'Option 1',
+        //         'r2' => 'Option 2',
+        //         'r3' => 'Option 3',
+        //     ]
+        // ];
 
         $this->fields = $fields;
 

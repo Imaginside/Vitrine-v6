@@ -38,45 +38,7 @@ $this->element('Page-title/page-title.php', [
 
                     <?php
                     print $form;
-                    /* ?>
-
-                    <form class="widget-contact-form" action="include/contact-form.php" role="form" method="post">
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <label for="name">Nom</label>
-                                <input type="text" aria-required="true" name="widget-contact-form-name" class="form-control required name" placeholder="Entrez votre nom">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label for="email">Email</label>
-                                <input type="email" aria-required="true" name="widget-contact-form-email" class="form-control required email" placeholder="Entrez votre adresse mail">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-sm-12">
-                                <label for="subject">Sujet de votre message</label>
-                                <input type="text" name="widget-contact-form-subject" class="form-control required" placeholder="Sujet...">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea type="text" name="widget-contact-form-message" rows="5" class="form-control required" placeholder="Entrez votre message"></textarea>
-                        </div>
-
-                        <?php
-                        if(Configure::read('Activate.Google-reCaptcha-sitekey') !== '' && Configure::read('Activate.Google-reCaptcha-secretkey') !== '') {
-                            echo '
-                            <div class="form-group">
-                                <script src="https://www.google.com/recaptcha/api.js"></script>
-                                <div class="g-recaptcha" data-sitekey="' . Configure::read('Activate.Google-reCaptcha-sitekey') . '"></div>
-                            </div>
-                            ';
-                        }
-                        ?>
-
-                        <button class="btn btn-icon-holder btn-shadow btn-light-hover btn-light-hover" type="submit" id="form-submit">Envoyer le message<i class="fa fa-paper-plane"></i></button>
-
-                    </form>
-                    <?php /**/ ?>
+                    ?>
                     
                 </div>
             </div>
