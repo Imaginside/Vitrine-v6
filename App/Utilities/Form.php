@@ -16,6 +16,8 @@ class Form {
     protected $fields = [];
     private $additionalFields = [];
 
+    protected $errors = [];
+
     private $fp;
 
     protected $templates = [
@@ -23,7 +25,7 @@ class Form {
          * Champs
          */
         'input' => '<input type="{{ type }}" name="{{ name }}" id="{{ id }}" {{ attributes }}>',
-        'textarea' => '<textarea name="{{ name }}" id="{{ id }}" {{ attributes }}></textarea>',
+        'textarea' => '<textarea name="{{ name }}" id="{{ id }}" {{ attributes }}>{{ value }}</textarea>',
         'submit' => '<button type="submit" {{ attributes }}>{{ title }}</button>',
         'hidden' => '<input type="hidden" name="{{ name }}" id="{{ id }}" value="{{ value }}">',
         'select' => '<select id="{{ id }}" name="{{ name }}" {{ attributes }}>{{ options }}</select>',
@@ -133,7 +135,7 @@ class Form {
 
     protected function renderField($name, $attributes = [])
     {
-            
+       
         $defaultAttributes = $this->fieldGetDefaultAttributes($name, $attributes);
 
         $type = strtolower($attributes['type']);
@@ -152,6 +154,55 @@ class Form {
 
         $attributes['attributes'] = [];
         
+        if(!empty($this->errors))
+        {
+            if(!empty($this->errors[$attributes['name']]))
+            {
+                $attributes['class'] = explode(' ', $attributes['class']);
+                $attributes['class'][] = 'error';
+                $attributes['class'] = implode(' ', $attributes['class']);
+            }
+            
+            $submitted = $this->getData();
+            if(preg_match('/\[[^\]]*\]/', $attributes['name']))
+            {
+                $valuesAsArray = $attributes['name'];
+                
+                $valuesAsArray = preg_replace('/(\[\])/', '', $valuesAsArray);
+                $valuesAsArray = preg_replace('/\[([^\]]*)\]/', '.$1', $valuesAsArray);
+                $valuesAsArray = explode('.', $valuesAsArray);
+                $verifyValuesAsArray = $submitted;
+                foreach($valuesAsArray as $t)
+                    $verifyValuesAsArray = $verifyValuesAsArray[$t];
+
+            }
+            if(!empty($submitted[$attributes['name']]) || !empty($verifyValuesAsArray))
+            {
+                switch($type)
+                {
+                    case 'text':
+                    case 'email':
+                    case 'textarea':
+                        $attributes['value'] = $submitted[$attributes['name']];
+                        break;
+                    case 'radio':
+                    case 'checkbox':
+                        // var_dump($submitted[$attributes['name']], $attributes['value']);
+                        if($submitted[$attributes['name']] === $attributes['value'] || in_array($attributes['value'], $verifyValuesAsArray))
+                            $attributes['checked'] = 'checked';
+                    case 'hidden':
+                        break;
+                    case 'select-option':
+                        $name = $attibutes['name'];
+                        unset($attributes['name']);
+                        if($submitted[$name] === $attributes['value'] || in_array($attributes['value'], $verifyValuesAsArray))
+                            $attributes['selected'] = true;
+                        break;
+                }
+            }
+
+        }
+
         foreach($attributes as $key => $value)
         {
             if(is_array($value)) continue;
@@ -304,6 +355,7 @@ class Form {
                 'value' => $value,
                 'title' => $title,
                 'selected' => !empty($default) && $default === $value,
+                'name' => $attributes['name'],
             ];
         }
 
@@ -364,6 +416,13 @@ class Form {
     public function getFields()
     {
         return $this->fields;
+    }
+
+    public function addError($field_name, $message = '')
+    {
+        if(empty($this->errors[$field_name]))
+            $this->errors[$field_name] = [];
+        $this->errors[$field_name][] = $message; 
     }
 
 }

@@ -113,7 +113,8 @@ class ContactForm extends Form{
             'labelClasses' => '',
             'groupClasses' => 'radio',
             'value' => 'hello world',
-            'title' => 'Hello radio'
+            'title' => 'Hello radio',
+            'required' => true
         ];
 
         $fields['checkbox'] = [
@@ -123,7 +124,8 @@ class ContactForm extends Form{
             'labelClasses' => '',
             'groupClasses' => 'checkbox',
             'value' => 'hello world',
-            'title' => 'Hello checkbox'
+            'title' => 'Hello checkbox',
+            'required' => true
         ];
 
         $fields['radios'] = [
@@ -137,7 +139,8 @@ class ContactForm extends Form{
                 'r1' => 'Radio 1',
                 'r2' => 'Radio 2',
                 'r3' => 'Radio 3',
-            ]
+            ],
+            'required' => true
         ];
 
         $fields['checkboxes'] = [
@@ -151,7 +154,7 @@ class ContactForm extends Form{
                 'r1' => 'Checkbox 1',
                 'r2' => 'Checkbox 2',
                 'r3' => 'Checkbox 3',
-            ]
+            ],
         ];
 
         $fields['select'] = [
@@ -167,7 +170,7 @@ class ContactForm extends Form{
                 'r1' => 'Option 1',
                 'r2' => 'Option 2',
                 'r3' => 'Option 3',
-            ]
+            ],
         ];
 
         $this->fields = $fields;
