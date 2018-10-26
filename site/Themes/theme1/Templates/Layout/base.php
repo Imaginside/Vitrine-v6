@@ -1,5 +1,6 @@
 <?php
 use II\Utilities\Configure;
+use II\Utilities\Session;
 ?>
 
 <!DOCTYPE html>
@@ -116,7 +117,65 @@ use II\Utilities\Configure;
             <?php
             echo $this->element('topbar.php', ['classesTopbar' => $ClassesTopBar]);
             echo $this->element('header.php', ['classesHeader' => $ClassesHeader]);
+
+            if(isset($page_title))
+                print $this->element('Page-title/page-title.php', $page_title);
+
+            Session::addError('<strong>Attention !</strong> Exemple de message d\'erreur. (base.php ligne ' . __LINE__ . ')');
+            Session::addSuccessMessage('<strong>Attention !</strong> Exemple de message de succès. (base.php ligne ' . __LINE__ . ')');
+            Session::addInfoMessage('<strong>Attention !</strong> Exemple d\'information. (base.php ligne ' . __LINE__ . ')');
+
+            // affichage des erreurs
+            // utiliser \II\Utilities\Session::addError('Error message here') pour ajouter des erreurs
+            $errors = Session::getErrors();
+            if(!empty($errors))
+            {
+                ?>
+                <div role="alert" class="alert alert-warning alert-dismissible animated visible" data-animation="pulse" data-animation-delay="1500">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span> </button>
+                    <?php
+                    foreach($errors as $error) {
+                        ?> <i class="fa fa-warning"></i> <?= $error ?> <?php
+                    }
+                    ?>
+                </div>
+                <?php
+            }
+
+            // affichage des messages de succes
+            // utiliser \II\Utilities\Session::addSuccessMessage('Success message here') pour en ajouter
+            $successMessages = Session::getSuccessMessages();
+            if(!empty($successMessages))
+            {
+                ?>
+                <div role="alert" class="alert alert-success">
+                <?php
+                foreach($successMessages as $successMessage) {
+                    ?> <i class="fa fa-check-circle"></i> <?= $successMessage ?> <?php
+                }
+                ?>
+                </div>
+                <?php
+            }
+
+            // affichage des messages d'informations
+            // utiliser \II\Utilities\Session::addInfoMessage('Information message here') pour en ajouter
+            $infoMessages = Session::getInfoMessages();
+            if(!empty($infoMessages))
+            {
+                ?>
+                <div role="alert" class="alert alert-info">
+                <?php
+                foreach($infoMessages as $infoMessage) {
+                    ?> <i class="fa fa-info-circle"></i> <?= $infoMessage ?> <?php
+                }
+                ?>
+                </div>
+                <?php
+            }
             ?>
+
+            
 
             <?= $content; ?>
 

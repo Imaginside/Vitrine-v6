@@ -2,6 +2,7 @@
 
 use II\Utilities\Mailer;
 use II\Utilities\Configure;
+use II\Utilities\Session;
 
 class PagesController extends Controllers
 {
@@ -69,17 +70,13 @@ class PagesController extends Controllers
             // var_dump($errors);
             if(!empty($errors))
             {
-                
-                $this->set([
-                    'formSuccess' => false 
-                ]);
+                Session::addError('<strong>Attention !</strong> Un ou plusieurs champs ci-dessous sont mal renseignés.');
             }
             else
             {
-                $this->set([
-                    'formSuccess' => true 
-                ]);
-                $this->set('success', true);
+                
+                Session::addSuccessMessage('<strong>Félicitations !</strong> Votre message a été envoyé avec succés.');
+
                 $submitted = $form->getData();
 
                 $mailer = new Mailer('gestionnaire');

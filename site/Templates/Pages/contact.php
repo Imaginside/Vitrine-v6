@@ -2,8 +2,8 @@
 use II\Utilities\Configure;
 ?>
 
-<?= 
-$this->element('Page-title/page-title.php', [
+<?php
+$this->set('page_title', [
     'PageTitleClassesSection' => 'dark', 
     // - Style : EMPTY | page-title-classic
     // - Alignement : EMPTY => page-title-left | page-title-center | page-title-right |
@@ -38,7 +38,8 @@ $this->element('Page-title/page-title.php', [
                 <div class="m-t-30">
                     
                     <?php
-                    if(isset($formSuccess) && $formSuccess === true) {
+                    
+                    /* if(isset($formSuccess) && $formSuccess === true) {
                         echo '<div role="alert" class="alert alert-success">
                         <i class="fa fa-check-circle"></i> <strong>Félicitations !</strong> Votre message a été envoyé avec succés.</div>';
                     }
@@ -46,7 +47,7 @@ $this->element('Page-title/page-title.php', [
                         echo '<div role="alert" class="alert alert-warning alert-dismissible animated visible" data-animation="pulse" data-animation-delay="1500">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span> </button>
                         <i class="fa fa-warning"></i> <strong>Attention !</strong> Un ou plusieurs champs ci-dessous sont mal renseignés.</div>';
-                    }
+                    } */
                     print $form;
                     ?>
                     
