@@ -127,7 +127,7 @@ class App
             throw new NotFoundException("La classe de vue doit hériter de la classe \\Views", [get_class($view)]);
 
         call_user_func_array([$view, 'preprocess'], $arguments);
-
+        
         if(method_exists($view, $callable[1]))
         {
             $viewsViewVars = call_user_func_array([$view, $callable[1]], $arguments);
@@ -136,8 +136,10 @@ class App
         }
 
         $pageContent = $view->render($viewVars);
-
+        
         call_user_func_array([$view, 'postprocess'], $arguments);
+
+        $viewVars = $viewVars + $view->getViewVars();
         
         // Appel à la classe de vue pour générer le layout
         $layout = new $view($view->layout(), Views::LAYOUT);
