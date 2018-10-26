@@ -26,6 +26,8 @@ class Mailer extends Views{
 
         $this->Mailer = new PHPMailer(true);
         
+        // $this->isSMTP(true);
+        
         $this->Mailer->CharSet = 'utf-8';
         $this->Mailer->isHTML(true);
         $this->Mailer->setFrom($config['From'], $config['FromName']);

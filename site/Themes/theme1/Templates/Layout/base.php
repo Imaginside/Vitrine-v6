@@ -122,7 +122,10 @@ use II\Utilities\Session;
                 print $this->element('Page-title/page-title.php', $page_title);
 
             Session::addError('<strong>Attention !</strong> Exemple de message d\'erreur. (base.php ligne ' . __LINE__ . ')');
+            Session::addError('<strong>Attention !</strong> Exemple de message d\'erreur. (base.php ligne ' . __LINE__ . ')');
+            Session::addError('<strong>Attention !</strong> Exemple de message d\'erreur. (base.php ligne ' . __LINE__ . ')');
             Session::addSuccessMessage('<strong>Attention !</strong> Exemple de message de succès. (base.php ligne ' . __LINE__ . ')');
+            Session::addWarningMessage('<strong>Attention !</strong> Exemple de message de succès. (base.php ligne ' . __LINE__ . ')');
             Session::addInfoMessage('<strong>Attention !</strong> Exemple d\'information. (base.php ligne ' . __LINE__ . ')');
 
             // affichage des erreurs
@@ -131,16 +134,34 @@ use II\Utilities\Session;
             if(!empty($errors))
             {
                 ?>
-                <div role="alert" class="alert alert-warning alert-dismissible animated visible" data-animation="pulse" data-animation-delay="1500">
+                <div role="alert" class="alert alert-danger alert-dismissible animated visible" data-animation="pulse" data-animation-delay="1500">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span> </button>
                     <?php
                     foreach($errors as $error) {
-                        ?> <i class="fa fa-warning"></i> <?= $error ?> <?php
+                        ?> <div><i class="fa fa-warning"></i> <?= $error ?></div> <?php
                     }
                     ?>
                 </div>
                 <?php
             }
+
+            // affichage des warnings
+            // utiliser \II\Utilities\Session::addWarningMessage('Warning message here') pour ajouter des warnings
+            $warnings = Session::getWarningMessages();
+            if(!empty($warnings))
+            {
+                ?>
+                <div role="alert" class="alert alert-warning alert-dismissible animated visible" data-animation="pulse" data-animation-delay="1500">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span> </button>
+                    <?php
+                    foreach($warnings as $warning) {
+                        ?> <div><i class="fa fa-warning"></i> <?= $warning ?></div> <?php
+                    }
+                    ?>
+                </div>
+                <?php
+            }
+
 
             // affichage des messages de succes
             // utiliser \II\Utilities\Session::addSuccessMessage('Success message here') pour en ajouter
@@ -151,7 +172,7 @@ use II\Utilities\Session;
                 <div role="alert" class="alert alert-success">
                 <?php
                 foreach($successMessages as $successMessage) {
-                    ?> <i class="fa fa-check-circle"></i> <?= $successMessage ?> <?php
+                    ?> <div><i class="fa fa-check-circle"></i> <?= $successMessage ?></div> <?php
                 }
                 ?>
                 </div>
@@ -167,7 +188,7 @@ use II\Utilities\Session;
                 <div role="alert" class="alert alert-info">
                 <?php
                 foreach($infoMessages as $infoMessage) {
-                    ?> <i class="fa fa-info-circle"></i> <?= $infoMessage ?> <?php
+                    ?> <div><i class="fa fa-info-circle"></i> <?= $infoMessage ?></div> <?php
                 }
                 ?>
                 </div>

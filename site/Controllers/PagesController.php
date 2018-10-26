@@ -82,20 +82,23 @@ class PagesController extends Controllers
                 $mailer = new Mailer('gestionnaire');
                 // $mailer->addAddress('dvd.chester@gmail.com'); // Envoyé à
                 // var_dump($submitted);
+                try {
+                    $html = $mailer->send([
+                        // Passer des variables au template (element) Html
 
-                $html = $mailer->send([
-                    // Passer des variables au template (element) Html
-
-                    'data' => $submitted, // Récupére toutes les données du formulaire
-                    // '_DateEnvoi' => strftime('%A %d %B, %Ih%M'),
-                    '_DayEnvoi' => strftime('%A %d %B'),
-                    '_HourEnvoi' => strftime('%Ih%M'),
-                    '_NomSite' => Configure::read('Society.Name'),
-                    '_URLSite' => Configure::read('Society.WebsiteURL'),
-                    '_WebSite' => Configure::read('Society.Website'),
-                    '_LogoSite' => Configure::read('logo-default'),
-                ], $debug = true); // $debug = true permet de renvoyer le contenu HTML plutot que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.
-                print $html;
+                        'data' => $submitted, // Récupére toutes les données du formulaire
+                        // '_DateEnvoi' => strftime('%A %d %B, %Ih%M'),
+                        '_DayEnvoi' => strftime('%A %d %B'),
+                        '_HourEnvoi' => strftime('%Ih%M'),
+                        '_NomSite' => Configure::read('Society.Name'),
+                        '_URLSite' => Configure::read('Society.WebsiteURL'),
+                        '_WebSite' => Configure::read('Society.Website'),
+                        '_LogoSite' => Configure::read('logo-default'),
+                    ], $debug = false); // $debug = true permet de renvoyer le contenu HTML plutot que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.
+                    print $html;
+                } catch(Exception $e) {
+                    Session::addError('<strong>Attention !</strong> Une erreur est survenue, votre message n\'a pas pus etre transmis. Contactez david@adam.com ');
+                }
                 // die();
                 // Gérer la soumission du formulaire ici
 

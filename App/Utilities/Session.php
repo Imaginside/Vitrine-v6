@@ -81,4 +81,17 @@ class Session
         return static::consum('informationsMessages', []);
     }
 
+
+    public static function addWarningMessage($value)
+    {
+        $warning = static::read('warningMessages', []);
+        $warning[] = $value;
+        return static::set('warningMessages', $warning);
+    }
+
+    public static function getWarningMessages()
+    {
+        return static::consum('warningMessages', []);
+    }
+
 }
