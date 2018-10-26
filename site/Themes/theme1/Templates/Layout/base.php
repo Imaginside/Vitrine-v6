@@ -117,24 +117,7 @@ use II\Utilities\Configure;
             echo $this->element('topbar.php', ['classesTopbar' => $ClassesTopBar]);
             echo $this->element('header.php', ['classesHeader' => $ClassesHeader]);
             ?>
-<<<<<<< HEAD
 
-            <?php
-            if(isset($success) && $success === false)
-            {
-                ?>
-                <div class="errors">
-                    <ul>
-                        <li>Une erreur est survenue</li></li>
-                    </ul>
-                </div>
-                <?php
-            }
-            ?>
-
-=======
-            
->>>>>>> ft-formulaires
             <?= $content; ?>
 
             <?php

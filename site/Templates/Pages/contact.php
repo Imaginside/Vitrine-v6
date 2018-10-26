@@ -27,6 +27,7 @@ $this->element('Page-title/page-title.php', [
 ]);
 ?>
 
+
 <!-- CONTENT -->
 <section>
     <div class="container">
@@ -35,24 +36,7 @@ $this->element('Page-title/page-title.php', [
                 <h3 class="text-uppercase">Contactez-nous !</h3>
                 <p>Vous souhaitez profiter d'un site de qualité, réalisé par des professionnels proche de vous ? Téléphonez-nous ou envoyez-nous un email, nous reviendrons vers vous dans les meilleurs délais !</p>
                 <div class="m-t-30">
-                    <style>
-                    .IIMessage {
-                        border-radius:4px;
-                        padding:0 10px;
-                        text-align:center;
-                    }
-                    .IIMessage p {
-                        margin:5px 0;
-                        font-weight:bold;
-                        font-size:1.1em;
-                    }
-                    .IIMessage.Success {
-                        border:2px solid #1eaa17;
-                    }
-                    .IIMessage.Error {
-                        border:2px solid #e42c3e;
-                    }
-                    </style>
+                    
                     <?php
                     if(isset($formSuccess) && $formSuccess === true) {
                         echo '<div role="alert" class="alert alert-success">
