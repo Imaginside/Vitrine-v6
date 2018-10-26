@@ -35,11 +35,7 @@ class Form {
          */
         'div' => '<div class="{{ class }}">{{ fields }}</div>',
         'html' => '{{ content }}',
-<<<<<<< HEAD
-        'recaptcha' => '<div class="{{ class }}" data-sitekey="{{ data }}">{{ fields }}</div>',
-=======
         'recaptcha' => '<div class="{{ class }}" data-sitekey="{{ data-sitekey }}">{{ fields }}</div>',
->>>>>>> ft-formulaires
         /**
          * Form
          */

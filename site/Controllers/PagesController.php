@@ -85,15 +85,10 @@ class PagesController extends Controllers
                 $mailer = new Mailer('gestionnaire');
                 // $mailer->addAddress('dvd.chester@gmail.com'); // Envoyé à
                 // var_dump($submitted);
-<<<<<<< HEAD
-                
-                $html = $mailer->send([
-=======
 
                 $html = $mailer->send([
                     // Passer des variables au template (element) Html
 
->>>>>>> ft-formulaires
                     'data' => $submitted, // Récupére toutes les données du formulaire
                     // '_DateEnvoi' => strftime('%A %d %B, %Ih%M'),
                     '_DayEnvoi' => strftime('%A %d %B'),
