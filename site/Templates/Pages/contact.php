@@ -35,48 +35,33 @@ $this->element('Page-title/page-title.php', [
                 <h3 class="text-uppercase">Contactez-nous !</h3>
                 <p>Téléphonez-nous ou envoyez-nous un email, nous reviendrons vers vous dès que possible !</p>
                 <div class="m-t-30">
-
+                    <style>
+                    .IIMessage {
+                        border-radius:4px;
+                        padding:0 10px;
+                        text-align:center;
+                    }
+                    .IIMessage p {
+                        margin:5px 0;
+                        font-weight:bold;
+                        font-size:1.1em;
+                    }
+                    .IIMessage.Success {
+                        border:2px solid #1eaa17;
+                    }
+                    .IIMessage.Error {
+                        border:2px solid #e42c3e;
+                    }
+                    </style>
                     <?php
+                    if(isset($formSuccess) && $formSuccess === true) {
+                        echo '<div class="IIMessage Success">Super !</div>';
+                    }
+                    if(isset($formSuccess) && $formSuccess === false) {
+                        echo '<div class="IIMessage Error"><p>Oups ! Un ou plusieurs champs ci-dessous sont mal renseignés.</p></div>';
+                    }
                     print $form;
-                    /* ?>
-
-                    <form class="widget-contact-form" action="include/contact-form.php" role="form" method="post">
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <label for="name">Nom</label>
-                                <input type="text" aria-required="true" name="widget-contact-form-name" class="form-control required name" placeholder="Entrez votre nom">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <label for="email">Email</label>
-                                <input type="email" aria-required="true" name="widget-contact-form-email" class="form-control required email" placeholder="Entrez votre adresse mail">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-sm-12">
-                                <label for="subject">Sujet de votre message</label>
-                                <input type="text" name="widget-contact-form-subject" class="form-control required" placeholder="Sujet...">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea type="text" name="widget-contact-form-message" rows="5" class="form-control required" placeholder="Entrez votre message"></textarea>
-                        </div>
-
-                        <?php
-                        if(Configure::read('Activate.Google-reCaptcha-sitekey') !== '' && Configure::read('Activate.Google-reCaptcha-secretkey') !== '') {
-                            echo '
-                            <div class="form-group">
-                                <script src="https://www.google.com/recaptcha/api.js"></script>
-                                <div class="g-recaptcha" data-sitekey="' . Configure::read('Activate.Google-reCaptcha-sitekey') . '"></div>
-                            </div>
-                            ';
-                        }
-                        ?>
-
-                        <button class="btn btn-icon-holder btn-shadow btn-light-hover btn-light-hover" type="submit" id="form-submit">Envoyer le message<i class="fa fa-paper-plane"></i></button>
-
-                    </form>
-                    <?php /**/ ?>
+                    ?>
                     
                 </div>
             </div>

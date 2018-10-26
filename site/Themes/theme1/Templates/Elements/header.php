@@ -14,8 +14,8 @@ use II\Utilities\Configure;
                 </a>
             </div>
             <!--End: Logo-->
-<!--Top Search Form-->
-<div id="top-search">
+            <!--Top Search Form-->
+            <div id="top-search">
                 <form action="search-results-page/" method="get">
                     <input type="text" name="q" class="form-control" value="" placeholder="Start typing & press  &quot;Enter&quot;">
                 </form>

@@ -1,11 +1,7 @@
-<?php
-use II\Utilities\Configure;
-?>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Vous avez un nouveau message</title>
+    <title>Votre message</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
@@ -14,13 +10,15 @@ use II\Utilities\Configure;
     td img {display: block;}
     body { background-color: #f7f7f7; margin: 0; padding: 0; -webkit-text-size-adjust:none; -ms-text-size-adjust:none; }
     </style>
-</head>
 
+   
+</head>
 <body style="margin:0px; padding:0px; -webkit-text-size-adjust:none;">
+
     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:rgb(247, 247, 247); padding-bottom:20px;">
         <tr>
             <td align="center" colspan="2">
-                <p><strong>$_NomPrénom</strong> vous a envoyé un nouveau message depuis votre site <a href="#" target="_blank" style="font-weight:bold;color:#3a3a3a;">$_MonSite</a>.</p>
+                <p><strong>$_NomPrénom</strong>, voici le récapitulatif de votre message écrit à <a href="#" target="_blank" style="font-weight:bold;color:#3a3a3a;">$_MonSite</a>.</p>
             </td>
         </tr>
         <tr>
@@ -31,7 +29,7 @@ use II\Utilities\Configure;
         <tr>
             <td align="center" colspan="2">
                 <table width="600px" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFF">
-                    <tr bgcolor="#df0a40">
+                    <tr bgcolor="#303030">
                         <td>
                             <table cellpadding="0" cellspacing="0" border="0">
                                 <tr>
@@ -45,6 +43,7 @@ use II\Utilities\Configure;
                                     </td>
                                 </tr>
                             </table>
+        
                         </td>
                         <td bgcolor="#3a3a3a" width="100%" valign="top">
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -56,8 +55,8 @@ use II\Utilities\Configure;
                                 <tr>
                                     <td style="color:#c7c7c7; font-size:26px;padding:30px;">
                                         <img src="img/megaphone-white.png" width="100px" height="100px" border="0" alt="Megaphone">
-                                        <span style="font-size:35px; font-weight:bold;">SUPER !</span><br>
-                                        <span style="color:#FFF;font-weight:bold;">$_NomPrénom</span> souhaite rentrer en contact avec vous !
+                                        <span style="font-size:35px; font-weight:bold;">MERCI !</span><br>
+                                        <span style="color:#FFF;font-weight:bold;">$_NomPrénom</span>, <br>votre message a été envoyé avec succés !
                                     </td>
                                 </tr>
                             </table>
@@ -67,10 +66,13 @@ use II\Utilities\Configure;
                         <td colspan="2">
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
-                                    <td style="padding:30px 20px 0 30px;color:#3a3a3a;" width="100px">
+                                    <td colspan="2"><h2 style="color:#3a3a3a; font-size:30px; padding:0 20px; margin-bottom:0px;">#récapitulatifDeVotreMessage</h2></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:20px 20px 0 30px;color:#3a3a3a;" width="100px">
                                         <img src="img/message-dark-grey.png" width="100px" height="75px" border="0" alt="Message">
                                     </td>
-                                    <td style="font-size:16px;padding-top:10px;">
+                                    <td style="font-size:16px;padding-top:0px;">
                                         Écrit le <span style="font-weight:bold;">samedi 20 octobre à 12h18</span><br>
                                         <span style="font-size:20px;font-weight:bold;">$_SujetDuMessage</span>
                                     </td>
@@ -86,22 +88,62 @@ use II\Utilities\Configure;
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" bgcolor="#df0a40">
+                        <td colspan="2" style="padding:30px;">
+                            <h2 style="font-size:30px;padding:0;margin:0;">#vosInformationsDeContact</h2>
+                            <p style="margin:4px 0;padding:0;">Pour vous recontacter, vous nous avez donné les informations de contact suivant :</p>
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:5px 0;">
+                                    <tr>
+                                        <td width="50px"><img src="img/picto-phone-black.png" width="35px" height="35px" border="0" alt="coche"></td>
+                                        <td>
+                                            <p style="margin:4px 0;padding:0;">$_VarTélInternaute</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="50px"><img src="img/picto-mail-black.png" width="35px" height="35px" border="0" alt="coche"></td>
+                                        <td>
+                                            <p style="margin:4px 0;padding:0;">$_VarMailInternaute</p>
+                                        </td>
+                                    </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding:30px;">
+                            <h2 style="font-size:30px;padding:0;margin:0;">#réglementationRGPD</h2>
+                            <span style="font-weight:bold;padding-bottom:10px;display:block;">Réglement Général sur la Protection des Données</span>
+                            <p style="margin:4px 0;padding:0;">Lors de l'envoi du message, <span style="font-weight:bold;">$_Nomprénom</span> a coché la case suivante :</p>
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin:5px 0;">
+                                <tr>
+                                    <td width="50px"><img src="img/picto-coche-dark-grey.png" width="35px" height="35px" border="0" alt="coche"></td>
+                                    <td>
+                                        <p style="margin:4px 0;padding:0;">En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre d'une demande de contact et de la relation commerciale qui peut en découler. Elles sont conservées pendant toute la durée de la relation d’affaires.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p style="margin:8px 0;padding:0;">Vous disposez d’un droit d’accès, de rectification et de suppression relatif aux données personnelles vous concernant ainsi que de celui de vous opposer à ce que ces données fassent l’objet d’un traitement, que vous pouvez exercer en écrivant à : $_NomSite - $_AddressSite - $_CPSite $_TownSite.</p>
+                            <p style="margin:8px 0 0;padding:0;"><strong>Opposition au démarchage téléphonique</strong> : Si vous ne souhaitez pas faire l'objet de prospection commerciale téléphonique, vous pouvez vous inscrire gratuitement sur la liste d'opposition au démarchage téléphonique Bloctel. Pour en savoir plus sur les modalités d'inscription, consultez le site Internet <a href="http://www.bloctel.gouv.fr/" target="_blank" style="color:#3a3a3a;">www.bloctel.gouv.fr</a>. Les consommateurs inscrits sur cette liste ne pourront plus être démarchés téléphoniquement par un professionnel, sauf en cas de relations contractuelles préexistantes avec ce professionnel lors du démarchage téléphonique.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" bgcolor="#303030">
                             <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td width="100%" style="padding:15px 30px;">
-                                        <h2 style="color:#FFF; font-size:30px;padding:0;margin:0 0 8px">#contact</h2>
+                                        <h2 style="color:#FFF; font-size:30px;padding:0;margin:0 0 8px">#nousContacter</h2>
                                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                             <tr>
                                                 <td width="35px"><img src="img/picto-phone-white.png" width="24px" height="24px" border="0" alt="Tél. :"></td>
-                                                <td style="padding-bottom:5px;"><a href="#" style="font-weight:bold;color:#FFF;">$_VarTélInternaute</a></td>
+                                                <td style="padding-bottom:5px;"><a href="#" style="font-weight:bold;color:#FFF;">$_VarTélSite</a></td>
                                             </tr>
                                             <tr>
                                                 <td width="35px"><img src="img/picto-mail-white.png" width="24px" height="24px" border="0" alt="Mail. :"></td>
-                                                <td style="padding-bottom:5px;"><a href="#" style="font-weight:bold;color:#FFF;">$_VarMailInternaute</a></td>
+                                                <td style="padding-bottom:5px;"><a href="#" style="font-weight:bold;color:#FFF;">$_VarMailSite</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="35px"><img src="img/picto-website-white.png" width="24px" height="24px" border="0" alt="Site web :"></td>
+                                                <td style="padding-bottom:5px;"><a href="#" style="font-weight:bold;color:#FFF;">$_VarURLSite</a></td>
                                             </tr>
                                         </table>
-                                        <p style="margin:10px 0 0;color:#FFF"><i>Pour répondre à <strong>$_NomPrénom</strong>, il vous suffit de cliquer sur “Répondre” dans votre système de messagerie.</i></p>
                                     </td>
                                     <td width="180px" height="180px">
                                         <img src="img/contact-main.jpg" width="180px" height="180px" border="0" alt="Contact">
@@ -110,24 +152,10 @@ use II\Utilities\Configure;
                             </table>
                         </td>
                     </tr>
-                    <tr>
-                        <td colspan="2" style="padding:30px;">
-                            <h2 style="font-size:30px;padding:0;margin:0;">#réglementationRGPD</h2>
-                            <span style="font-weight:bold;padding-bottom:10px;display:block;">Réglement Général sur la Protection des Données</span>
-                            <span>Lors de l'envoi du message, <span style="font-weight:bold;">$_Nomprénom</span> a coché la case suivante :</span>
-                            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:5px;">
-                                <tr>
-                                    <td width="50px"><img src="img/picto-coche-dark-grey.png" width="35px" height="35px" border="0" alt="coche"></td>
-                                    <td>
-                                        <p style="margin:4px 0;padding:0;">En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre d'une demande de contact et de la relation commerciale qui peut en découler. Elles sont conservées pendant toute la durée de la relation d’affaires.</p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
                 </table>
             </td>
         </tr>
+        
         <tr>
             <td align="center">
                 <table width="600px" cellpadding="0" cellspacing="0" border="0">
@@ -140,11 +168,14 @@ use II\Utilities\Configure;
                             <p style="margin:0;padding:0;">Un mail et un site vitrine réalisé par <a href="https://www.imaginside.com" style="font-weight:bold;color:#3a3a3a;" target="_blank">Imag’Inside</a>.</p>
                         </td>
                     </tr>
+                
                 </table>
+
             </td>
         </tr>
     </td>
 </table>
+
 
 </body>
 </html>

@@ -6,8 +6,8 @@ return [
     'Activate' => [
         'Maintenance' => true, // "true" => mode maintenance activé
         'Google-TagManager' => 'GTM-KJ7MDZ3', // GTM-XXXXXXX
-        'Google-reCaptcha-sitekey' => '',
-        'Google-reCaptcha-secretkey' => '',
+        'Google-reCaptcha-sitekey' => '6LdTrgoUAAAAAE678H7ePfgugHDFREJXeZQm-rge',
+        'Google-reCaptcha-secretkey' => '6LdTrgoUAAAAADxGqBhK9ASX-V8Cs2MrRBbsHDsm',
         'Cookies' => true, // 'true' affichera le bandeau sur le site
         'Favicons' => true, // 'true' affichera les favicons -> /site/Medias/img/favicon/ -> https://www.favicon-generator.org/
 
@@ -39,8 +39,8 @@ return [
         'Phone2'            => '03 00 00 00 00',
             'Phone2Link'    => '+33300000000',
         'Mail'              => 'hello@imaginside.com',
-        'Website'           => 'www.imaginside.com',
-            'WebsiteURL'    => 'https://www.imaginside.com/',
+        'Website'           => 'www.ma-vitrine.pro',
+            'WebsiteURL'    => 'https://www.ma-vitrine.pro/',
 
         'Gerant' => [
             'Nom'           => 'ADAM',
@@ -109,10 +109,14 @@ return [
             
             'template'      => 'default.php', // Template mail pour internaute
         ],
-        // 'gerant' => [
-        //     'template'  => 'gerant.php',
-        //     'to'        => 'gerant@site.com'
-        // ],
+        'gestionnaire' => [
+            'template'  => 'gestionnaire.php',
+            'to'        => 'dvd.chester@gmail.com' // Mail pour le gestionnaire
+        ],
+        'internaute' => [
+            'template'  => 'internaute.php',
+            'to'        => 'dvd.chester@gmail.com' // Mail pour le gestionnaire
+        ],
     ]
 
 ];

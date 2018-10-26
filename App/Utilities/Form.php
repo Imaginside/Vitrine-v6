@@ -35,7 +35,7 @@ class Form {
          */
         'div' => '<div class="{{ class }}">{{ fields }}</div>',
         'html' => '{{ content }}',
-        'recaptcha' => '<div class="{{ class }}" data-sitekey="{{ data }}-sitekey">{{ fields }}</div>',
+        'recaptcha' => '<div class="{{ class }}" data-sitekey="{{ data-sitekey }}">{{ fields }}</div>',
         /**
          * Form
          */

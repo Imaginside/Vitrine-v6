@@ -29,6 +29,9 @@ class App
         Configure::loadConfigurationFile(CORE_CONFIG . 'app.php');
         Configure::loadConfigurationFile(SITE . 'Config/app.php');
 
+        date_default_timezone_set('Europe/Paris');
+        setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
+
         // Si un fichier de variables existe pour le thème, on le charge
         $themeConfigurationFile = SITE . '/' . Configure::read('Paths.themes') . '/' . Configure::read('theme') . '/variables.php';
         if(file_exists($themeConfigurationFile))
