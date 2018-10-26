@@ -33,7 +33,7 @@ $this->element('Page-title/page-title.php', [
         <div class="row">
             <div class="col-md-6">
                 <h3 class="text-uppercase">Contactez-nous !</h3>
-                <p>Téléphonez-nous ou envoyez-nous un email, nous reviendrons vers vous dès que possible !</p>
+                <p>Vous souhaitez profiter d'un site de qualité, réalisé par des professionnels proche de vous ? Téléphonez-nous ou envoyez-nous un email, nous reviendrons vers vous dans les meilleurs délais !</p>
                 <div class="m-t-30">
                     <style>
                     .IIMessage {
@@ -55,10 +55,13 @@ $this->element('Page-title/page-title.php', [
                     </style>
                     <?php
                     if(isset($formSuccess) && $formSuccess === true) {
-                        echo '<div class="IIMessage Success">Super !</div>';
+                        echo '<div role="alert" class="alert alert-success">
+                        <i class="fa fa-check-circle"></i> <strong>Félicitations !</strong> Votre message a été envoyé avec succés.</div>';
                     }
                     if(isset($formSuccess) && $formSuccess === false) {
-                        echo '<div class="IIMessage Error"><p>Oups ! Un ou plusieurs champs ci-dessous sont mal renseignés.</p></div>';
+                        echo '<div role="alert" class="alert alert-warning alert-dismissible animated visible" data-animation="pulse" data-animation-delay="1500">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span> </button>
+                        <i class="fa fa-warning"></i> <strong>Attention !</strong> Un ou plusieurs champs ci-dessous sont mal renseignés.</div>';
                     }
                     print $form;
                     ?>
@@ -105,7 +108,7 @@ $this->element('Page-title/page-title.php', [
                 </div>
 
                 <!-- Google map sensor -->
-                    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?v=3.exp"></script>
+                <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?v=3.exp"></script>
                 <div class="map m-t-30" data-map-address="52 Rue Cérès, 51100 Reims, FRANCE" data-map-zoom="13" data-map-icon="/site/Themes/theme1/img/markers/marker3.png" data-map-type="ROADMAP"></div>
                 <!-- Google map sensor -->
 

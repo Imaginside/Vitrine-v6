@@ -66,7 +66,7 @@ class PagesController extends Controllers
         if($form->isSubmitted())
         {
             $errors = $form->validate();
-            var_dump($errors);
+            // var_dump($errors);
             if(!empty($errors))
             {
                 
@@ -99,7 +99,7 @@ class PagesController extends Controllers
                     '_LogoSite' => Configure::read('logo-default'),
                 ], $debug = true); // $debug = true permet de renvoyer le contenu HTML plutot que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.
                 print $html;
-                die();
+                // die();
                 // Gérer la soumission du formulaire ici
 
 

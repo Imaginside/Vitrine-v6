@@ -56,6 +56,7 @@ class Form {
         'formGroup--html' => '{{ input }}', // affichage directement de l'input, sans wrapper
         'formGroup--submit' => '{{ input }}', // affichage directement de l'input, sans wrapper
         'formGroup--hidden' => '{{ input }}', // affichage directement de l'input, sans wrapper
+        'formGroup--recaptcha' => '{{ input }}', // affichage directement de l'input, sans wrapper
         'formGroup--select' => '<div class="{{ groupClasses }}"><label for="{{ inputId }}">{{ title }}</label>{{ input }}</div>', // affichage directement de l'input, sans wrapper
         'formGroup--select-option' => '{{ input }}', // affichage directement de l'input, sans wrapper
         // - Wrapper d'un formulaire
