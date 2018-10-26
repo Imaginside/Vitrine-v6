@@ -35,8 +35,31 @@ $this->element('Page-title/page-title.php', [
                 <h3 class="text-uppercase">Contactez-nous !</h3>
                 <p>Téléphonez-nous ou envoyez-nous un email, nous reviendrons vers vous dès que possible !</p>
                 <div class="m-t-30">
-
+                    <style>
+                    .IIMessage {
+                        border-radius:4px;
+                        padding:0 10px;
+                        text-align:center;
+                    }
+                    .IIMessage p {
+                        margin:5px 0;
+                        font-weight:bold;
+                        font-size:1.1em;
+                    }
+                    .IIMessage.Success {
+                        border:2px solid #1eaa17;
+                    }
+                    .IIMessage.Error {
+                        border:2px solid #e42c3e;
+                    }
+                    </style>
                     <?php
+                    if(isset($formSuccess) && $formSuccess === true) {
+                        echo '<div class="IIMessage Success">Super !</div>';
+                    }
+                    if(isset($formSuccess) && $formSuccess === false) {
+                        echo '<div class="IIMessage Error"><p>Oups ! Un ou plusieurs champs ci-dessous sont mal renseignés.</p></div>';
+                    }
                     print $form;
                     ?>
                     

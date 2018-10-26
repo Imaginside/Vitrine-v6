@@ -9,30 +9,29 @@ echo '
         echo ' data-parallax-image="' . $PageTitleImg . '"';
     }
 
-    echo 'class="';
+    echo ' class="';
     if(isset($PageTitleClassesSection) && $PageTitleClassesSection != '') {
         echo ' ' . $PageTitleClassesSection . ' ';
     }
     if(isset($PageTitleScroller) && $PageTitleScroller === true) {
         echo ' scroller ';
     }
-    echo '"';
+    echo '" ';
 
-    echo 'style="';
+    echo ' style="';
     if(isset($PageTitleBgColor) && $PageTitleBgColor != '') {
         echo ' background-color:' . $PageTitleBgColor . '; ';
     }
     if(isset($PageTitlePattern) && $PageTitlePattern != '') {
         echo ' background:url(' . $PageTitlePattern . '); ';
     }
-    echo '"';
+    echo '" ';
     
     if(isset($PageTitleVideo) && $PageTitleVideo != '') {
         echo 'data-vide-bg="' . $PageTitleVideo . '" data-vide-options="position: 0% 50%"';
     }
     
-echo '
->';
+echo '>';
 
 if(isset($PageTitleImg) && $PageTitleImg != '') {
 

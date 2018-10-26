@@ -9,16 +9,18 @@ use II\Utilities\Configure;
         if(Configure::read('Activate.Google-TagManager') !== '') {
         ?>
         <script type="text/javascript" src="/site/Medias/js/tag_google_analytics.js"></script>
-        <!-- Google Tag Manager -->
-        <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+        <?php /* -- Google Tag Manager -- */ ?>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','" . Configure::read('Activate.Google-TagManager') . "');</script> -->
-        <!-- End Google Tag Manager -->
+        })(window,document,'script','dataLayer','<?= Configure::read('Activate.Google-TagManager') ?>');</script>
+        <?php /* -- End Google Tag Manager -- */ ?>
         <?php
         }
         ?>
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="<?= $DescPage ?>">
@@ -27,14 +29,14 @@ use II\Utilities\Configure;
         <meta name="author" content="Imag'Inside" />
         <meta name="Publisher" content="Imag'Inside" />
         <meta name="Copyright" content="Imag'Inside" />
-        <meta name="Identifier-URL" content="www.ma-vitrine.fr" />
+        <meta name="Identifier-URL" content="<?= Configure::read('Society.Website'); ?>" />
         <meta name="Reply-to" content="<?= Configure::read('Society.Mail'); ?>" />
         <meta name="robots" content="<?= $MetaRobot ?>">
 
         <meta property="og:title" content="<?= Configure::read('Society.Name') . ' | ' . $NamePage ?>" />
         <meta property="og:description" content="<?= $DescPage ?>" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ma-vitrine.fr" />
+        <meta property="og:url" content="<?= Configure::read('Society.WebsiteURL'); ?>" />
         <meta property="og:image" content="img/image-rs2.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -77,32 +79,45 @@ use II\Utilities\Configure;
             <meta name="theme-color" content="#ffffff">';
         }
         ?>
+
+        <?php /* -- Google reCAPTCHA : https://www.google.com/recaptcha/ -- */ ?>
+        <?php
+        if(Configure::read('Activate.Google-reCaptcha-sitekey') !== '' && Configure::read('Activate.Google-reCaptcha-secretkey') !== '') {
+            echo '
+            <script src="https://www.google.com/recaptcha/api.js"></script>';
+        }
+        ?>
+
     </head>
 
-    <body class="
-        <?php
-        if(isset($ClassesBody) && $ClassesBody != NULL) echo $ClassesBody . ' ';
-        if(Configure::read('PageLoader') === false) echo 'no-page-loader ';
-        ?>
-    ">
+    <body class="<?php
+        if(isset($ClassesBody) && $ClassesBody != NULL) echo $ClassesBody;
+        if(Configure::read('PageLoader') === false) echo ' no-page-loader ';?>">
 
         <?php
+        /* -- Google Tag Manager (noscript) -- */
         if(Configure::read('Activate.Google-TagManager') !== '') {
-            // echo '
-            // <!-- Google Tag Manager (noscript) -->
-            // <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=' . Configure::read('Activate.Google-TagManager') . '"
-            // height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-            // <!-- End Google Tag Manager (noscript) -->';
+            echo '
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=' . Configure::read('Activate.Google-TagManager') . '"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
         }
+        /* -- End Google Tag Manager (noscript) -- */
         ?>
         
         <?php /* -- Wrapper -- */ ?>
         <div id="wrapper">
+            
+            <?php
+            // if(isset($formSuccess) && $formSuccess === false) {
+            //     echo '<script>alert("NOPE");</script>';
+            // }
+            ?>
 
             <?php
             echo $this->element('topbar.php', ['classesTopbar' => $ClassesTopBar]);
             echo $this->element('header.php', ['classesHeader' => $ClassesHeader]);
             ?>
+<<<<<<< HEAD
 
             <?php
             if(isset($success) && $success === false)
@@ -117,6 +132,9 @@ use II\Utilities\Configure;
             }
             ?>
 
+=======
+            
+>>>>>>> ft-formulaires
             <?= $content; ?>
 
             <?php

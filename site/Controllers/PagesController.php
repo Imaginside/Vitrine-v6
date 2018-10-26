@@ -66,23 +66,34 @@ class PagesController extends Controllers
         if($form->isSubmitted())
         {
             $errors = $form->validate();
+            var_dump($errors);
             if(!empty($errors))
             {
+                
                 $this->set([
-                    'success' => false,
-                    'errors' => $errors,
+                    'formSuccess' => false 
                 ]);
             }
             else
             {
+                $this->set([
+                    'formSuccess' => true 
+                ]);
                 $this->set('success', true);
                 $submitted = $form->getData();
 
                 $mailer = new Mailer('gestionnaire');
                 // $mailer->addAddress('dvd.chester@gmail.com'); // Envoyé à
                 // var_dump($submitted);
+<<<<<<< HEAD
                 
                 $html = $mailer->send([
+=======
+
+                $html = $mailer->send([
+                    // Passer des variables au template (element) Html
+
+>>>>>>> ft-formulaires
                     'data' => $submitted, // Récupére toutes les données du formulaire
                     // '_DateEnvoi' => strftime('%A %d %B, %Ih%M'),
                     '_DayEnvoi' => strftime('%A %d %B'),

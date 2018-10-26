@@ -57,6 +57,7 @@ class FormValidator {
             $verified = \call_user_func_array($rule['rule'], [$this->validate[$rule['field_name']]]);
             if(!$verified)
             {
+                $this->form->addError($rule['field_name'], $rule['name']);
                 $errors[] = [
                     'field_name' => $rule['field_name'],
                     'errors' => $rule['name']
