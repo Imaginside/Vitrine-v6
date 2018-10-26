@@ -141,7 +141,7 @@ class ContactForm extends Form {
                     'g-recaptcha' => [
                         'type' => 'recaptcha',
                         'class' => 'g-recaptcha',
-                        'data' => $rsitekey
+                        'data-sitekey' => $rsitekey
                     ],
                 ],
             ];
@@ -163,69 +163,69 @@ class ContactForm extends Form {
         ];
         
 
-        $fields['radio'] = [
-            'type' => 'radio',
-            'name' => 'helloRadio',
-            'class' => '',
-            'labelClasses' => '',
-            'groupClasses' => 'radio',
-            'value' => 'hello world',
-            'title' => 'Hello radio'
-        ];
+        // $fields['radio'] = [
+        //     'type' => 'radio',
+        //     'name' => 'helloRadio',
+        //     'class' => '',
+        //     'labelClasses' => '',
+        //     'groupClasses' => 'radio',
+        //     'value' => 'hello world',
+        //     'title' => 'Hello radio'
+        // ];
 
-        $fields['checkbox'] = [
-            'type' => 'checkbox',
-            'name' => 'hellocheckbox',
-            'class' => '',
-            'labelClasses' => '',
-            'groupClasses' => 'checkbox',
-            'value' => 'hello world',
-            'title' => 'Hello checkbox'
-        ];
+        // $fields['checkbox'] = [
+        //     'type' => 'checkbox',
+        //     'name' => 'hellocheckbox',
+        //     'class' => '',
+        //     'labelClasses' => '',
+        //     'groupClasses' => 'checkbox',
+        //     'value' => 'hello world',
+        //     'title' => 'Hello checkbox'
+        // ];
 
-        $fields['radios'] = [
-            'type' => 'radios',
-            'name' => 'helloRadios[]',
-            'class' => '',
-            'radiosGroupClasses' => '',
-            'labelClasses' => '',
-            'groupClasses' => 'radio',
-            'options' => [
-                'r1' => 'Radio 1',
-                'r2' => 'Radio 2',
-                'r3' => 'Radio 3',
-            ]
-        ];
+        // $fields['radios'] = [
+        //     'type' => 'radios',
+        //     'name' => 'helloRadios[]',
+        //     'class' => '',
+        //     'radiosGroupClasses' => '',
+        //     'labelClasses' => '',
+        //     'groupClasses' => 'radio',
+        //     'options' => [
+        //         'r1' => 'Radio 1',
+        //         'r2' => 'Radio 2',
+        //         'r3' => 'Radio 3',
+        //     ]
+        // ];
 
-        $fields['checkboxes'] = [
-            'type' => 'checkboxes',
-            'name' => 'helloCheckboxes[]',
-            'class' => '',
-            'checkboxesGroupClasses' => '',
-            'labelClasses' => '',
-            'groupClasses' => 'checkbox',
-            'options' => [
-                'r1' => 'Checkbox 1',
-                'r2' => 'Checkbox 2',
-                'r3' => 'Checkbox 3',
-            ]
-        ];
+        // $fields['checkboxes'] = [
+        //     'type' => 'checkboxes',
+        //     'name' => 'helloCheckboxes[]',
+        //     'class' => '',
+        //     'checkboxesGroupClasses' => '',
+        //     'labelClasses' => '',
+        //     'groupClasses' => 'checkbox',
+        //     'options' => [
+        //         'r1' => 'Checkbox 1',
+        //         'r2' => 'Checkbox 2',
+        //         'r3' => 'Checkbox 3',
+        //     ]
+        // ];
 
-        $fields['select'] = [
-            'type' => 'select',
-            'title' => 'Sélectionner une option',
-            'name' => 'select[]',
-            'class' => 'form-control',
-            'labelClasses' => '',
-            'groupClasses' => '',
-            'default' => 'r2',
-            'options' => [
-                '' => '',
-                'r1' => 'Option 1',
-                'r2' => 'Option 2',
-                'r3' => 'Option 3',
-            ]
-        ];
+        // $fields['select'] = [
+        //     'type' => 'select',
+        //     'title' => 'Sélectionner une option',
+        //     'name' => 'select[]',
+        //     'class' => 'form-control',
+        //     'labelClasses' => '',
+        //     'groupClasses' => '',
+        //     'default' => 'r2',
+        //     'options' => [
+        //         '' => '',
+        //         'r1' => 'Option 1',
+        //         'r2' => 'Option 2',
+        //         'r3' => 'Option 3',
+        //     ]
+        // ];
 
         // $fields['select'] = [
         //     'type' => 'select',
