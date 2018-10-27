@@ -19,8 +19,9 @@ return [
     ],
 
     'logo-default' => BASE_URL . IMAGES . 'logo-imaginside.png',
-    'logo-dark' => BASE_URL . IMAGES . 'logo-imaginside-dark.png',
-    'logo-light' => BASE_URL . IMAGES . 'logo-imaginside.png',
+    'logo-dark'     => BASE_URL . IMAGES . 'logo-imaginside-dark.png',
+    'logo-light'    => BASE_URL . IMAGES . 'logo-imaginside.png',
+    'logo-mail'     => BASE_URL . IMAGES . 'logo-imaginside.png',
 
     'Site' => [
         'date_mise_en_ligne' => '2018',
@@ -118,8 +119,8 @@ return [
         ],
         'internaute' => [
             'template'  => 'internaute.php',
-            'to'        => 'dvd.chester@gmail.com' // Mail pour le gestionnaire
+            'to'        => 'dvd.chester@gmail.com' // Mail pour l'internaute
         ],
-    ]
+    ],
 
 ];

@@ -133,7 +133,6 @@ class ContactForm extends Form {
         $rsecret = Configure::read('Activate.Google-reCaptcha-secretkey');
 
         if($rsitekey !== '' && $rsecret !== '') {
-        
             $fields['recaptcha-group'] = [
                 'type' => 'div',
                 'class' => 'row',
@@ -145,7 +144,6 @@ class ContactForm extends Form {
                     ],
                 ],
             ];
-
         }
 
         $fields['envoyer'] = [

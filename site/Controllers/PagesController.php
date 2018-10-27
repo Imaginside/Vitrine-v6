@@ -74,12 +74,10 @@ class PagesController extends Controllers
             }
             else
             {
-                
-                Session::addSuccessMessage('<strong>Félicitations !</strong> Votre message a été envoyé avec succés.');
-
                 $submitted = $form->getData();
 
                 $mailer = new Mailer('gestionnaire');
+                $mailer->Subject = Configure::read('Society.Name') . ' - Nouveau message - Formulaire de contact';
                 // $mailer->addAddress('dvd.chester@gmail.com'); // Envoyé à
                 // var_dump($submitted);
                 try {
@@ -89,15 +87,22 @@ class PagesController extends Controllers
                         'data' => $submitted, // Récupére toutes les données du formulaire
                         // '_DateEnvoi' => strftime('%A %d %B, %Ih%M'),
                         '_DayEnvoi' => strftime('%A %d %B'),
-                        '_HourEnvoi' => strftime('%Ih%M'),
+                        '_HourEnvoi' => strftime('%Hh%M'),
                         '_NomSite' => Configure::read('Society.Name'),
                         '_URLSite' => Configure::read('Society.WebsiteURL'),
                         '_WebSite' => Configure::read('Society.Website'),
                         '_LogoSite' => Configure::read('logo-default'),
                     ], $debug = false); // $debug = true permet de renvoyer le contenu HTML plutot que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.
+                    
                     print $html;
+
+                    Session::addSuccessMessage('<strong>Félicitations !</strong><br>Votre message a été envoyé avec succés.<br>
+                    Nous vous recontacterons dans les meilleurs délais.');
+
                 } catch(Exception $e) {
-                    Session::addError('<strong>Attention !</strong> Une erreur est survenue, votre message n\'a pas pus etre transmis. Contactez david@adam.com ');
+                    Session::addError('<strong>Attention !</strong><br>Une erreur est survenue, votre message n\'a pas pus etre transmis correctement.<br>
+                    Merci de nous contacter par téléphone au <a href="tel:' . Configure::read('Society.Phone1Link') . '">' . Configure::read('Society.Phone1') . ',</a> ou par mail à <a href="mailto:' . Configure::read('Society.Mail') . '">' . Configure::read('Society.Mail') . '</a>.<br>
+                    Nous nous excusons pour la gêne occasionnée.');
                 }
                 // die();
                 // Gérer la soumission du formulaire ici

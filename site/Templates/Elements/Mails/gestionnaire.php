@@ -33,7 +33,7 @@
                             <table cellpadding="0" cellspacing="0" border="0">
                                 <tr>
                                     <td width="180px" height="180px">
-                                        <img src="<?= $_URLSite.IMAGES ?>mail/nouveau-message-petit-garcon.jpg" width="180px" height="180px" border="0" alt="Petit garçon avec un megaphone">
+                                        <img src="<?= $_URLSite.IMAGES ?>mail/nouveau-message-petit-garcon.jpg" width="100%" height="180px" border="0" alt="Petit garçon avec un megaphone">
                                     </td>
                                 </tr>
                                 <tr>
@@ -54,7 +54,7 @@
                                 <tr>
                                     <td style="color:#c7c7c7; font-size:26px;padding:30px;">
                                         <img src="<?= $_URLSite.IMAGES ?>mail/megaphone-white.png" width="100px" height="100px" border="0" alt="Megaphone">
-                                        <span style="font-size:35px; font-weight:bold;">SUPER !</span><br>
+                                        <div style="font-size:35px; font-weight:bold;">SUPER !</div>
                                         <span style="color:#FFF;font-weight:bold;"><?= ucfirst($data['widget-contact-form-name']) ?></span> souhaite rentrer en contact avec vous !
                                     </td>
                                 </tr>
@@ -92,7 +92,7 @@
                                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                             <tr>
                                                 <td width="35px"><img src="<?= $_URLSite.IMAGES ?>mail/picto-phone-white.png" width="24px" height="24px" border="0" alt="Tél. :"></td>
-                                                <td style="padding-bottom:5px;"><a href="tel:<?= $data['widget-contact-form-tel'] ?>" style="font-weight:bold;color:#FFF;"><?= $data['widget-contact-form-tel'] ?></a></td>
+                                                <td style="padding-bottom:5px;"><a href="tel:<?= $data['widget-contact-form-phone'] ?>" style="font-weight:bold;color:#FFF;"><?= $data['widget-contact-form-phone'] ?></a></td>
                                             </tr>
                                             <tr>
                                                 <td width="35px"><img src="<?= $_URLSite.IMAGES ?>mail/picto-mail-white.png" width="24px" height="24px" border="0" alt="Mail. :"></td>
@@ -111,7 +111,7 @@
                     <tr>
                         <td colspan="2" style="padding:30px;">
                             <h2 style="font-size:30px;padding:0;margin:0;">#réglementationRGPD</h2>
-                            <span style="font-weight:bold;padding-bottom:10px;display:block;">Réglement Général sur la Protection des Données</span>
+                            <span style="font-weight:bold;padding:5px 0 10px 0;display:block">Réglement Général sur la Protection des Données</span>
                             <span>Lors de l'envoi du message, <span style="font-weight:bold;"><?= ucfirst($data['widget-contact-form-name']) ?></span> a coché la case suivante :</span>
                             <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:5px;">
                                 <tr>

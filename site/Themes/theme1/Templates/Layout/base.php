@@ -134,13 +134,15 @@ use II\Utilities\Session;
             if(!empty($errors))
             {
                 ?>
-                <div role="alert" class="alert alert-danger alert-dismissible animated visible" data-animation="pulse" data-animation-delay="1500">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span> </button>
-                    <?php
-                    foreach($errors as $error) {
-                        ?> <div><i class="fa fa-warning"></i> <?= $error ?></div> <?php
-                    }
-                    ?>
+                <div class="container m-t-20 m-b-20">
+                    <div role="alert" class="alert alert-danger alert-dismissible animated visible" data-animation="pulse" data-animation-delay="1500">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span> </button>
+                        <?php
+                        foreach($errors as $error) {
+                            ?> <div><i class="fa fa-warning"></i> <?= $error ?></div> <?php
+                        }
+                        ?>
+                    </div>
                 </div>
                 <?php
             }
@@ -151,13 +153,15 @@ use II\Utilities\Session;
             if(!empty($warnings))
             {
                 ?>
-                <div role="alert" class="alert alert-warning alert-dismissible animated visible" data-animation="pulse" data-animation-delay="1500">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span> </button>
-                    <?php
-                    foreach($warnings as $warning) {
-                        ?> <div><i class="fa fa-warning"></i> <?= $warning ?></div> <?php
-                    }
-                    ?>
+                <div class="container m-t-20 m-b-20">
+                    <div role="alert" class="alert alert-warning alert-dismissible animated visible" data-animation="pulse" data-animation-delay="1500">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span> </button>
+                        <?php
+                        foreach($warnings as $warning) {
+                            ?> <div><i class="fa fa-warning"></i> <?= $warning ?></div> <?php
+                        }
+                        ?>
+                    </div>
                 </div>
                 <?php
             }
@@ -169,12 +173,14 @@ use II\Utilities\Session;
             if(!empty($successMessages))
             {
                 ?>
-                <div role="alert" class="alert alert-success">
-                <?php
-                foreach($successMessages as $successMessage) {
-                    ?> <div><i class="fa fa-check-circle"></i> <?= $successMessage ?></div> <?php
-                }
-                ?>
+                <div class="container m-t-20 m-b-20">
+                    <div role="alert" class="alert alert-success">
+                    <?php
+                    foreach($successMessages as $successMessage) {
+                        ?> <div><i class="fa fa-check-circle"></i> <?= $successMessage ?></div> <?php
+                    }
+                    ?>
+                    </div>
                 </div>
                 <?php
             }
@@ -185,12 +191,14 @@ use II\Utilities\Session;
             if(!empty($infoMessages))
             {
                 ?>
-                <div role="alert" class="alert alert-info">
-                <?php
-                foreach($infoMessages as $infoMessage) {
-                    ?> <div><i class="fa fa-info-circle"></i> <?= $infoMessage ?></div> <?php
-                }
-                ?>
+                <div class="container m-t-20 m-b-20">
+                    <div role="alert" class="alert alert-info">
+                    <?php
+                    foreach($infoMessages as $infoMessage) {
+                        ?> <div><i class="fa fa-info-circle"></i> <?= $infoMessage ?></div> <?php
+                    }
+                    ?>
+                    </div>
                 </div>
                 <?php
             }
