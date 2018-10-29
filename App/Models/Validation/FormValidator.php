@@ -7,6 +7,7 @@ class FormValidator {
     const ERROR_EMAIL = 'EMAIL FORMAT';
     const ERROR_EMAIL_MX = 'EMAIL MX';
     const ERROR_TEL = 'TEL FORMAT';
+    const ERROR_RECAPTCHA = 'RECAPTCHA';
 
     /**
      * Classe du formulaire
@@ -107,6 +108,9 @@ class FormValidator {
                 case 'tel':
                     $this->addRule(self::ERROR_TEL, $field['name'], [$this, 'verifyTelFormat']);
                     break;
+                case 'recaptcha':
+                    $this->addRule(self::ERROR_RECAPTCHA, 'g-recaptcha-response', [$this, 'verifyReCaptcha']);
+                    $validate['g-recaptcha-response'] = isset($data['g-recaptcha-response']) ? $data['g-recaptcha-response'] : null;
             }
 
 
@@ -135,6 +139,22 @@ class FormValidator {
     protected function verifyTelFormat($value)
     {
         return preg_match('/^\(?(?:(?:\+|00)33|0)\)?\s*[1-9](?:[\s.-]*\d{2}){4}$/', $value);
+    }
+
+    protected function verifyReCaptcha($value)
+    {
+        $ch = curl_init('https://www.google.com/recaptcha/api/siteverify');
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, [
+            'secret' => '6Le0zXYUAAAAADn-sB9lLqS-5yaQ_xBCVlvtR8Ez',
+            'response' => $value,
+        ]);
+
+        $exec = curl_exec($ch);
+        $json_exec = json_decode($exec);
+        
+        return !empty($json_exec) && !$json_exec && !empty($json_exec->success) && $json_exec->success === true;
     }
 
 }
