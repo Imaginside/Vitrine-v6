@@ -118,10 +118,10 @@ return [
             'template'  => 'gestionnaire.php',
             'to'        => 'farkas.axel@gmail.com' // Mail pour le gestionnaire // dvd.chester@gmail.com // farkas.axel@gmail.com // hello@imaginside.com
         ],
-        // 'internaute' => [
-        //     'template'  => 'internaute.php',
-        //     'to'        => 'dvd.chester@gmail.com' // Mail pour l'internaute
-        // ],
+        'internaute' => [
+            'template'  => 'internaute.php',
+            // 'to'        => 'dvd.chester@gmail.com' // Mail pour l'internaute
+        ],
     ],
 
 ];
