@@ -52,7 +52,7 @@ class ContactForm extends Form {
                     ],
                     'phone' => [
                         'type' => 'phone',
-                        'name' => 'widget-contact-form-tel',
+                        'name' => 'widget-contact-form-phone',
                         'title' => 'Téléphone',
                         'placeholder' => 'Entrez votre numéro de téléphone',
                         'class' => 'form-control required phone',

@@ -27,9 +27,9 @@ use II\Utilities\Session;
         <meta name="description" content="<?= $DescPage ?>">
         <title><?= Configure::read('Society.Name') . ' | ' . $NamePage ?></title>
 
-        <meta name="author" content="Imag'Inside" />
+        <meta name="author" content="<?= Configure::read('Society.Name'); ?>" />
         <meta name="Publisher" content="Imag'Inside" />
-        <meta name="Copyright" content="Imag'Inside" />
+        <meta name="Copyright" content="Imag'Inside - Ma Vitrine" />
         <meta name="Identifier-URL" content="<?= Configure::read('Society.Website'); ?>" />
         <meta name="Reply-to" content="<?= Configure::read('Society.Mail'); ?>" />
         <meta name="robots" content="<?= $MetaRobot ?>">
@@ -49,13 +49,6 @@ use II\Utilities\Session;
         <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/responsive.css" rel="stylesheet">
         <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/custom.css" rel="stylesheet">
 
-        <?php /* -- reCaptcha Google -- */ ?>
-        <?php
-        if(Configure::read('Activate.Google-reCaptcha-sitekey') !== '' && Configure::read('Activate.Google-reCaptcha-secretkey') !== '') {
-        echo '
-            <script src="https://www.google.com/recaptcha/api.js"></script>';
-        }
-        ?>
 
         <?php /* -- Favicon : https://www.favicon-generator.org/ -- */ ?>
         <?php
@@ -80,7 +73,7 @@ use II\Utilities\Session;
             <meta name="theme-color" content="#ffffff">';
         }
         ?>
-
+        
         <?php /* -- Google reCAPTCHA : https://www.google.com/recaptcha/ -- */ ?>
         <?php
         if(Configure::read('Activate.Google-reCaptcha-sitekey') !== '' && Configure::read('Activate.Google-reCaptcha-secretkey') !== '') {
@@ -121,12 +114,12 @@ use II\Utilities\Session;
             if(isset($page_title))
                 print $this->element('Page-title/page-title.php', $page_title);
 
-            Session::addError('<strong>Attention !</strong> Exemple de message d\'erreur. (base.php ligne ' . __LINE__ . ')');
-            Session::addError('<strong>Attention !</strong> Exemple de message d\'erreur. (base.php ligne ' . __LINE__ . ')');
-            Session::addError('<strong>Attention !</strong> Exemple de message d\'erreur. (base.php ligne ' . __LINE__ . ')');
-            Session::addSuccessMessage('<strong>Attention !</strong> Exemple de message de succès. (base.php ligne ' . __LINE__ . ')');
-            Session::addWarningMessage('<strong>Attention !</strong> Exemple de message de succès. (base.php ligne ' . __LINE__ . ')');
-            Session::addInfoMessage('<strong>Attention !</strong> Exemple d\'information. (base.php ligne ' . __LINE__ . ')');
+            // Session::addError('<strong>Attention !</strong> Exemple de message d\'erreur. (base.php ligne ' . __LINE__ . ')');
+            // Session::addError('<strong>Attention !</strong> Exemple de message d\'erreur. (base.php ligne ' . __LINE__ . ')');
+            // Session::addError('<strong>Attention !</strong> Exemple de message d\'erreur. (base.php ligne ' . __LINE__ . ')');
+            // Session::addSuccessMessage('<strong>Attention !</strong> Exemple de message de succès. (base.php ligne ' . __LINE__ . ')');
+            // Session::addWarningMessage('<strong>Attention !</strong> Exemple de message de succès. (base.php ligne ' . __LINE__ . ')');
+            // Session::addInfoMessage('<strong>Attention !</strong> Exemple d\'information. (base.php ligne ' . __LINE__ . ')');
 
             // affichage des erreurs
             // utiliser \II\Utilities\Session::addError('Error message here') pour ajouter des erreurs

@@ -77,7 +77,7 @@ class PagesController extends Controllers
                 $submitted = $form->getData();
 
                 $mailer = new Mailer('gestionnaire');
-                $mailer->Subject = Configure::read('Society.Name') . ' - Nouveau message - Formulaire de contact';
+                $mailer->Subject = Configure::read('Society.Name') . ' - Ma Vitrine - Nouveau message';
                 // $mailer->addAddress('dvd.chester@gmail.com'); // Envoyé à
                 // var_dump($submitted);
                 try {
@@ -85,7 +85,8 @@ class PagesController extends Controllers
                         // Passer des variables au template (element) Html
 
                         'data' => $submitted, // Récupére toutes les données du formulaire
-                        // '_DateEnvoi' => strftime('%A %d %B, %Ih%M'),
+
+                        // '_DateEnvoi' => strftime('%A %d %B, %Hh%M'),
                         '_DayEnvoi' => strftime('%A %d %B'),
                         '_HourEnvoi' => strftime('%Hh%M'),
                         '_NomSite' => Configure::read('Society.Name'),
@@ -94,7 +95,7 @@ class PagesController extends Controllers
                         '_LogoSite' => Configure::read('logo-default'),
                     ], $debug = false); // $debug = true permet de renvoyer le contenu HTML plutot que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.
                     
-                    print $html;
+                    // print $html;
 
                     Session::addSuccessMessage('<strong>Félicitations !</strong><br>Votre message a été envoyé avec succés.<br>
                     Nous vous recontacterons dans les meilleurs délais.');
@@ -106,7 +107,6 @@ class PagesController extends Controllers
                 }
                 // die();
                 // Gérer la soumission du formulaire ici
-
 
             }
 

@@ -78,6 +78,9 @@
                     </tr>
                     <tr>
                         <td colspan="2" style="padding:10px 30px 20px;">
+                            <h3 style="margin:4px 0 20px;padding:0;">
+                                <?= $data['widget-contact-form-subject'] ?>
+                            </h3>
                             <p style="margin:4px 0;padding:0;">
                                 <?= $data['widget-contact-form-message'] ?>
                             </p>
@@ -85,7 +88,7 @@
                     </tr>
                     <tr>
                         <td colspan="2" bgcolor="#df0a40">
-                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td width="100%" style="padding:15px 30px;">
                                         <h2 style="color:#FFF; font-size:30px;padding:0;margin:0 0 8px">#contact</h2>

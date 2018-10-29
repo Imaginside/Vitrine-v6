@@ -1,13 +1,13 @@
 <?php
 return [
-    'theme' => 'theme1', // default
+    'theme' => 'ma-vitrine', // default
 
     // Gestion de l'affichage // 1 = activé | 0 = désactivé
     'Activate' => [
         'Maintenance' => true, // "true" => mode maintenance activé
         'Google-TagManager' => 'GTM-KJ7MDZ3', // GTM-XXXXXXX
-        'Google-reCaptcha-sitekey' => '6LdTrgoUAAAAAE678H7ePfgugHDFREJXeZQm-rge',
-        'Google-reCaptcha-secretkey' => '6LdTrgoUAAAAADxGqBhK9ASX-V8Cs2MrRBbsHDsm',
+        'Google-reCaptcha-sitekey' => '6LdTrgoUAAAAAE678H7ePfgugHDFREJXeZQm-rge', // 6LdTrgoUAAAAAE678H7ePfgugHDFREJXeZQm-rge
+        'Google-reCaptcha-secretkey' => '6LdTrgoUAAAAADxGqBhK9ASX-V8Cs2MrRBbsHDsm', // 6LdTrgoUAAAAADxGqBhK9ASX-V8Cs2MrRBbsHDsm
         'Cookies' => true, // 'true' affichera le bandeau sur le site
         'Favicons' => true, // 'true' affichera les favicons -> /site/Medias/img/favicon/ -> https://www.favicon-generator.org/
 
@@ -35,13 +35,13 @@ return [
         'Zipcode'           => '51100',
         'Town'              => 'Reims',
         'Country'           => 'France',
-        'Phone1'            => '06 30 56 18 46',
-            'Phone1Link'    => '+33630561846',
-        'Phone2'            => '03 00 00 00 00',
-            'Phone2Link'    => '+33300000000',
-        'Mail'              => 'hello@imaginside.com',
-        'Website'           => 'www.ma-vitrine.pro',
-            'WebsiteURL'    => 'https://www.ma-vitrine.pro/',
+        'Phone1'            => '06 30 56 18 46', // 06 00 00 00 00
+            'Phone1Link'    => '+33630561846', // +33600000000
+        'Phone2'            => '03 00 00 00 00', // 06 00 00 00 00
+            'Phone2Link'    => '+33300000000', // +33600000000
+        'Mail'              => 'contact@ma-vitrine.pro', // contact@monsite.fr
+        'Website'           => 'www.ma-vitrine.pro', // www.monsite.fr
+            'WebsiteURL'    => 'https://www.ma-vitrine.pro/', // https://www.monsite.fr/
 
         'Gerant' => [
             'Nom'           => 'ADAM',
@@ -75,7 +75,7 @@ return [
     ],
 
     // Liens des réseaux sociaux
-    'SocialNetwork' => [
+    'SocialNetwork' => [ // Ici les URLs
         'Facebook'  => '#',
         'Twitter'   => '#',
         'GooglePlus'=> '#',
@@ -104,23 +104,24 @@ return [
         'Hebergement'       => 'OVH SAS<br>140 Quai du Sartel<br>59100 Roubaix - France<br>RCS Roubaix - Tourcoing 424 761 419',
     ],
 
+    // Paramètres de l'envoi des mails
     'Mails' => [
         'default' => [
-            'From'          => 'hello@imaginside.com', // Envoyé depuis MAIL
-            'FromName'      => 'Imag\'Inside',  // Envoyé de NOM
-            'ReplyTo'       => 'hello@imaginside.com', // Répondre à MAIL
-            'ReplyToName'   => 'Coucou', // Répondre à NOM
+            'From'          => 'no-reply@ma-vitrine.pro', // Envoyé depuis MAIL
+            'FromName'      => 'Imag\'Inside - Ma Vitrine',  // Envoyé de NOM
+            'ReplyTo'       => 'contact@ma-vitrine.pro', // Répondre à MAIL
+            'ReplyToName'   => 'Imag\'Inside - Ma Vitrine', // Répondre à NOM
             
             'template'      => 'default.php', // Template mail pour internaute
         ],
         'gestionnaire' => [
             'template'  => 'gestionnaire.php',
-            'to'        => 'dvd.chester@gmail.com' // Mail pour le gestionnaire
+            'to'        => 'farkas.axel@gmail.com' // Mail pour le gestionnaire // dvd.chester@gmail.com // farkas.axel@gmail.com // hello@imaginside.com
         ],
-        'internaute' => [
-            'template'  => 'internaute.php',
-            'to'        => 'dvd.chester@gmail.com' // Mail pour l'internaute
-        ],
+        // 'internaute' => [
+        //     'template'  => 'internaute.php',
+        //     'to'        => 'dvd.chester@gmail.com' // Mail pour l'internaute
+        // ],
     ],
 
 ];
