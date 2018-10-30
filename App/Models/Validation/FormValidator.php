@@ -1,6 +1,8 @@
 <?php
 namespace II\Models\Validation;
 
+use II\Utilities\Configure;
+
 class FormValidator {
 
     const ERROR_REQUIRED = 'REQUIRED';
@@ -147,7 +149,7 @@ class FormValidator {
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, [
-            'secret' => '6Le0zXYUAAAAADn-sB9lLqS-5yaQ_xBCVlvtR8Ez',
+            'secret' => Configure::read('Activate.Google-reCaptcha-secretkey'),
             'response' => $value,
         ]);
 
