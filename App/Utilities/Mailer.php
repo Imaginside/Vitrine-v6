@@ -27,11 +27,18 @@ class Mailer extends Views{
         $this->Mailer = new PHPMailer(true);
         
         // $this->isSMTP(true);
-        
+
         $this->Mailer->CharSet = 'utf-8';
         $this->Mailer->isHTML(true);
-        $this->Mailer->setFrom($config['From'], $config['FromName']);
-        $this->Mailer->addReplyTo($config['ReplyTo'], $config['ReplyToName']);
+        
+        $this->Mailer->Sender = $config['Sender'];
+        if(isset($config['From']))
+            $this->Mailer->setFrom($config['From'], !empty($config['FromName']) ? $config['FromName'] : null);
+
+
+        if(isset($config['ReplyTo']))
+            $this->Mailer->addReplyTo($config['ReplyTo'], isset($config['ReplyToName']) ? $config['ReplyToName'] : null);
+            
 
         if(isset($config['to'])){
             if(is_array($config['to']))

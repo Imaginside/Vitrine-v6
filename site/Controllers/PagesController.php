@@ -80,17 +80,16 @@ class PagesController extends Controllers
                 $mailer = new Mailer('gestionnaire');
                 $mailer->Subject = Configure::read('Society.Name') . ' - Ma Vitrine - Nouveau message';
                 // $mailer->addAddress('dvd.chester@gmail.com'); // Envoyé à
-                $mailer->addReplyTo($data['widget-contact-form-email'], $data['widget-contact-form-name']);
+                $mailer->addReplyTo($data['widget-contact-form-email'], ucfirst($data['widget-contact-form-name']));
 
                 /**
                  * Mail à l'internaute
                  */
                 $mailerInternaute = new Mailer();
                 $mailerInternaute->Subject = Configure::read('Society.Name') . ' - Ma Vitrine - Nouveau message';
-                $mailerInternaute->addAddress($data['widget-contact-form-email'], $data['widget-contact-form-name']); // Envoyé à
+                $mailerInternaute->addAddress($data['widget-contact-form-email'], ucfirst($data['widget-contact-form-name'])); // Envoyé à
 
                 try {
-                    // $data['widget-contact-form-message'] = nl2br($data['widget-contact-form-message']); // Retour à la ligne
                     $html = $mailer->send([
                         // Passer des variables au template (element) Html
 
@@ -103,7 +102,7 @@ class PagesController extends Controllers
                         '_URLSite' => Configure::read('Society.WebsiteURL'),
                         '_WebSite' => Configure::read('Society.Website'),
                         '_LogoSite' => Configure::read('logo-default'),
-                    ], $debug = true); // $debug = true permet de renvoyer le contenu HTML plutot que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.
+                    ], $debug = false); // $debug = true permet de renvoyer le contenu HTML plutôt que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.
                     
                     // print $html;
 
@@ -120,11 +119,11 @@ class PagesController extends Controllers
                         '_URLSite' => Configure::read('Society.WebsiteURL'),
                         '_WebSite' => Configure::read('Society.Website'),
                         '_LogoSite' => Configure::read('logo-default'),
-                    ], $debug = true); // $debug = true permet de renvoyer le contenu HTML plutot que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.
+                    ], $debug = true); // $debug = true permet de renvoyer le contenu HTML plutôt que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.
 
                     // print $htmlInternaut;
 
-                    
+
                     Session::addSuccessMessage('<strong>Félicitations !</strong><br>Votre message a été envoyé avec succés.<br>
                     Nous vous recontacterons dans les meilleurs délais.');
 

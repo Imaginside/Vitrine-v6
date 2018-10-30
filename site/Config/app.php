@@ -106,22 +106,36 @@ return [
 
     // Paramètres de l'envoi des mails
     'Mails' => [
+        
+        // -> gestionnaire
+        // sender no-reply@ma-vitrine.pro
+        // from internaute@gmail.com
+        // replyTo internaute@gmail.com
+
+        // -> internaute
+        // sender no-reply@ma-vitrine.com
+        // from perso@gmail.com
+        // replyTo perso@gmail.com
+
+
         'default' => [
-            'From'          => 'no-reply@ma-vitrine.pro', // Envoyé depuis MAIL
-            'FromName'      => 'Imag\'Inside - Ma Vitrine',  // Envoyé de NOM
-            'ReplyTo'       => 'contact@ma-vitrine.pro', // Répondre à MAIL
-            'ReplyToName'   => 'Imag\'Inside - Ma Vitrine', // Répondre à NOM
-            
+            'Sender'        => 'no-reply@ma-vitrine.pro', // Envoyé depuis MAIL
+            'SenderName'    => 'Imag\'Inside - Ma Vitrine',  // Envoyé de NOM   
             'template'      => 'default.php', // Template mail pour internaute
         ],
         'gestionnaire' => [
+            'From'      => 'contact@ma-vitrine.pro',
+            'FromName'  => 'Imag\'Inside - Ma Vitrine',
             'template'  => 'gestionnaire.php',
-            'to'        => 'farkas.axel@gmail.com' // Mail pour le gestionnaire // dvd.chester@gmail.com // farkas.axel@gmail.com // hello@imaginside.com
+            'to'        => 'dvd.chester@gmail.com' // Mail pour le gestionnaire // dvd.chester@gmail.com // farkas.axel@gmail.com // hello@imaginside.com
         ],
         'internaute' => [
             'template'  => 'internaute.php',
+            'ReplyTo'       => 'contact@ma-vitrine.pro', // Répondre à MAIL
+            'ReplyToName'   => 'Imag\'Inside - Ma Vitrine', // Répondre à NOM
             // 'to'        => 'dvd.chester@gmail.com' // Mail pour l'internaute
         ],
     ],
 
 ];
+
