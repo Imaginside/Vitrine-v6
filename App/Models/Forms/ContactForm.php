@@ -51,7 +51,7 @@ class ContactForm extends Form {
                         'required' => true,
                     ],
                     'phone' => [
-                        'type' => 'phone',
+                        'type' => 'tel',
                         'name' => 'widget-contact-form-phone',
                         'title' => 'Téléphone',
                         'placeholder' => 'Entrez votre numéro de téléphone',

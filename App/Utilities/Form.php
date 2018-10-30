@@ -183,6 +183,7 @@ class Form {
                 {
                     case 'text':
                     case 'email':
+                    case 'tel':
                     case 'textarea':
                         $attributes['value'] = $submitted[$attributes['name']];
                         break;

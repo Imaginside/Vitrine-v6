@@ -148,6 +148,7 @@ class FormValidator {
         $ch = curl_init('https://www.google.com/recaptcha/api/siteverify');
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_POSTFIELDS, [
             'secret' => Configure::read('Activate.Google-reCaptcha-secretkey'),
             'response' => $value,
@@ -155,8 +156,8 @@ class FormValidator {
 
         $exec = curl_exec($ch);
         $json_exec = json_decode($exec);
-        
-        return !empty($json_exec) && !$json_exec && !empty($json_exec->success) && $json_exec->success === true;
+        // var_dump($exec, $json_exec, !empty($json_exec), $json_exec, !empty($json_exec->success), $json_exec->success === true);
+        return !empty($json_exec) && $json_exec && !empty($json_exec->success) && $json_exec->success === true;
     }
 
 }

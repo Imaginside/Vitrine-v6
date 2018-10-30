@@ -82,7 +82,7 @@
                                 <?= $data['widget-contact-form-subject'] ?>
                             </h3>
                             <p style="margin:4px 0;padding:0;">
-                                <?= $data['widget-contact-form-message'] ?>
+                                <?= nl2br($data['widget-contact-form-message']) ?>
                             </p>
                         </td>
                     </tr>
