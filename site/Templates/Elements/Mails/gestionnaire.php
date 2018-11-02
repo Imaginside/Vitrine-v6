@@ -136,7 +136,7 @@
                         <td align="center">
                         <a href="<?= $_URLSite ?>" target="_blank" style="display:inline-block;"><img src="<?= $_URLSite.$_LogoSite ?>" alt="Logo <?= $_NomSite ?>"></a>
                         </td>
-                        <td align="center" style="font-size:12px;padding-top:10px">
+                        <td align="center" style="font-size:11px;padding-top:10px">
                             <p style="margin:0;padding:0;">Ce mail est envoyé automatiquement depuis le site <a href="<?= $_URLSite ?>" style="font-weight:bold;color:#3a3a3a;" target="_blank"><?= $_NomSite ?></a>.</p>
                             <p style="margin:0;padding:0;">Un mail et un site vitrine réalisé par <a href="https://www.imaginside.com" style="font-weight:bold;color:#3a3a3a;" target="_blank">Imag’Inside</a>.</p>
                         </td>

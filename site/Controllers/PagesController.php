@@ -67,6 +67,7 @@ class PagesController extends Controllers
         if($form->isSubmitted())
         {
             $errors = $form->validate();
+            // var_dump($errors);
             
             if(!empty($errors))
             {
@@ -76,6 +77,7 @@ class PagesController extends Controllers
             else
             {
                 $data = $form->getData();
+                // var_dump($data);
 
                 $mailer = new Mailer('gestionnaire');
                 $mailer->Subject = Configure::read('Society.Name') . ' - Ma Vitrine - Nouveau message';
@@ -85,8 +87,8 @@ class PagesController extends Controllers
                 /**
                  * Mail à l'internaute
                  */
-                $mailerInternaute = new Mailer();
-                $mailerInternaute->Subject = Configure::read('Society.Name') . ' - Ma Vitrine - Nouveau message';
+                $mailerInternaute = new Mailer('internaute');
+                $mailerInternaute->Subject = Configure::read('Society.Name') . ' - Ma Vitrine - Votre message';
                 $mailerInternaute->addAddress($data['widget-contact-form-email'], ucfirst($data['widget-contact-form-name'])); // Envoyé à
 
                 try {
@@ -116,10 +118,16 @@ class PagesController extends Controllers
                         '_DayEnvoi' => strftime('%A %d %B'),
                         '_HourEnvoi' => strftime('%Hh%M'),
                         '_NomSite' => Configure::read('Society.Name'),
-                        '_URLSite' => Configure::read('Society.WebsiteURL'),
                         '_WebSite' => Configure::read('Society.Website'),
+                        '_URLSite' => Configure::read('Society.WebsiteURL'),
+                        '_AddressSite' => Configure::read('Society.Adress'),
+                        '_ZipcodeSite' => Configure::read('Society.Zipcode'),
+                        '_TownSite' => Configure::read('Society.Town'),
+                        '_TelSite' => Configure::read('Society.Phone1'),
+                        '_TelLinkSite' => Configure::read('Society.Phone1Link'),
+                        '_MailSite' => Configure::read('Society.Mail'),
                         '_LogoSite' => Configure::read('logo-default'),
-                    ], $debug = true); // $debug = true permet de renvoyer le contenu HTML plutôt que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.
+                    ], $debug = false); // $debug = true permet de renvoyer le contenu HTML plutôt que d'envoyer le mail. En local l'envoi de mails ne fonctionne pas.
 
                     // print $htmlInternaut;
 

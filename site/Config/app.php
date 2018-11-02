@@ -117,7 +117,6 @@ return [
         // from perso@gmail.com
         // replyTo perso@gmail.com
 
-
         'default' => [
             'Sender'        => 'no-reply@ma-vitrine.pro', // Envoyé depuis MAIL
             'SenderName'    => 'Imag\'Inside - Ma Vitrine',  // Envoyé de NOM   
@@ -127,10 +126,10 @@ return [
             'From'      => 'contact@ma-vitrine.pro',
             'FromName'  => 'Imag\'Inside - Ma Vitrine',
             'template'  => 'gestionnaire.php',
-            'to'        => 'dvd.chester@gmail.com' // Mail pour le gestionnaire // dvd.chester@gmail.com // farkas.axel@gmail.com // hello@imaginside.com
+            'to'        => 'contact@ma-vitrine.pro' // Mail pour le gestionnaire // dvd.chester@gmail.com // farkas.axel@gmail.com // hello@imaginside.com
         ],
         'internaute' => [
-            'template'  => 'internaute.php',
+            'template'      => 'internaute.php',
             'ReplyTo'       => 'contact@ma-vitrine.pro', // Répondre à MAIL
             'ReplyToName'   => 'Imag\'Inside - Ma Vitrine', // Répondre à NOM
             // 'to'        => 'dvd.chester@gmail.com' // Mail pour l'internaute
