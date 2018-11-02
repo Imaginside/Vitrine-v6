@@ -1,195 +1,225 @@
 <?php
 use II\Utilities\Configure;
+use II\Utilities\Session;
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="La page que vous recherchez a peut-être été supprimée, son nom a été modifié ou est temporairement indisponible.">
-    <title><?php echo Configure::read('Society.Name'); ?> | Erreur 404</title>
-
-    
-    <meta name="author" content="Imag'Inside" />
-    <meta name="Publisher" content="Imag'Inside" />
-    <meta name="Copyright" content="Imag'Inside" />
-    <meta name="Identifier-URL" content="www.ma-vitrine.fr" />
-    <meta name="Reply-to" content="hello@imaginside.com" />
-
-    <meta property="og:title" content="<?php echo Configure::read('Society.Name'); ?> | Accueil" />
-    <meta property="og:description" content="La page que vous recherchez a peut-être été supprimée, son nom a été modifié ou est temporairement indisponible." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.ma-vitrine.fr" />
-    <meta property="og:image" content="img/image-rs2.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
-    <!-- Stylesheets & Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
-    <link href="/site/Themes/theme1/css/plugins.css" rel="stylesheet">
-    <link href="/site/Themes/theme1/css/style.css" rel="stylesheet">
-    <link href="/site/Themes/theme1/css/responsive.css" rel="stylesheet">
-    <link href="/site/Themes/theme1/css/custom.css" rel="stylesheet">
-</head>
-
-<body>
-
-    <!-- Wrapper -->
-    <div id="wrapper">
-
+    <head>
         <?php
-        echo $this->element('topbar.php');
-        echo $this->element('header.php');
+        if(Configure::read('Activate.Google-TagManager') !== '') {
+        ?>
+        <script type="text/javascript" src="/site/Medias/js/tag_google_analytics.js"></script>
+
+        <?php /* -- Google Tag Manager -- */ ?>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','<?= Configure::read('Activate.Google-TagManager') ?>');</script>
+        <?php /* -- End Google Tag Manager -- */ ?>
+        <?php
+        }
         ?>
 
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="<?= $DescPage ?>">
+        <title><?= Configure::read('Society.Name') . ' | ' . $NamePage ?></title>
 
-        <section class="m-t-80 p-b-150">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="page-error-404">404</div>
+        <meta name="author" content="<?= Configure::read('Society.Name'); ?>" />
+        <meta name="Publisher" content="Imag'Inside" />
+        <meta name="Copyright" content="Imag'Inside - Ma Vitrine" />
+        <meta name="Identifier-URL" content="<?= Configure::read('Society.Website'); ?>" />
+        <meta name="Reply-to" content="<?= Configure::read('Society.Mail'); ?>" />
+        <meta name="robots" content="<?= $MetaRobot ?>">
+
+        <meta property="og:title" content="<?= Configure::read('Society.Name') . ' | ' . $NamePage ?>" />
+        <meta property="og:description" content="<?= $DescPage ?>" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="<?= Configure::read('Society.WebsiteURL'); ?>" />
+        <meta property="og:image" content="img/image-rs2.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <?php /* -- Stylesheets & Fonts -- */ ?>
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/plugins.css" rel="stylesheet">
+        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/style.css" rel="stylesheet">
+        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/responsive.css" rel="stylesheet">
+        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/custom.css" rel="stylesheet">
+
+
+        <?php /* -- Favicon : https://www.favicon-generator.org/ -- */ ?>
+        <?php
+        if(Configure::read('Activate.Favicons') === true) {
+        echo '
+            <link rel="apple-touch-icon" sizes="57x57" href="' . BASE_URL . IMAGES . 'favicon/apple-icon-57x57.png">
+            <link rel="apple-touch-icon" sizes="60x60" href="' . BASE_URL . IMAGES . 'favicon/apple-icon-60x60.png">
+            <link rel="apple-touch-icon" sizes="72x72" href="' . BASE_URL . IMAGES . 'favicon/apple-icon-72x72.png">
+            <link rel="apple-touch-icon" sizes="76x76" href="' . BASE_URL . IMAGES . 'favicon/apple-icon-76x76.png">
+            <link rel="apple-touch-icon" sizes="114x114" href="' . BASE_URL . IMAGES . 'favicon/apple-icon-114x114.png">
+            <link rel="apple-touch-icon" sizes="120x120" href="' . BASE_URL . IMAGES . 'favicon/apple-icon-120x120.png">
+            <link rel="apple-touch-icon" sizes="144x144" href="' . BASE_URL . IMAGES . 'favicon/apple-icon-144x144.png">
+            <link rel="apple-touch-icon" sizes="152x152" href="' . BASE_URL . IMAGES . 'favicon/apple-icon-152x152.png">
+            <link rel="apple-touch-icon" sizes="180x180" href="' . BASE_URL . IMAGES . 'favicon/apple-icon-180x180.png">
+            <link rel="icon" type="image/png" sizes="192x192"  href="' . BASE_URL . IMAGES . 'favicon/android-icon-192x192.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="' . BASE_URL . IMAGES . 'favicon/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="96x96" href="' . BASE_URL . IMAGES . 'favicon/favicon-96x96.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="' . BASE_URL . IMAGES . 'favicon/favicon-16x16.png">
+            <link rel="manifest" href="' . BASE_URL . IMAGES . 'favicon/manifest.json">
+            <meta name="msapplication-TileColor" content="#ffffff">
+            <meta name="msapplication-TileImage" content="' . BASE_URL . IMAGES . 'favicon/ms-icon-144x144.png">
+            <meta name="theme-color" content="#ffffff">';
+        }
+        ?>
+        
+        <?php /* -- Google reCAPTCHA : https://www.google.com/recaptcha/ -- */ ?>
+        <?php
+        if(Configure::read('Activate.Google-reCaptcha-sitekey') !== '' && Configure::read('Activate.Google-reCaptcha-secretkey') !== '')
+            echo '
+            <script src="//www.google.com/recaptcha/api.js"></script>';
+        ?>
+    </head>
+
+    <body class="<?php
+        if(isset($ClassesBody) && $ClassesBody != NULL) echo $ClassesBody;
+        if(Configure::read('PageLoader') === false) echo ' no-page-loader ';?>">
+
+        <?php
+        /* -- Google Tag Manager (noscript) -- */
+        if(Configure::read('Activate.Google-TagManager') !== '') {
+            echo '
+            <noscript><iframe src="//www.googletagmanager.com/ns.html?id=' . Configure::read('Activate.Google-TagManager') . '"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
+        }
+        /* -- End Google Tag Manager (noscript) -- */
+        ?>
+        
+        <?php /* -- Wrapper -- */ ?>
+        <div id="wrapper">
+            
+            <?php
+            // if(isset($formSuccess) && $formSuccess === false) {
+            //     echo '<script>alert("NOPE");</script>';
+            // }
+            ?>
+
+            <?php
+            echo $this->element('topbar.php', ['classesTopbar' => $ClassesTopBar]);
+            echo $this->element('header.php', ['classesHeader' => $ClassesHeader]);
+
+            if(isset($page_title))
+                print $this->element('Page-title/page-title.php', $page_title);
+
+            // Session::addError('<strong>Attention !</strong> Exemple de message d\'erreur. (base.php ligne ' . __LINE__ . ')');
+            // Session::addError('<strong>Attention !</strong> Exemple de message d\'erreur. (base.php ligne ' . __LINE__ . ')');
+            // Session::addError('<strong>Attention !</strong> Exemple de message d\'erreur. (base.php ligne ' . __LINE__ . ')');
+            // Session::addSuccessMessage('<strong>Attention !</strong> Exemple de message de succès. (base.php ligne ' . __LINE__ . ')');
+            // Session::addWarningMessage('<strong>Attention !</strong> Exemple de message de succès. (base.php ligne ' . __LINE__ . ')');
+            // Session::addInfoMessage('<strong>Attention !</strong> Exemple d\'information. (base.php ligne ' . __LINE__ . ')');
+
+            // affichage des erreurs
+            // utiliser \II\Utilities\Session::addError('Error message here') pour ajouter des erreurs
+            $errors = Session::getErrors();
+            if(!empty($errors))
+            {
+                ?>
+                <div class="container m-t-20 m-b-20">
+                    <div role="alert" class="alert alert-danger alert-dismissible animated visible" data-animation="pulse" data-animation-delay="1500">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span> </button>
+                        <?php
+                        foreach($errors as $error) {
+                            ?> <div><i class="fa fa-warning"></i> <?= $error ?></div> <?php
+                        }
+                        ?>
                     </div>
-                    <div class="col-md-6">
-                        <div class="text-left">
-                            <h1 class="text-medium">Ooops, cette page n'a pas pu être trouvée !</h1>
-                            <p class="lead">La page que vous recherchez a peut-être été supprimée, son nom a été modifié ou est temporairement indisponible.</p>
-                            <div class="seperator m-t-20 m-b-20"></div>
+                </div>
+                <?php
+            }
 
-                            <div class="search-form">
-                            <a href="/" class="btn btn-icon-holder btn-shadow btn-light-hover btn-light-hover">Retour à l'accueil<i class="fa fa-home"></i></a>
+            // affichage des warnings
+            // utiliser \II\Utilities\Session::addWarningMessage('Warning message here') pour ajouter des warnings
+            $warnings = Session::getWarningMessages();
+            if(!empty($warnings))
+            {
+                ?>
+                <div class="container m-t-20 m-b-20">
+                    <div role="alert" class="alert alert-warning alert-dismissible animated visible" data-animation="pulse" data-animation-delay="1500">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span> </button>
+                        <?php
+                        foreach($warnings as $warning) {
+                            ?> <div><i class="fa fa-warning"></i> <?= $warning ?></div> <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+                <?php
+            }
+
+
+            // affichage des messages de succes
+            // utiliser \II\Utilities\Session::addSuccessMessage('Success message here') pour en ajouter
+            $successMessages = Session::getSuccessMessages();
+            if(!empty($successMessages))
+            {
+                ?>
+                <div class="container m-t-20 m-b-20">
+                    <div role="alert" class="alert alert-success">
+                    <?php
+                    foreach($successMessages as $successMessage) {
+                        ?> <div><i class="fa fa-check-circle"></i> <?= $successMessage ?></div> <?php
+                    }
+                    ?>
+                    </div>
+                </div>
+                <?php
+            }
+
+            // affichage des messages d'informations
+            // utiliser \II\Utilities\Session::addInfoMessage('Information message here') pour en ajouter
+            $infoMessages = Session::getInfoMessages();
+            if(!empty($infoMessages))
+            {
+                ?>
+                <div class="container m-t-20 m-b-20">
+                    <div role="alert" class="alert alert-info">
+                    <?php
+                    foreach($infoMessages as $infoMessage) {
+                        ?> <div><i class="fa fa-info-circle"></i> <?= $infoMessage ?></div> <?php
+                    }
+                    ?>
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
+
+
+            <section class="m-t-80 p-b-150">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="page-error-404">404</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-left">
+                                <h1 class="text-medium">Ooops, cette page n'a pas pu être trouvée !</h1>
+                                <p class="lead">La page que vous recherchez a peut-être été supprimée, son nom a été modifié ou est temporairement indisponible.</p>
+                                <div class="seperator m-t-20 m-b-20"></div>
+
+                                <div class="search-form">
+                                <a href="/" class="btn btn-icon-holder btn-shadow btn-light-hover btn-light-hover">Retour à l'accueil<i class="fa fa-home"></i></a>
+                                </div>
+
                             </div>
-
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
         
-
-
-        <?php
-        echo $this->element('footer.php');
-        ?>
-
-    
-    </div>
-    <!-- end: Wrapper -->
-    <!-- Go to top button -->
-    <a id="goToTop"><i class="fa fa-angle-up top-icon"></i><i class="fa fa-angle-up"></i></a>
-
-    <!--Plugins-->
-    <script src="/site/Themes/theme1/js/jquery.js"></script>
-    <script src="/site/Themes/theme1/js/plugins.js"></script>
-
-    <!--Template functions-->
-    <script src="/site/Themes/theme1/js/functions.js"></script>
-
-    <!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
-    <link rel="stylesheet" type="text/css" href="/site/Themes/theme1/js/plugins/revolution/css/settings.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/site/Themes/theme1/js/plugins/revolution/css/layers.css">
-    <link rel="stylesheet" type="text/css" href="/site/Themes/theme1/js/plugins/revolution/css/navigation.css">
-
-    <script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
-
-    <script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-    <script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="/site/Themes/theme1/js/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
-
-    <script type="text/javascript">
-        var tpj = jQuery;
-
-        var revapi30;
-        tpj(document).ready(function() {
-            if (tpj("#rev_slider_30_1").revolution == undefined) {
-                revslider_showDoubleJqueryError("#rev_slider_30_1");
-            } else {
-                revapi30 = tpj("#rev_slider_30_1").show().revolution({
-                    sliderType: "standard",
-                    jsFileLocation: "/site/Themes/theme1/js/plugins/revolution/js/",
-                    sliderLayout: "fullscreen",
-                    dottedOverlay: "none",
-                    delay: 9000,
-                    navigation: {
-                        keyboardNavigation: "off",
-                        keyboard_direction: "horizontal",
-                        mouseScrollNavigation: "off",
-                        onHoverStop: "on",
-                        touch: {
-                            touchenabled: "on",
-                            swipe_threshold: 75,
-                            swipe_min_touches: 50,
-                            swipe_direction: "horizontal",
-                            drag_block_vertical: false
-                        },
-                        arrows: {
-                            style: "hermes",
-                            enable: true,
-                            hide_onmobile: true,
-                            hide_under: 600,
-                            hide_onleave: true,
-                            hide_delay: 200,
-                            hide_delay_mobile: 1200,
-                            tmp: '<div class="tp-arr-allwrapper">	<div class="tp-arr-imgholder"></div>	<div class="tp-arr-titleholder">{{title}}</div>	</div>',
-                            left: {
-                                h_align: "left",
-                                v_align: "center",
-                                h_offset: 0,
-                                v_offset: 0
-                            },
-                            right: {
-                                h_align: "right",
-                                v_align: "center",
-                                h_offset: 0,
-                                v_offset: 0
-                            }
-                        }
-                    },
-                    responsiveLevels: [1240, 1024, 778, 480],
-                    visibilityLevels: [1240, 1024, 778, 480],
-                    gridwidth: [1240, 1024, 778, 480],
-                    gridheight: [868, 768, 960, 720],
-                    lazyType: "smart",
-                    shadow: 0,
-                    spinner: "off",
-                    stopLoop: "off",
-                    stopAfterLoops: -1,
-                    stopAtSlide: -1,
-                    shuffle: "off",
-                    autoHeight: "off",
-                    fullScreenAutoWidth: "off",
-                    fullScreenAlignForce: "off",
-                    fullScreenOffsetContainer: "",
-                    fullScreenOffset: "",
-                    disableProgressBar: "on",
-                    hideThumbsOnMobile: "off",
-                    hideSliderAtLimit: 0,
-                    hideCaptionAtLimit: 0,
-                    hideAllCaptionAtLilmit: 0,
-                    debugMode: false,
-                    fallbacks: {
-                        simplifyAll: "off",
-                        nextSlideOnWindowFocus: "off",
-                        disableFocusListener: false,
-                    }
-                });
-            }
-        }); /*ready*/
-
-    </script>
-
-</body>
-
-</html>
-
-
-</body>
-
+            <?php
+            echo $this->element('footer.php');
+            ?>
+    </body>
 </html>
