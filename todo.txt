@@ -5,6 +5,9 @@
 
 -   David : Dans Bubble Best, j'ai un problème avec la vidéo en bg dans le title. Elle n'est pas 100%
 
+-   Axel : La page 404 ne passant pas par le controller, les variables ne sont pas appelées :
+            $this->set('ClassesTopBar' , 'topbar-colored topbar-fullwidth dark visible-md visible-lg');
+            $this->set('ClassesHeader' , 'header-sticky-resposnive header-light-transparent');
 
 
 =========================================
