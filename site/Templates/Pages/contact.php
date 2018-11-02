@@ -1,8 +1,7 @@
 <?php
 use II\Utilities\Configure;
-?>
 
-<?php
+
 $this->set('page_title', [
     'PageTitleClassesSection' => 'dark', 
     // - Style : EMPTY | page-title-classic
@@ -28,7 +27,7 @@ $this->set('page_title', [
 ?>
 
 
-<!-- CONTENT -->
+
 <section>
     <div class="container">
         <div class="row">
@@ -36,27 +35,15 @@ $this->set('page_title', [
                 <h3 class="text-uppercase">Contactez-nous !</h3>
                 <p>Vous souhaitez profiter d'un site de qualité, réalisé par des professionnels proche de vous ? Téléphonez-nous ou envoyez-nous un email, nous reviendrons vers vous dans les meilleurs délais !</p>
                 <div class="m-t-30">
-                    
                     <?php
-                    
-                    /* if(isset($formSuccess) && $formSuccess === true) {
-                        echo '<div role="alert" class="alert alert-success">
-                        <i class="fa fa-check-circle"></i> <strong>Félicitations !</strong> Votre message a été envoyé avec succés.</div>';
-                    }
-                    if(isset($formSuccess) && $formSuccess === false) {
-                        echo '<div role="alert" class="alert alert-warning alert-dismissible animated visible" data-animation="pulse" data-animation-delay="1500">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span> </button>
-                        <i class="fa fa-warning"></i> <strong>Attention !</strong> Un ou plusieurs champs ci-dessous sont mal renseignés.</div>';
-                    } */
                     print $form;
                     ?>
-                    
                 </div>
             </div>
             <div class="col-md-6">
                 <h3 class="text-uppercase">Adresse & Carte</h3>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-offset-1 col-md-6">
                         <address>
                             <?php
                             echo '<strong>' . Configure::read('Society.Name') . ' - Siège</strong><br>';
@@ -73,32 +60,16 @@ $this->set('page_title', [
                             ?>
                         </address>
                     </div>
-                    <div class="col-md-6">
-                        <address>
-                            <?php
-                            echo '<strong>' . Configure::read('Society.Name') . ' - Agence</strong><br>';
-                            echo Configure::read('Society.Adress') . '<br>' . Configure::read('Society.Zipcode') . ' ' . Configure::read('Society.Town') . '<br>';
-                            if(Configure::read('Society.Phone1') != '') {
-                                echo '<i class="fa fa-phone"></i> <a href="tel:' . Configure::read('Society.Phone1Link') . '">' . Configure::read('Society.Phone1') . '</a><br>';
-                            }
-                            if(Configure::read('Society.Phone2') != '') {
-                                echo '<i class="fa fa-phone"></i> <a href="tel:' . Configure::read('Society.Phone2Link') . '">' . Configure::read('Society.Phone2') . '</a><br>';
-                            }
-                            if(Configure::read('Society.Mail') != '') {
-                                echo '<i class="fa fa-envelope"></i> <a href="mailto:' . Configure::read('Society.Mail') . '">' . Configure::read('Society.Mail') . '</a>';
-                            }
-                            ?>
-                        </address>
-                    </div>
                 </div>
 
-                <!-- Google map sensor -->
-                <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?v=3.exp"></script>
-                <div class="map m-t-30" data-map-address="52 Rue Cérès, 51100 Reims, FRANCE" data-map-zoom="13" data-map-icon="/site/Themes/theme1/img/markers/marker3.png" data-map-type="ROADMAP"></div>
-                <!-- Google map sensor -->
-
+                <?php /* -- Google Maps API : https://console.cloud.google.com -- */
+                if(Configure::read('Google-Map.Activate') === true) {
+                    echo '
+                    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=' . Configure::read('Google-Map.Key') . '"></script>
+                    <div class="map m-t-30" data-map-address="' . Configure::read('Google-Map.data-map-address') . '" data-map-zoom="' . Configure::read('Google-Map.data-map-zoom') . '" data-map-icon="' . Configure::read('Google-Map.data-map-icon') . '" data-map-type="ROADMAP"></div>';
+                }
+                ?>
             </div>
         </div>
     </div>
 </section>
-<!-- end: CONTENT -->

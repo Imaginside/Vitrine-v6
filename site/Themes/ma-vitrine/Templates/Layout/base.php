@@ -43,7 +43,7 @@ use II\Utilities\Session;
         <meta property="og:image:height" content="630" />
 
         <?php /* -- Stylesheets & Fonts -- */ ?>
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
         <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/plugins.css" rel="stylesheet">
         <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/style.css" rel="stylesheet">
         <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/responsive.css" rel="stylesheet">
@@ -76,12 +76,10 @@ use II\Utilities\Session;
         
         <?php /* -- Google reCAPTCHA : https://www.google.com/recaptcha/ -- */ ?>
         <?php
-        if(Configure::read('Activate.Google-reCaptcha-sitekey') !== '' && Configure::read('Activate.Google-reCaptcha-secretkey') !== '') {
+        if(Configure::read('Activate.Google-reCaptcha-sitekey') !== '' && Configure::read('Activate.Google-reCaptcha-secretkey') !== '')
             echo '
-            <script src="https://www.google.com/recaptcha/api.js"></script>';
-        }
+            <script src="//www.google.com/recaptcha/api.js"></script>';
         ?>
-
     </head>
 
     <body class="<?php
@@ -92,7 +90,7 @@ use II\Utilities\Session;
         /* -- Google Tag Manager (noscript) -- */
         if(Configure::read('Activate.Google-TagManager') !== '') {
             echo '
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=' . Configure::read('Activate.Google-TagManager') . '"
+            <noscript><iframe src="//www.googletagmanager.com/ns.html?id=' . Configure::read('Activate.Google-TagManager') . '"
             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
         }
         /* -- End Google Tag Manager (noscript) -- */

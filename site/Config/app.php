@@ -1,8 +1,14 @@
 <?php
 return [
-    'theme' => 'ma-vitrine', // default
+    /**
+     * Thème graphique du site
+     */
+    'theme' => 'ma-vitrine', // Dossier dans : site/Themes/_DIR_
 
-    // Gestion de l'affichage // 1 = activé | 0 = désactivé
+
+    /**
+     * Gestion de l'affichage
+     */
     'Activate' => [
         'Maintenance' => true, // "true" => mode maintenance activé
         'Google-TagManager' => 'GTM-KJ7MDZ3', // GTM-XXXXXXX
@@ -18,16 +24,42 @@ return [
         'Breadcrumb' => true, // Fil d'ariane
     ],
 
+
+    /**
+     * Carte Google Maps
+     * Google Cloud Plateform -> A activer :
+     *      - Maps Javascript API
+     *      - Geocoding API
+     */
+    'Google-Map' => [
+        'Activate' => true,
+        'Key' => 'AIzaSyDtzu36FA7o17RfSYCTWdzgBtp0yaSXNN8', // Si vide, non activé
+        'data-map-address' => '52 Rue Cérès, 51100 Reims, FRANCE', // Adresse
+        'data-map-icon' => '/site/Themes/ma-vitrine/img/markers/marker3.png', // lien icon
+        'data-map-zoom' => '13', // Zoom
+    ],
+
+
+    /**
+     * Logos
+     */
     'logo-default' => BASE_URL . IMAGES . 'logo-imaginside.png',
     'logo-dark'     => BASE_URL . IMAGES . 'logo-imaginside-dark.png',
     'logo-light'    => BASE_URL . IMAGES . 'logo-imaginside.png',
     'logo-mail'     => BASE_URL . IMAGES . 'logo-imaginside.png',
 
+
+    /**
+     * Divers
+     */
     'Site' => [
-        'date_mise_en_ligne' => '2018',
+        'date_mise_en_ligne' => '2018', // Année de mise en ligne du site -> Affiché dans le footer
     ],
 
-    
+
+    /**
+     * Informations sur la société
+     */
     'Society' => [
         'Name'              => 'Imag\'Inside',
         'Baseline'          => 'Location de site vitrine à 39€ /mois',
@@ -42,14 +74,16 @@ return [
         'Mail'              => 'contact@ma-vitrine.pro', // contact@monsite.fr
         'Website'           => 'www.ma-vitrine.pro', // www.monsite.fr
             'WebsiteURL'    => 'https://www.ma-vitrine.pro/', // https://www.monsite.fr/
-
         'Gerant' => [
             'Nom'           => 'ADAM',
             'Prenom'        => 'David',
         ],
     ],
 
-    // La partie juridique est reprise dans les mentions légales et Politique de protection des données
+
+    /**
+     * La partie juridique est reprise dans les mentions légales et Politique de protection des données
+     */
     'Juridique' => [
         'Name'              => 'Imag\'Inside',
         'Adress'            => '52 Rue Cérès',
@@ -67,14 +101,20 @@ return [
         ],
     ],
 
-    // Réglementation Générale sur le Protection des Données
-    // General Data Protection Regulation
+
+    /**
+     * Réglementation Générale sur le Protection des Données
+     * General Data Protection Regulation
+     */
     'GDPR' => [
         'DPO'               => 'M. David ADAM',
         'Mail'              => 'hello@imaginside.com', // Mail du DPO
     ],
 
-    // Liens des réseaux sociaux
+    
+    /**
+     * Liens des réseaux sociaux
+     */
     'SocialNetwork' => [ // Ici les URLs
         'Facebook'  => '#',
         'Twitter'   => '#',
@@ -90,7 +130,9 @@ return [
     ],
 
 
-    // Les développeurs, repris dans les mentions légales.
+    /**
+     * Les développeurs, repris dans les mentions légales.
+     */
     'Developer' => [
         'Name'              => 'Imag\'Inside',
         'Baseline'          => 'Création de sites internet à Reims',
@@ -104,7 +146,10 @@ return [
         'Hebergement'       => 'OVH SAS<br>140 Quai du Sartel<br>59100 Roubaix - France<br>RCS Roubaix - Tourcoing 424 761 419',
     ],
 
-    // Paramètres de l'envoi des mails
+
+    /**
+     * Paramètres de l'envoi des mails
+     */
     'Mails' => [
         
         // -> gestionnaire
