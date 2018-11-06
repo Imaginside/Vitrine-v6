@@ -80,7 +80,7 @@ class PagesController extends Controllers
                 // var_dump($data);
 
                 $mailer = new Mailer('gestionnaire');
-                $mailer->Subject = Configure::read('Society.Name') . ' - Ma Vitrine - Nouveau message';
+                $mailer->Subject = Configure::read('Society.Name') . ' - Ma Vitrine - Nouveau message de ' . ucfirst($data['widget-contact-form-name']);
                 // $mailer->addAddress('dvd.chester@gmail.com'); // Envoyé à
                 $mailer->addReplyTo($data['widget-contact-form-email'], ucfirst($data['widget-contact-form-name']));
 
@@ -173,5 +173,17 @@ class PagesController extends Controllers
         $this->set('NamePage', 'Politique de protection des données');
         $this->set('DescPage', 'Politique de protection des données');
         $this->set('ClassesBody', 'Politique de protection des données');
+    }
+    public function actualites()
+    {
+        $this->set('NamePage', 'Actualités');
+        $this->set('DescPage', 'Exemple d\'affichage du blog');
+        $this->set('ClassesBody', 'actualites');
+    }
+    public function articleSimple()
+    {
+        $this->set('NamePage', 'Article Simple');
+        $this->set('DescPage', 'Exemple d\'affichage d\'un article simple');
+        $this->set('ClassesBody', 'article-simple');
     }
 }

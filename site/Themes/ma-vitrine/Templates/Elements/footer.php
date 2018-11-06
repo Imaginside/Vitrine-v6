@@ -66,24 +66,24 @@ use II\Utilities\Configure;
 
                                     <div class="post-thumbnail-content">
                                         <a href="#">Suspendisse consectetur fringilla luctus</a>
-                                        <span class="post-date"><i class="fa fa-clock-o"></i> 6m ago</span>
-                                        <span class="post-category"><i class="fa fa-tag"></i> Technology</span>
+                                        <span class="post-date"><i class="fa fa-clock-o"></i> 55 minutes</span>
+                                        <span class="post-category"><i class="fa fa-tag"></i> Technologie</span>
                                     </div>
                                 </div>
                                 <div class="post-thumbnail-entry">
 
                                     <div class="post-thumbnail-content">
                                         <a href="#">Consectetur adipiscing elit</a>
-                                        <span class="post-date"><i class="fa fa-clock-o"></i> 24h ago</span>
-                                        <span class="post-category"><i class="fa fa-tag"></i> Lifestyle</span>
+                                        <span class="post-date"><i class="fa fa-clock-o"></i> 12 heures</span>
+                                        <span class="post-category"><i class="fa fa-tag"></i> Vidéo</span>
                                     </div>
                                 </div>
                                 <div class="post-thumbnail-entry">
 
                                     <div class="post-thumbnail-content">
                                         <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
-                                        <span class="post-date"><i class="fa fa-clock-o"></i> 11h ago</span>
-                                        <span class="post-category"><i class="fa fa-tag"></i> Lifestyle</span>
+                                        <span class="post-date"><i class="fa fa-clock-o"></i> 3 jours</span>
+                                        <span class="post-category"><i class="fa fa-tag"></i> Musique</span>
                                     </div>
                                 </div>
                             </div>
@@ -94,6 +94,7 @@ use II\Utilities\Configure;
                         <!-- Footer widget area 4 -->
                         <div class="widget widget-tweeter" data-username="ardianmusliu" data-limit="2">
                             <h4>Derniers tweets</h4>
+                            <a class="twitter-timeline" data-lang="fr" data-height="300" data-theme="light" href="https://twitter.com/ImagInside?ref_src=twsrc%5Etfw">Tweets by ImagInside</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
                         </div>
                         <!-- end: Footer widget area 4 -->
                     </div>

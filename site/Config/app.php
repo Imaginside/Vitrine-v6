@@ -181,5 +181,20 @@ return [
         ],
     ],
 
+
+    /**
+     * Système de Blog
+     */
+    'Blog' => [
+        'Comments' => true, // Affichage des commentaires sur les actualités. true = activé | false = désactivé
+        'SidebarBlogActiv' => true, // Affichage de la sidebar. true = activé | false = désactivé
+        'SidebarBlogPosition' => 'right', // Position de la sidebar. 'right' | 'left'
+        'SidebarBlogSearch' => true, // Affichage du champ de recherche. true = activé | false = désactivé
+        'SidebarBlogNewsletter' => true, // Affichage du champ newsletter. true = activé | false = désactivé
+        'SidebarBlogCategories' => true, // Affichage des catégories. true = activé | false = désactivé
+        'SidebarBlogTwitter' => true, // Affichage du pavé Twitter. true = activé | false = désactivé
+        'SidebarBlogTwitterURL' => 'https://twitter.com/ImagInside?ref_src=twsrc%5Etfw', // URL du fil d'actualité
+        'SidebarBlogTwitterheight' => '600', // Hauteur du fil d'actualité
+    ],
 ];
 

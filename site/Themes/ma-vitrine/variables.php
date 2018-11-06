@@ -4,7 +4,7 @@ return [
         'Dir' => 'theme1',
         'Name' => 'Thème n°1',
         'Image' => '',
-        'LastMaj' => '2018-05-16',
+        'LastMaj' => '2018-11-05',
         'Version' => '0.1',
     ],
 

@@ -1,5 +1,5 @@
-<?= 
-$this->element('Page-title/page-title.php', [
+<?php
+$this->set('page_title', [
     'PageTitleClassesSection' => 'page-title-center light', 
     // - Style : EMPTY | page-title-classic
     // - Alignement : EMPTY => page-title-left | page-title-center | page-title-right |
