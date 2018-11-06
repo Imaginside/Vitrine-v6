@@ -5,8 +5,8 @@ use II\Utilities\Configure;
  */
 
 // 'NewsTitle' => 'Lighthouse, standard post with a single image',
-// 'NewsPicture' => '1.jpg',
-// 'NewsCategories' => array('Général','Audio'),
+// 'NewsVideo' => 'https://www.youtube.com/embed/dA8Smj5tZOQ', // url Youtube ou Vimeo
+// 'NewsCategories' => array('Vidéo'),
 // 'NewsDatePost' => '5 novembre 2018, 11h18',
 // 'NewsNbComment' => '33',
 // 'NewsContent' => '
@@ -25,10 +25,8 @@ echo '
     <!-- Post single item-->
     <div class="post-item">
         <div class="post-item-wrap">
-            <div class="post-image">
-                <a href="#">
-                    <img alt="" src="/site/Medias/img/actualites/' . $NewsPicture . '">
-                </a>
+            <div class="post-video">
+                <iframe width="560" height="315" src="' . $NewsVideo . '" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="post-item-description">
                 <h2>' . $NewsTitle . '</h2>

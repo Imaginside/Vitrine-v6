@@ -31,10 +31,10 @@ $this->set('page_title', [
         <div class="row">
             <div class="<?php if(Configure::read('Blog.SidebarBlogActiv') === true) echo 'content col-md-9' ?>">
                 <?php
-                // Affichage default
-                echo $this->element('Blog/blog-default-single.php', [
+                // Affichage gallery
+                echo $this->element('Blog/blog-gallery-single.php', [
                     'NewsTitle' => 'Lighthouse, standard post with a single image',
-                    'NewsPicture' => '1.jpg',
+                    'NewsPicture' => array('11.jpg','16.jpg'),
                     'NewsCategories' => array('Général','Audio'),
                     'NewsDatePost' => '5 novembre 2018, 11h18',
                     'NewsNbComment' => '33',

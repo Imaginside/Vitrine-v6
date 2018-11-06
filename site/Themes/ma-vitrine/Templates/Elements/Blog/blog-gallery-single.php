@@ -5,7 +5,7 @@ use II\Utilities\Configure;
  */
 
 // 'NewsTitle' => 'Lighthouse, standard post with a single image',
-// 'NewsPicture' => '1.jpg',
+// 'NewsPicture' => array('11.jpg','16.jpg'),
 // 'NewsCategories' => array('Général','Audio'),
 // 'NewsDatePost' => '5 novembre 2018, 11h18',
 // 'NewsNbComment' => '33',
@@ -25,11 +25,16 @@ echo '
     <!-- Post single item-->
     <div class="post-item">
         <div class="post-item-wrap">
-            <div class="post-image">
-                <a href="#">
-                    <img alt="" src="/site/Medias/img/actualites/' . $NewsPicture . '">
-                </a>
+            <div class="carousel dots-inside arrows-visible" data-items="1" data-lightbox="gallery">';
+                foreach ( $NewsPicture as $NewsPicture ) {
+                    echo '
+                    <a href="/site/Medias/img/actualites/' . $NewsPicture . '" data-lightbox="gallery-item">
+                        <img alt="image" src="/site/Medias/img/actualites/' . $NewsPicture . '">
+                    </a>';
+                }
+                echo '
             </div>
+
             <div class="post-item-description">
                 <h2>' . $NewsTitle . '</h2>
                 <div class="post-meta">

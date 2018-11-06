@@ -5,8 +5,9 @@ use II\Utilities\Configure;
  */
 
 // 'NewsTitle' => 'Lighthouse, standard post with a single image',
-// 'NewsPicture' => '1.jpg',
-// 'NewsCategories' => array('Général','Audio'),
+// 'NewsPicture' => 'audio-bg.jpg',
+// 'NewsAudio' => 'beautiful-optimist.mp3',
+// 'NewsCategories' => array('Vidéo'),
 // 'NewsDatePost' => '5 novembre 2018, 11h18',
 // 'NewsNbComment' => '33',
 // 'NewsContent' => '
@@ -25,10 +26,13 @@ echo '
     <!-- Post single item-->
     <div class="post-item">
         <div class="post-item-wrap">
-            <div class="post-image">
+            <div class="post-audio">
                 <a href="#">
-                    <img alt="" src="/site/Medias/img/actualites/' . $NewsPicture . '">
+                    <img alt="image" src="/site/Medias/img/actualites/' . $NewsPicture . '">
                 </a>
+                <audio class="video-js vjs-default-skin" controls preload="false" data-setup="{}">
+                    <source src="/site/Medias/audio/' . $NewsAudio . '" type="audio/mp3" />
+                </audio>
             </div>
             <div class="post-item-description">
                 <h2>' . $NewsTitle . '</h2>

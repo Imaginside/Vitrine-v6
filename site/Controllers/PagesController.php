@@ -174,6 +174,11 @@ class PagesController extends Controllers
         $this->set('DescPage', 'Politique de protection des données');
         $this->set('ClassesBody', 'Politique de protection des données');
     }
+
+
+    /**
+     * Blog
+     */
     public function actualites()
     {
         $this->set('NamePage', 'Actualités');
@@ -186,4 +191,25 @@ class PagesController extends Controllers
         $this->set('DescPage', 'Exemple d\'affichage d\'un article simple');
         $this->set('ClassesBody', 'article-simple');
     }
+    public function articleGallery()
+    {
+        $this->set('NamePage', 'Article Galerie');
+        $this->set('DescPage', 'Exemple d\'affichage d\'un article galerie');
+        $this->set('ClassesBody', 'article-gallery');
+    }
+    public function articleVideo()
+    {
+        $this->set('NamePage', 'Article Vidéo');
+        $this->set('DescPage', 'Exemple d\'affichage d\'un article video');
+        $this->set('ClassesBody', 'article-video');
+    }
+    public function articleAudio()
+    {
+        $this->set('NamePage', 'Article Audio');
+        $this->set('DescPage', 'Exemple d\'affichage d\'un article audio');
+        $this->set('ClassesBody', 'article-audio');
+    }
+    /**
+     * end: Blog
+     */
 }
