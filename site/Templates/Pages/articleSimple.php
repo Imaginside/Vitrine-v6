@@ -34,7 +34,7 @@ $this->set('page_title', [
                 // Affichage default
                 echo $this->element('Blog/blog-default-single.php', [
                     'NewsTitle' => 'Lighthouse, standard post with a single image',
-                    'NewsPicture' => '1.jpg',
+                    'NewsPicture' => '1.jpg', // Possible sans image, laisser vide
                     'NewsCategories' => array('Général','Audio'),
                     'NewsDatePost' => '5 novembre 2018, 11h18',
                     'NewsNbComment' => '33',
@@ -47,7 +47,7 @@ $this->set('page_title', [
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id dolor dui, dapibus gravida elit. Donec consequat laoreet sagittis. Suspendisse ultricies ultrices viverra. Morbi rhoncus laoreet tincidunt. Mauris interdum convallis metus. Suspendisse vel lacus est, sit amet tincidunt erat. Etiam purus sem, euismod eu vulputate eget, porta quis sapien. Donec tellus est, rhoncus vel scelerisque id, iaculis eu nibh.</p>
                         <p>Donec posuere bibendum metus. Quisque gravida luctus volutpat. Mauris interdum, lectus in dapibus molestie, quam felis sollicitudin mauris, sit amet tempus velit lectus nec lorem. Nullam vel mollis neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel enim dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed tincidunt accumsan massa id viverra. Sed sagittis, nisl sit amet imperdiet convallis, nunc tortor consequat tellus, vel molestie neque nulla non ligula. Proin tincidunt tellus ac porta volutpat. Cras mattis congue lacus id bibendum. Mauris ut sodales libero. Maecenas feugiat sit amet enim in accumsan.</p>
                         <p>Duis vestibulum quis quam vel accumsan. Nunc a vulputate lectus. Vestibulum eleifend nisl sed massa sagittis vestibulum. Vestibulum pretium blandit tellus, sodales volutpat sapien varius vel. Phasellus tristique cursus erat, a placerat tellus laoreet eget. Fusce vitae dui sit amet lacus rutrum convallis. Vivamus sit amet lectus venenatis est rhoncus interdum a vitae velit.</p>',
-                    'NewsComments' => false, // Affiche des commentaires pour l'article. 'true' | 'false'
+                    'NewsComments' => true, // Affiche des commentaires pour l'article. 'true' | 'false'
                 ]);
                 ?>
                 </div>

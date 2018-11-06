@@ -13,9 +13,15 @@ use II\Utilities\Configure;
 // 'NewsNbComment' => '33',
 // 'NewsContent' => 'Audio euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.',
 // 'NewsLink' => 'article-simple',
+// 'NewsAuthor' => 'Prénom NOM',
+// 'NewsAuthorPicture' => 'prenom-nom.jpg',
 
 echo '
-<div class="post-item border ' . implode(' ',$NewsCategoriesFilter) . '">
+<div class="post-item ' . implode(' ',$NewsCategoriesFilter) . ' ';
+if(Configure::read('Blog.BlogBorder') === true) { echo ' border '; }
+if(Configure::read('Blog.BlogShadow') === true) { echo ' shadow '; }
+if(Configure::read('Blog.BlogBackground') === true) { echo ' bg-post-item '; }
+echo '">
     <div class="post-item-wrap">
         <div class="post-audio">
             <a href="/actualite/article/' . $NewsLink . '/">
@@ -30,8 +36,16 @@ echo '
             <span class="post-meta-date"><i class="fa fa-calendar-o"></i>' . $NewsDatePost . '</span>
             <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>' . $NewsNbComment . ' Commentaires</a></span>
             <h2><a href="' . $NewsLink . '">' . $NewsTitle . '</a></h2>
-            <p>' . $NewsContent . '</p>
-            <a href="/actualite/article/' . $NewsLink . '" class="item-link">Lire la suite... <i class="fa fa-arrow-right"></i></a>
+            <p>' . $NewsContent . '</p>';
+            if(Configure::read('Blog.BlogLinkReadMore') === true) {
+            echo '
+            <a href="/actualite/article/' . $NewsLink . '" class="item-link">Lire la suite... <i class="fa fa-arrow-right"></i></a>';
+            }
+            if(Configure::read('Blog.BlogAuthor') === true) {
+            echo '
+            <div class="post-author"><img src="/site/Medias/img/actualites/authors/' . $NewsAuthorPicture . '"><p>Par <span class="text-primary">' . $NewsAuthor . '</span></p></div>';
+            }
+        echo '
         </div>
     </div>
 </div>';

@@ -27,7 +27,7 @@ $this->set('page_title', [
 ?>
 
 <section id="page-content" class="<?php if(Configure::read('Blog.SidebarBlogActiv') === true) echo 'sidebar-' . Configure::read('Blog.SidebarBlogPosition'); ?>">
-    <div class="container">
+    <div class="<?= Configure::read('Blog.BlogWidthContainer') ?>">
         <div class="row">
             <div class="<?php if(Configure::read('Blog.SidebarBlogActiv') === true) echo 'content col-md-9' ?>">
                 <!-- Filter -->
@@ -38,37 +38,51 @@ $this->set('page_title', [
                         <li><a href="#" data-category=".bc-audio">Musique</a></li>
                         <li><a href="#" data-category=".bc-video">Vidéo</a></li>
                         <li><a href="#" data-category=".bc-technologie">Technologie</a></li>
+                        <li><a href="#" data-category=".bc-quote">Citation</a></li>
                     </ul>
                     <div class="grid-active-title">Tous</div>
                 </nav>
                 <!-- end: Filter -->
 
                 <!-- Actualités - Blog -->
-                <div id="blog" class="grid-layout post-3-columns m-b-30" data-item="post-item">
+                <div id="blog" 
+                    class="grid-layout post-<?= Configure::read('Blog.BlogColumn') ?>-columns m-b-30 
+                    <?php if (Configure::read('Blog.BlogImageLeft') === true) echo 'post-thumbnails'; ?>" data-item="post-item">
                     
                     <?php
                     // Affichage default
                     echo $this->element('Blog/blog-default.php', [
                         'NewsTitle' => 'Article simple',
-                        'NewsPicture' => '12.jpg',
+                        'NewsPicture' => '12.jpg', // Possible sans image, laisser vide
                         'NewsCategory' => 'Général',
                         'NewsCategoriesFilter' => array('bc-general','bc-technologie'),
                         'NewsDatePost' => '5 novembre 2018, 11h18',
                         'NewsNbComment' => '33',
                         'NewsContent' => 'Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.',
                         'NewsLink' => 'article-simple',
+                        'NewsAuthor' => 'David ADAM',
+                        'NewsAuthorPicture' => 'david-adam.jpg',
                     ]);
 
+                    // Affichage citation
+                    echo $this->element('Blog/blog-quote.php', [
+                        'NewsCategoriesFilter' => array('bc-general', 'bc-technologie', 'bc-quote'),
+                        'NewsDatePost' => '5 novembre 2018, 11h18',
+                        'NewsContent' => 'Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.',
+                    ]);
+                    
                     // Affichage vidéo
                     echo $this->element('Blog/blog-video.php', [
                         'NewsTitle' => 'Vidéo YouTube',
-                        'NewsVideoYT' => 'https://www.youtube.com/embed/dA8Smj5tZOQ', // url Youtube ou Vimeo
+                        'NewsVideo' => 'https://www.youtube.com/embed/dA8Smj5tZOQ', // url Youtube ou Vimeo
                         'NewsCategory' => 'Vidéo',
                         'NewsCategoriesFilter' => array('bc-video','bc-audio'),
                         'NewsDatePost' => '5 novembre 2018, 11h18',
                         'NewsNbComment' => '33',
                         'NewsContent' => 'Vidéo YouTube euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.',
                         'NewsLink' => 'article-simple',
+                        'NewsAuthor' => 'Axel FARKAS',
+                        'NewsAuthorPicture' => 'axel-farkas.jpg',
                     ]);
 
                     // Affichage slider
@@ -82,6 +96,8 @@ $this->set('page_title', [
                         'NewsNbComment' => '12',
                         'NewsContent' => 'Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet. Pulvinar euismod antesagittis ante posuere ligula pharetra laoreet.',
                         'NewsLink' => 'article-simple',
+                        'NewsAuthor' => 'David ADAM',
+                        'NewsAuthorPicture' => 'david-adam.jpg',
                     ]);
 
                     // Affichage slider
@@ -95,18 +111,29 @@ $this->set('page_title', [
                         'NewsNbComment' => '784',
                         'NewsContent' => 'Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.',
                         'NewsLink' => 'article-simple',
+                        'NewsAuthor' => 'Axel FARKAS',
+                        'NewsAuthorPicture' => 'axel-farkas.jpg',
+                    ]);
+
+                    // Affichage citation
+                    echo $this->element('Blog/blog-quote.php', [
+                        'NewsCategoriesFilter' => array('bc-general', 'bc-technologie', 'bc-quote'),
+                        'NewsDatePost' => '6 novembre 2018, 10h22',
+                        'NewsContent' => 'Choisissez un travail que vous aimez et vous n\'aurez pas à travailler un seul jour de votre vie. Confucius',
                     ]);
                     
                     // Affichage vidéo
                     echo $this->element('Blog/blog-video.php', [
                         'NewsTitle' => 'Vidéo Vimeo',
-                        'NewsVideoYT' => 'https://player.vimeo.com/video/198559065?title=0&byline=0&portrait=0', // url Youtube ou Vimeo
+                        'NewsVideo' => 'https://player.vimeo.com/video/198559065?title=0&byline=0&portrait=0', // url Youtube ou Vimeo
                         'NewsCategory' => 'Vidéo',
                         'NewsCategoriesFilter' => array('bc-video','bc-audio'),
                         'NewsDatePost' => '5 novembre 2018, 11h18',
                         'NewsNbComment' => '33',
                         'NewsContent' => 'Vidéo Vimeo euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.',
                         'NewsLink' => 'article-simple',
+                        'NewsAuthor' => 'David ADAM',
+                        'NewsAuthorPicture' => 'david-adam.jpg',
                     ]);
                     
                     // Affichage Audio HTML5
@@ -120,18 +147,22 @@ $this->set('page_title', [
                         'NewsNbComment' => '33',
                         'NewsContent' => 'Audio euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.',
                         'NewsLink' => 'article-simple',
+                        'NewsAuthor' => 'Axel FARKAS',
+                        'NewsAuthorPicture' => 'axel-farkas.jpg',
                     ]);
 
                     // Affichage default
                     echo $this->element('Blog/blog-default.php', [
-                        'NewsTitle' => 'Article simple',
-                        'NewsPicture' => '12.jpg',
+                        'NewsTitle' => 'Article sans image',
+                        'NewsPicture' => '', // Possible sans image, laisser vide
                         'NewsCategory' => 'Général',
                         'NewsCategoriesFilter' => array('bc-general'),
                         'NewsDatePost' => '5 novembre 2018, 11h18',
                         'NewsNbComment' => '33',
                         'NewsContent' => 'Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.',
                         'NewsLink' => 'article-simple',
+                        'NewsAuthor' => 'David ADAM',
+                        'NewsAuthorPicture' => 'david-adam.jpg',
                     ]);
 
                     // Affichage slider
@@ -145,18 +176,22 @@ $this->set('page_title', [
                         'NewsNbComment' => '12',
                         'NewsContent' => 'Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet. Pulvinar euismod antesagittis ante posuere ligula pharetra laoreet.',
                         'NewsLink' => 'article-simple',
+                        'NewsAuthor' => 'Axel FARKAS',
+                        'NewsAuthorPicture' => 'axel-farkas.jpg',
                     ]);
 
                     // Affichage vidéo
                     echo $this->element('Blog/blog-video.php', [
                         'NewsTitle' => 'Vidéo YouTube',
-                        'NewsVideoYT' => 'https://www.youtube.com/embed/dA8Smj5tZOQ', // url Youtube ou Vimeo
+                        'NewsVideo' => 'https://www.youtube.com/embed/dA8Smj5tZOQ', // url Youtube ou Vimeo
                         'NewsCategory' => 'Vidéo',
                         'NewsCategoriesFilter' => array('bc-video','bc-audio'),
                         'NewsDatePost' => '5 novembre 2018, 11h18',
                         'NewsNbComment' => '33',
                         'NewsContent' => 'Vidéo YouTube euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.',
                         'NewsLink' => 'article-simple',
+                        'NewsAuthor' => 'David ADAM',
+                        'NewsAuthorPicture' => 'david-adam.jpg',
                     ]);
                     ?>
                 

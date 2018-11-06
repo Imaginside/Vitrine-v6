@@ -31,27 +31,50 @@ echo '
             <div class="post-item-description">
                 <h2>' . $NewsTitle . '</h2>
                 <div class="post-meta">
-                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i>' . $NewsDatePost . '</span>
-                    <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>' . $NewsNbComment . ' Commentaires</a></span>
-                    <span class="post-meta-category"><a href=""><i class="fa fa-tag"></i>' . implode(', ',$NewsCategories) . '</a></span>
-                    <div class="post-meta-share">
-                        <a class="btn btn-xs btn-slide btn-facebook" href="#">
+                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i>' . $NewsDatePost . '</span>';
+                    if(Configure::read('Blog.PostComments') === true && $NewsComments === true) {
+                    echo '
+                    <span class="post-meta-comments"><a href="#commentaires"><i class="fa fa-comments-o"></i>' . $NewsNbComment . ' Commentaires</a></span>';
+                    }
+                    echo '
+                    <span class="post-meta-category"><i class="fa fa-tag"></i>' . implode(', ',$NewsCategories) . '</span>';
+                    if(Configure::read('Blog.BlogAuthor') === true) {
+                    echo '
+                    <span class="post-meta-author"><i class="fa fa-user-circle-o"></i><span class="text-primary">David ADAM</span></span>';
+                    }
+                    
+                    if(Configure::read('Blog.PostShare') === true) {
+                    echo '
+                    <div class="post-meta-share">';
+                        if(Configure::read('Blog.PostShareFacebook') === true) {
+                        echo '<a class="btn btn-xs btn-slide btn-facebook" href="#">
                             <i class="fa fa-facebook"></i>
                             <span>Facebook</span>
-                        </a>
-                        <a class="btn btn-xs btn-slide btn-twitter" href="#" data-width="100">
+                        </a>';
+                        }
+                        if(Configure::read('Blog.PostShareTwitter') === true) {
+                        echo '<a class="btn btn-xs btn-slide btn-twitter" href="#" data-width="100">
                             <i class="fa fa-twitter"></i>
                             <span>Twitter</span>
-                        </a>
-                        <a class="btn btn-xs btn-slide btn-instagram" href="#" data-width="118">
+                        </a>';
+                        }
+                        if(Configure::read('Blog.PostShareInstagram') === true) {
+                        echo '<a class="btn btn-xs btn-slide btn-instagram" href="#" data-width="118">
                             <i class="fa fa-instagram"></i>
                             <span>Instagram</span>
-                        </a>
-                        <a class="btn btn-xs btn-slide btn-googleplus" href="mailto:#" data-width="80">
+                        </a>';
+                        }
+                        if(Configure::read('Blog.PostShareMail') === true) {
+                        echo '<a class="btn btn-xs btn-slide btn-googleplus" href="mailto:#" data-width="80">
                             <i class="fa fa-envelope"></i>
                             <span>Mail</span>
-                        </a>
-                    </div>
+                        </a>';
+                        }
+                    echo '
+                    </div>';
+                    }
+
+                echo '
                 </div>
                 ' . $NewsContent . '
             </div>
@@ -61,7 +84,10 @@ echo '
                 <a href="#">Sport</a>
                 <a href="#">Tech</a>
                 <a href="#">Travel</a>
-            </div>
+            </div>';
+
+            if(Configure::read('Blog.PostNavigation') === true) {
+            echo '
             <div class="post-navigation">
                 <a href="blog-single-slider.html" class="post-prev">
                     <div class="post-prev-title"><span>Article précédent</span>Post with a slider and lightbox</div>
@@ -73,20 +99,21 @@ echo '
                     <div class="post-next-title"><span>Article suivant</span>Post with YouTube Video</div>
                 </a>
             </div>';
+            }
 
-            if(Configure::read('Blog.Comments') === true && $NewsComments === true) {
+            if(Configure::read('Blog.PostComments') === true && $NewsComments === true) {
             echo '
             <!-- Comments -->
-            <div class="comments" id="comments">
+            <div class="comments" id="commentaires">
                 <div class="comment_number">
                     Commentaires <span>(2)</span>
                 </div>
                 <div class="comment-list">
                     <!-- Comment -->
                     <div class="comment" id="comment-1">
-                        <div class="image"><img alt="" src="/site/Medias/img/actualites/author.jpg" class="avatar"></div>
+                        <div class="image"><img alt="" src="/site/Medias/img/actualites/authors/david-adam.jpg" class="avatar"></div>
                         <div class="text">
-                            <h5 class="name">John Doe</h5>
+                            <h5 class="name">David ADAM</h5>
                             <span class="comment_date">Posté à 15h32, le 6 novembre</span>
                             <a class="comment-reply-link" href="#">Répondre</a>
                             <div class="text_holder">
@@ -97,9 +124,9 @@ echo '
 
                         <!-- Comment -->
                         <div class="comment" id="comment-1-1">
-                            <div class="image"><img alt="" src="/site/Medias/img/actualites/author2.jpg" class="avatar"></div>
+                            <div class="image"><img alt="" src="/site/Medias/img/actualites/authors/axel-farkas.jpg" class="avatar"></div>
                             <div class="text">
-                                <h5 class="name">John Doe</h5>
+                                <h5 class="name">Axel FARKAS</h5>
                                 <span class="comment_date">Posté à 15h32, le 6 novembre</span>
                                 <a class="comment-reply-link" href="#">Répondre</a>
                                 <div class="text_holder">
@@ -111,9 +138,9 @@ echo '
 
                         <!-- Comment -->
                         <div class="comment" id="comment-1-2">
-                            <div class="image"><img alt="" src="/site/Medias/img/actualites/author3.jpg" class="avatar"></div>
+                            <div class="image"><img alt="" src="/site/Medias/img/actualites/authors/david-adam.jpg" class="avatar"></div>
                             <div class="text">
-                                <h5 class="name">John Doe</h5>
+                                <h5 class="name">David ADAM</h5>
                                 <span class="comment_date">Posté à 15h32, le 6 novembre</span>
                                 <a class="comment-reply-link" href="#">Répondre</a>
                                 <div class="text_holder">
@@ -127,9 +154,9 @@ echo '
 
                     <!-- Comment -->
                     <div class="comment" id="comment-2">
-                        <div class="image"><img alt="" src="/site/Medias/img/actualites/author2.jpg" class="avatar"></div>
+                        <div class="image"><img alt="" src="/site/Medias/img/actualites/authors/axel-farkas.jpg" class="avatar"></div>
                         <div class="text">
-                            <h5 class="name">John Doe</h5>
+                            <h5 class="name">Axel FARKAS</h5>
                             <span class="comment_date">Posté à 15h32, le 6 novembre</span>
                             <a class="comment-reply-link" href="#">Répondre</a>
                             <div class="text_holder">
