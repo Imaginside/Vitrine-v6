@@ -134,3 +134,18 @@ a.text-primary:hover,a.text-primary:focus {
 .copyright-text {
   padding-top:0;
 }
+
+/* BLOG - POST */
+.post-item.bg-post-item .post-item-wrap {
+  background-color:#f7f7f7;
+}
+.single-post .post-item .post-item-description .post-meta-author {
+  color:#777;
+  font-size:13px;
+  line-height:16px;
+  top: -4px;
+  position: relative;
+}
+.post-item .post-item-description .post-meta-author i {
+  margin-right:4px !important;
+}

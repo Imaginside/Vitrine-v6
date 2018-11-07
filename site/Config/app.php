@@ -181,5 +181,41 @@ return [
         ],
     ],
 
+
+    /**
+     * Système de Blog / Articles
+     */
+    'Blog' => [
+        // Paramètres blog
+        'BlogColumn' => '2', // Nombre de colonne du blog : 1 à 6
+        'BlogBorder' => true, // Ajout d'une bordure sur les bloc d'article. true |false
+        'BlogShadow' => true, // Ajout d'une ombre sur les bloc d'article. true |false
+        'BlogBackground' => false, // Ajout background sur les bloc d'article. true |false // Voir custom.css ".bg-post-item"
+        'BlogWidthContainer' => 'container', // 'container' | 'container-fluid',
+        'BlogImageLeft' => false, // Si true, mettre l'image à gauche et forcera l'affichage à une colonne
+        'BlogLinkReadMore' => true, // Affiche du bouton "Lire la suite...". true = activé | false = désactivé
+        'BlogAuthor' => true, // Si true, mettre l'image à gauche et forcera l'affichage à une colonne
+        
+        // Paramètres articles
+        'PostComments' => true, // Affichage des commentaires sur les actualités. true = activé | false = désactivé
+        'PostShare' => true, // Partage réseaux sociaux. true = activé | false = désactivé
+            'PostShareFacebook' => true, // Partage Facerbook. true = activé | false = désactivé
+            'PostShareTwitter' => true, // Partage Twitter. true = activé | false = désactivé
+            'PostShareInstagram' => true, // Partage Instagram. true = activé | false = désactivé
+            'PostShareMail' => true, // Partage Mail. true = activé | false = désactivé
+        'PostNavigation' => true, // Affichage articles "prev / next" sur les actualités. true = activé | false = désactivé
+
+        // Paramètres sidebar du blog
+        'SidebarBlogActiv' => true, // Affichage de la sidebar. true = activé | false = désactivé
+        'SidebarBlogPosition' => 'right', // Position de la sidebar. 'right' | 'left'
+        'SidebarBlogSearch' => true, // Affichage du champ de recherche. true = activé | false = désactivé
+        'SidebarBlogNewsletter' => true, // Affichage du champ newsletter. true = activé | false = désactivé
+        'SidebarBlogCategories' => true, // Affichage des catégories. true = activé | false = désactivé
+        'SidebarBlogRecentPost' => true, // Affichage derniers articles. true = activé | false = désactivé
+        'SidebarBlogRecentPostTab' => false, // Affichage tab articles. true = activé | false = désactivé
+        'SidebarBlogTwitter' => true, // Affichage du pavé Twitter. true = activé | false = désactivé
+        'SidebarBlogTwitterURL' => 'https://twitter.com/ImagInside?ref_src=twsrc%5Etfw', // URL du fil d'actualité
+        'SidebarBlogTwitterheight' => '600', // Hauteur du fil d'actualité
+    ],
 ];
 

@@ -80,7 +80,7 @@ class PagesController extends Controllers
                 // var_dump($data);
 
                 $mailer = new Mailer('gestionnaire');
-                $mailer->Subject = Configure::read('Society.Name') . ' - Ma Vitrine - Nouveau message';
+                $mailer->Subject = Configure::read('Society.Name') . ' - Ma Vitrine - Nouveau message de ' . ucfirst($data['widget-contact-form-name']);
                 // $mailer->addAddress('dvd.chester@gmail.com'); // Envoyé à
                 $mailer->addReplyTo($data['widget-contact-form-email'], ucfirst($data['widget-contact-form-name']));
 
@@ -174,4 +174,42 @@ class PagesController extends Controllers
         $this->set('DescPage', 'Politique de protection des données');
         $this->set('ClassesBody', 'Politique de protection des données');
     }
+
+
+    /**
+     * Blog
+     */
+    public function actualites()
+    {
+        $this->set('NamePage', 'Actualités');
+        $this->set('DescPage', 'Exemple d\'affichage du blog');
+        $this->set('ClassesBody', 'actualites');
+    }
+    public function articleSimple()
+    {
+        $this->set('NamePage', 'Article Simple');
+        $this->set('DescPage', 'Exemple d\'affichage d\'un article simple');
+        $this->set('ClassesBody', 'article-simple');
+    }
+    public function articleGallery()
+    {
+        $this->set('NamePage', 'Article Galerie');
+        $this->set('DescPage', 'Exemple d\'affichage d\'un article galerie');
+        $this->set('ClassesBody', 'article-gallery');
+    }
+    public function articleVideo()
+    {
+        $this->set('NamePage', 'Article Vidéo');
+        $this->set('DescPage', 'Exemple d\'affichage d\'un article video');
+        $this->set('ClassesBody', 'article-video');
+    }
+    public function articleAudio()
+    {
+        $this->set('NamePage', 'Article Audio');
+        $this->set('DescPage', 'Exemple d\'affichage d\'un article audio');
+        $this->set('ClassesBody', 'article-audio');
+    }
+    /**
+     * end: Blog
+     */
 }
