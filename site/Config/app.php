@@ -183,7 +183,7 @@ return [
 
 
     /**
-     * Système de Blog / Articles
+     * Système Blog / Articles
      */
     'Blog' => [
         // Paramètres blog
@@ -192,6 +192,7 @@ return [
         'BlogShadow' => true, // Ajout d'une ombre sur les bloc d'article. true |false
         'BlogBackground' => false, // Ajout background sur les bloc d'article. true |false // Voir custom.css ".bg-post-item"
         'BlogWidthContainer' => 'container', // 'container' | 'container-fluid',
+        'BlogFilter' => true, // 'container' | 'container-fluid',
         'BlogImageLeft' => false, // Si true, mettre l'image à gauche et forcera l'affichage à une colonne
         'BlogLinkReadMore' => true, // Affiche du bouton "Lire la suite...". true = activé | false = désactivé
         'BlogAuthor' => true, // Si true, mettre l'image à gauche et forcera l'affichage à une colonne
@@ -216,6 +217,23 @@ return [
         'SidebarBlogTwitter' => true, // Affichage du pavé Twitter. true = activé | false = désactivé
         'SidebarBlogTwitterURL' => 'https://twitter.com/ImagInside?ref_src=twsrc%5Etfw', // URL du fil d'actualité
         'SidebarBlogTwitterheight' => '600', // Hauteur du fil d'actualité
+    ],
+
+
+    /**
+     * Système Portfolio
+     */
+    'Portfolio' => [
+        // Paramètres portfolio
+        'PortfolioColumn' => '3', // Nombre de colonne du blog : 1 à 6
+        'PortfolioWidthContainer' => 'container', // 'container' | 'container-fluid',
+        'PortfolioFilter' => true, // 'container' | 'container-fluid',
+
+
+
+        // Paramètres sidebar du blog
+        'SidebarPortfolioActiv' => false, // Affichage de la sidebar. true = activé | false = désactivé
+        'SidebarPortfolioPosition' => 'right', // Position de la sidebar. 'right' | 'left'
     ],
 ];
 

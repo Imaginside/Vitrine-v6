@@ -212,4 +212,15 @@ class PagesController extends Controllers
     /**
      * end: Blog
      */
+
+
+    /**
+     * Portfolio
+     */
+    public function portfolio()
+    {
+        $this->set('NamePage', 'Portfolio');
+        $this->set('DescPage', 'Exemple d\'affichage du portfolio');
+        $this->set('ClassesBody', 'portfolio');
+    }
 }

@@ -30,7 +30,12 @@ $this->set('page_title', [
     <div class="<?= Configure::read('Blog.BlogWidthContainer') ?>">
         <div class="row">
             <div class="<?php if(Configure::read('Blog.SidebarBlogActiv') === true) echo 'content col-md-9' ?>">
-                <!-- Filter -->
+                
+            
+                <?php
+                // Filter blog
+                if(Configure::read('Blog.BlogFilter') === true) {
+                echo '
                 <nav class="grid-filter gf-outline" data-layout="#blog">
                     <ul>
                         <li class="active"><a href="#" data-category="*">Tous</a></li>
@@ -41,8 +46,9 @@ $this->set('page_title', [
                         <li><a href="#" data-category=".bc-quote">Citation</a></li>
                     </ul>
                     <div class="grid-active-title">Tous</div>
-                </nav>
-                <!-- end: Filter -->
+                </nav>';
+                }
+                ?>
 
                 <!-- Actualités - Blog -->
                 <div id="blog" 

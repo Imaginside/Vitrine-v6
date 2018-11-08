@@ -25,7 +25,7 @@
 
                         </li>
                         <li>
-                            <a href="/portfolio/"><i class="fa fa-newspaper-o"></i>Réalisations</a>
+                            <a href="/portfolio/"><i class="fa fa-book"></i>Réalisations</a>
                         </li>
                     </ul>
                 </li>
