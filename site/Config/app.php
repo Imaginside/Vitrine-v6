@@ -193,6 +193,14 @@ return [
         'BlogBackground' => false, // Ajout background sur les bloc d'article. true |false // Voir custom.css ".bg-post-item"
         'BlogWidthContainer' => 'container', // 'container' | 'container-fluid',
         'BlogFilter' => true, // 'container' | 'container-fluid',
+            'BlogFilterCat' => [ // 'NomCategorie' => 'DataCat' 
+                'Tous' => '*', // '*' sera activé par défaut
+                'Général' => '.bc-general',
+                'Musique' => '.bc-audio',
+                'Vidéo' => '.bc-video',
+                'Technologie' => '.bc-technologie',
+                'Citation' => '.bc-quote',
+            ],
         'BlogImageLeft' => false, // Si true, mettre l'image à gauche et forcera l'affichage à une colonne
         'BlogLinkReadMore' => true, // Affiche du bouton "Lire la suite...". true = activé | false = désactivé
         'BlogAuthor' => true, // Si true, mettre l'image à gauche et forcera l'affichage à une colonne
@@ -217,6 +225,10 @@ return [
         'SidebarBlogTwitter' => true, // Affichage du pavé Twitter. true = activé | false = désactivé
         'SidebarBlogTwitterURL' => 'https://twitter.com/ImagInside?ref_src=twsrc%5Etfw', // URL du fil d'actualité
         'SidebarBlogTwitterheight' => '600', // Hauteur du fil d'actualité
+        'SidebarBlogContact' => true, // Affichage bloc contact (adresse, tél, mail). true = activé | false = désactivé
+        'SidebarBlogModalBox' => true, // Affichage bloc contact (adresse, tél, mail). true = activé | false = désactivé
+            'SidebarBlogModalBoxStart' => '1541026800', // Date de début - timestamp
+            'SidebarBlogModalBoxEnd' => '1577833200', // Date de fin - timestamp // Si vide, durée illimité
     ],
 
 
@@ -225,15 +237,33 @@ return [
      */
     'Portfolio' => [
         // Paramètres portfolio
-        'PortfolioColumn' => '3', // Nombre de colonne du blog : 1 à 6
+        'PortfolioColumn' => '2', // Nombre de colonne du blog : 1 à 6
         'PortfolioWidthContainer' => 'container', // 'container' | 'container-fluid',
         'PortfolioFilter' => true, // 'container' | 'container-fluid',
-
-
+            'PortfolioFilterCat' => [ // 'NomCategorie' => 'DataCat' 
+                'Tous' => '*', // '*' sera activé par défaut
+                'Icons' => '.pf-icons',
+                'Illustrations' => '.pf-illustrations',
+                'UI Elements' => '.pf-uielements',
+                'Media' => '.pf-media',
+                'Graphics' => '.pf-graphics',
+            ],
 
         // Paramètres sidebar du blog
-        'SidebarPortfolioActiv' => false, // Affichage de la sidebar. true = activé | false = désactivé
+        'SidebarPortfolioActiv' => true, // Affichage de la sidebar. true = activé | false = désactivé
         'SidebarPortfolioPosition' => 'right', // Position de la sidebar. 'right' | 'left'
+        'SidebarPortfolioSearch' => true, // Affichage du champ de recherche. true = activé | false = désactivé
+        'SidebarPortfolioNewsletter' => true, // Affichage du champ newsletter. true = activé | false = désactivé
+        'SidebarPortfolioCategories' => true, // Affichage des catégories. true = activé | false = désactivé
+        'SidebarPortfolioRecentPost' => true, // Affichage derniers articles. true = activé | false = désactivé
+        'SidebarPortfolioRecentPostTab' => false, // Affichage tab articles. true = activé | false = désactivé
+        'SidebarPortfolioTwitter' => true, // Affichage du pavé Twitter. true = activé | false = désactivé
+        'SidebarPortfolioTwitterURL' => 'https://twitter.com/ImagInside?ref_src=twsrc%5Etfw', // URL du fil d'actualité
+        'SidebarPortfolioTwitterheight' => '600', // Hauteur du fil d'actualité
+        'SidebarPortfolioContact' => true, // Affichage bloc contact (adresse, tél, mail). true = activé | false = désactivé
+        'SidebarPortfolioModalBox' => true, // Affichage bloc contact (adresse, tél, mail). true = activé | false = désactivé
+            'SidebarPortfolioModalBoxStart' => '1541026800', // Date de début - timestamp
+            'SidebarPortfolioModalBoxEnd' => '1577833200', // Date de fin - timestamp // Si vide, durée illimité
     ],
 ];
 

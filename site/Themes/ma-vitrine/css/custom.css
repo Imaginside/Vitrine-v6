@@ -135,6 +135,23 @@ a.text-primary:hover,a.text-primary:focus {
   padding-top:0;
 }
 
+
+
+/* WIDGET */
+.widget .widget-title,
+.widget p {
+  margin-bottom:10px !important;
+}
+
+/* Widget Modal box */
+.widget.widget-modal-box {
+  border-bottom: 1px solid #eee !important;
+  padding-bottom:30px !important;
+  margin-bottom:30px !important;
+}
+
+
+
 /* BLOG - POST */
 .post-item.bg-post-item .post-item-wrap {
   background-color:#f7f7f7;

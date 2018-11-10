@@ -16,10 +16,10 @@
                             <li class="dropdown-submenu"><span class="dropdown-menu-title-only"><i class="fa fa-newspaper-o"></i>Actualité / Blog</span>
                                 <ul class="dropdown-menu">
                                     <li><a href="/actualites/"></i>Toutes les actualités</a></li>
-                                    <li><a href="/article-simple/"></i>Article simple</a></li>
-                                    <li><a href="/article-gallery/"></i>Article gallerie</a></li>
-                                    <li><a href="/article-video/"></i>Article vidéo</a></li>
-                                    <li><a href="/article-audio/"></i>Article audio</a></li>
+                                    <li><a href="/actualites/article-simple/"></i>Article simple</a></li>
+                                    <li><a href="/actualites/article-gallery/"></i>Article gallerie</a></li>
+                                    <li><a href="/actualites/article-video/"></i>Article vidéo</a></li>
+                                    <li><a href="/actualites/article-audio/"></i>Article audio</a></li>
                                 </ul>
                             </li>
 

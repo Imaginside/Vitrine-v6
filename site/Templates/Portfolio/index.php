@@ -31,20 +31,35 @@ $this->set('page_title', [
         <div class="row">
             <div class="<?php if(Configure::read('Portfolio.SidebarPortfolioActiv') === true) echo 'content col-md-9' ?>">
                 
+                <div>
+                    <p>Les possibilités d'affichage du portfolio :
+                        <ul>
+                            <li>Avec ou sans sidebar</li>
+                            <li>Paramétrer les widgets dans la sidebar</li>
+                            <li>Affichage de 1 à 6 colonnes</li>
+                            <li>Affichage en 100% ou non</li>
+                            <li>Avec ou sans barre de filtre</li>
+                            <li>Choisir quoi et comment afficher les réalisations <small><i>(couleurs, liens, pictos, boutons, vidéo, carousel, grand, petit...)</i></small></li>
+                        </ul>
+                    </p>
+                </div>
+
                 <?php
                 // Filter portfolio
-                if(Configure::read('Portfolio.PortfolioFilter') === true) {
+                if(Configure::read('Portfolio.PortfolioFilter') === true && !empty(Configure::read('Portfolio.PortfolioFilterCat'))) {
                 echo '<nav class="grid-filter gf-outline" data-layout="#portfolio">
-                    <ul>
-                        <li class="active"><a href="#" data-category="*">Tous</a></li>
-                        <li><a href="#" data-category=".pf-icons">Icons</a></li>
-                        <li><a href="#" data-category=".pf-illustrations">Illustrations</a></li>
-                        <li><a href="#" data-category=".pf-uielements">UI Elements</a></li>
-                        <li><a href="#" data-category=".pf-media">Media</a></li>
-                        <li><a href="#" data-category=".pf-graphics">Graphics</a></li>
-                    </ul>
-                    <div class="grid-active-title">Tous</div>
-                </nav>';
+                    <ul>';
+                        foreach (Configure::read('Portfolio.PortfolioFilterCat') as $NameCat => $DataCat) {
+                            echo '<li';
+                            if($DataCat === '*') echo ' class="active"';
+                            echo '><a href="#" data-category="' . $DataCat . '">' . $NameCat . '</a></li>';
+                        }
+                    echo '
+                    </ul>';
+                    foreach (Configure::read('Portfolio.PortfolioFilterCat') as $NameCat => $DataCat) {
+                        if($DataCat === '*') echo '<div class="grid-active-title">' . $NameCat . '</div>';
+                    }
+                echo '</nav>';
                 }
                 ?>
 
@@ -334,7 +349,7 @@ $this->set('page_title', [
 
             <?php
             // Sidebar
-            // echo $this->element('Blog/Sidebar/sidebar.php');
+            echo $this->element('Sidebar/sidebar-portfolio.php');
             ?>
         </div>
     </div>
