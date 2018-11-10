@@ -32,10 +32,11 @@ $this->set('page_title', [
             <div class="<?php if(Configure::read('Blog.SidebarBlogActiv') === true) echo 'content col-md-9' ?>">
                 <?php
                 // Affichage gallery
-                echo $this->element('Blog/blog-video-single.php', [
+                echo $this->element('Blog/blog-audio-single.php', [
                     'NewsTitle' => 'Lighthouse, standard post with a single image',
-                    'NewsVideo' => 'https://www.youtube.com/embed/dA8Smj5tZOQ', // url Youtube ou Vimeo
-                    'NewsCategories' => array('Vidéo'),
+                    'NewsPicture' => 'audio-bg.jpg',
+                    'NewsAudio' => 'beautiful-optimist.mp3',
+                    'NewsCategories' => array('Audio'),
                     'NewsDatePost' => '5 novembre 2018, 11h18',
                     'NewsNbComment' => '33',
                     'NewsContent' => '
@@ -55,7 +56,7 @@ $this->set('page_title', [
 
             <?php
             // Sidebar
-            echo $this->element('Blog/Sidebar/sidebar.php');
+            echo $this->element('Sidebar/sidebar-blog.php');
             ?>
         </div>
     </div>

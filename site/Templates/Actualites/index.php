@@ -30,19 +30,38 @@ $this->set('page_title', [
     <div class="<?= Configure::read('Blog.BlogWidthContainer') ?>">
         <div class="row">
             <div class="<?php if(Configure::read('Blog.SidebarBlogActiv') === true) echo 'content col-md-9' ?>">
-                <!-- Filter -->
-                <nav class="grid-filter gf-outline" data-layout="#blog">
-                    <ul>
-                        <li class="active"><a href="#" data-category="*">Tous</a></li>
-                        <li><a href="#" data-category=".bc-general">Général</a></li>
-                        <li><a href="#" data-category=".bc-audio">Musique</a></li>
-                        <li><a href="#" data-category=".bc-video">Vidéo</a></li>
-                        <li><a href="#" data-category=".bc-technologie">Technologie</a></li>
-                        <li><a href="#" data-category=".bc-quote">Citation</a></li>
-                    </ul>
-                    <div class="grid-active-title">Tous</div>
-                </nav>
-                <!-- end: Filter -->
+                
+                <div>
+                    <p>Les possibilités d'affichage du blog :
+                        <ul>
+                            <li>Avec ou sans sidebar</li>
+                            <li>Paramétrer les widgets dans la sidebar</li>
+                            <li>Affichage de 1 à 6 colonnes</li>
+                            <li>Affichage en 100% ou non</li>
+                            <li>Avec ou sans barre de filtre</li>
+                            <li>Choisir l'affiche en fonction de type d'actualité <small><i>(simple, image, carousel, citation, vidéo, auteur, ...)</i></small></li>
+                        </ul>
+                    </p>
+                </div>
+            
+                <?php
+                // Filter blog
+                if(Configure::read('Blog.BlogFilter') === true && !empty(Configure::read('Blog.BlogFilterCat'))) {
+                    echo '<nav class="grid-filter gf-outline" data-layout="#blog">
+                        <ul>';
+                        foreach (Configure::read('Blog.BlogFilterCat') as $NameCat => $DataCat) {
+                            echo '<li';
+                            if($DataCat === '*') echo ' class="active"';
+                            echo '><a href="#" data-category="' . $DataCat . '">' . $NameCat . '</a></li>';
+                        }
+                    echo '
+                    </ul>';
+                    foreach (Configure::read('Blog.BlogFilterCat') as $NameCat => $DataCat) {
+                        if($DataCat === '*') echo '<div class="grid-active-title">' . $NameCat . '</div>';
+                    }
+                echo '</nav>';
+                }
+                ?>
 
                 <!-- Actualités - Blog -->
                 <div id="blog" 
@@ -220,7 +239,7 @@ $this->set('page_title', [
 
             <?php
             // Sidebar
-            echo $this->element('Blog/Sidebar/sidebar.php');
+            echo $this->element('Sidebar/sidebar-blog.php');
             ?>
         </div>
     </div>
