@@ -44,10 +44,10 @@ use II\Utilities\Session;
 
         <?php /* -- Stylesheets & Fonts -- */ ?>
         <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
-        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/plugins.css" rel="stylesheet">
-        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/style.css" rel="stylesheet">
-        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/responsive.css" rel="stylesheet">
-        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/custom.css" rel="stylesheet">
+        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/plugins.css?v=<?php echo Configure::read('Theme.Version'); ?>" rel="stylesheet">
+        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/style.css?v=<?php echo Configure::read('Theme.Version'); ?>" rel="stylesheet">
+        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/responsive.css?v=<?php echo Configure::read('Theme.Version'); ?>" rel="stylesheet">
+        <link href="/site/Themes/<?php echo Configure::read('theme'); ?>/css/custom.css?v=<?php echo Configure::read('Theme.Version'); ?>" rel="stylesheet">
 
 
         <?php /* -- Favicon : https://www.favicon-generator.org/ -- */ ?>
@@ -194,8 +194,6 @@ use II\Utilities\Session;
                 <?php
             }
             ?>
-
-            
 
             <?= $content; ?>
 

@@ -21,9 +21,15 @@
                                     <li><a href="/actualites/article-audio/"></i>Article audio</a></li>
                                 </ul>
                             </li>
-
                         </li>
-                        <li><a href="/portfolio/"><i class="fa fa-book"></i>Réalisations</a></li>
+                        <li>
+                            <li class="dropdown-submenu"><span class="dropdown-menu-title-only"><i class="fa fa-book"></i>Réalisations</span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/portfolio/"></i>Toutes les réalisations</a></li>
+                                    <li><a href="/portfolio/portfolio-default/"></i>Portfolio default</a></li>
+                                </ul>
+                            </li>
+                        </li>
                         <li><a href="/gallery/"><i class="fa fa-picture-o"></i>Galerie Photos</a></li>
                     </ul>
                 </li>
