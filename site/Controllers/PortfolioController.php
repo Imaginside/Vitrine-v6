@@ -45,6 +45,7 @@ class PortfolioController extends Controllers
     }
     public function portfolioDefault()
     {
+        // $this->Breadcrumb->add('Portfolio');
         $this->set('NamePage', 'Portfolio defaut');
         $this->set('DescPage', 'Exemple d\'affichage portfolio');
         $this->set('ClassesBody', 'portfolio-default');

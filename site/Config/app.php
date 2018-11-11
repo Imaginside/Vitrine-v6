@@ -258,7 +258,10 @@ return [
                 'Media' => '.pf-media',
                 'Graphics' => '.pf-graphics',
             ],
-
+        
+        // Paramètres portfolio single
+        'PortfolioSingle_PageTitleClassesSection' => 'page-title-center', // page-title-left | page-title-center | page-title-right
+        
         // Paramètres sidebar du blog
         'SidebarPortfolioActiv' => true, // Affichage de la sidebar. true = activé | false = désactivé
         'SidebarPortfolioPosition' => 'right', // Position de la sidebar. 'right' | 'left'

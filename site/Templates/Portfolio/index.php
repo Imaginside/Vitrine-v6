@@ -84,7 +84,7 @@ $this->set('page_title', [
                         'PortfolioItemPicture' => '60.jpg', // Possible sans image, laisser vide
                         'PortfolioItemTitle' => 'Paper Pouch !',
                         'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
-                        'PortfolioItemLink' => 'portfolio-page-grid-gallery.html', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-page-grid-gallery.html'
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
                         'PortfolioItemCategory' => 'Illustrations / Graphics',
                     ]);
                     
@@ -102,7 +102,7 @@ $this->set('page_title', [
                         'PortfolioItemClass3d' => false, // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
                         'PortfolioItemPicture' => '71.jpg', // Possible sans image, laisser vide
                         'PortfolioItemTitle' => 'Paper Pouch !',
-                        'PortfolioItemLink' => 'portfolio-page-grid-gallery.html', // Lien de la page
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page
                         'PortfolioItemVideo' => 'https://www.youtube.com/watch?v=k6Kly58LYzY',
                         
                         // Affichage Picto
@@ -128,7 +128,7 @@ $this->set('page_title', [
                                 // outline
                         'PortfolioItemPicture' => '72.jpg', // Possible sans image, laisser vide
                         'PortfolioItemTitle' => 'Paper Pouch !',
-                        'PortfolioItemLink' => 'portfolio-page-grid-gallery.html', // Lien de la page
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page
                         'PortfolioItemVideo' => 'https://www.youtube.com/watch?v=k6Kly58LYzY',
                         
                         // Affichage BTN
@@ -173,7 +173,7 @@ $this->set('page_title', [
                         ],
                         // 'PortfolioItemTitle' => 'Stockholm Fashion',
                         // 'PortfolioItemCategory' => 'Illustrations / Graphics',
-                        'PortfolioItemLink' => 'portfolio-page-grid-gallery.html', // Lien de la page
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page
                         // 'PortfolioDescription' => false, // Choix de l'affichage au survol. Pictos liens (1) ou texte (2)
                     ]);
 
@@ -194,7 +194,7 @@ $this->set('page_title', [
                         'PortfolioItemPicture' => '60.jpg', // Possible sans image, laisser vide
                         'PortfolioItemTitle' => 'Paper Pouch !',
                         'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
-                        'PortfolioItemLink' => 'portfolio-page-grid-gallery.html', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-page-grid-gallery.html'
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
                         'PortfolioItemCategory' => 'Illustrations / Graphics',
                     ]);
 
@@ -225,7 +225,7 @@ $this->set('page_title', [
                         ],
                         // 'PortfolioItemTitle' => 'Stockholm Fashion',
                         // 'PortfolioItemCategory' => 'Illustrations / Graphics',
-                        'PortfolioItemLink' => 'portfolio-page-grid-gallery.html', // Lien de la page
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page
                         // 'PortfolioDescription' => false, // Choix de l'affichage au survol. Pictos liens (1) ou texte (2)
                     ]);
 
@@ -246,7 +246,7 @@ $this->set('page_title', [
                         'PortfolioItemPicture' => '23.jpg', // Possible sans image, laisser vide
                         'PortfolioItemTitle' => 'Paper Pouch !',
                         'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
-                        'PortfolioItemLink' => 'portfolio-page-grid-gallery.html', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-page-grid-gallery.html'
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
                         'PortfolioItemCategory' => 'Illustrations / Graphics',
                     ]);
 
@@ -267,7 +267,7 @@ $this->set('page_title', [
                         'PortfolioItemPicture' => '73.jpg', // Possible sans image, laisser vide
                         'PortfolioItemTitle' => 'Paper Pouch !',
                         'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
-                        'PortfolioItemLink' => 'portfolio-page-grid-gallery.html', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-page-grid-gallery.html'
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
                         'PortfolioItemCategory' => 'Illustrations / Graphics',
                     ]);
 
@@ -288,7 +288,7 @@ $this->set('page_title', [
                         'PortfolioItemPicture' => '40.png', // Possible sans image, laisser vide
                         'PortfolioItemTitle' => 'Paper Pouch !',
                         'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
-                        'PortfolioItemLink' => 'portfolio-page-grid-gallery.html', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-page-grid-gallery.html'
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
                         'PortfolioItemCategory' => 'Illustrations / Graphics',
                     ]);
 
@@ -319,7 +319,7 @@ $this->set('page_title', [
                         ],
                         // 'PortfolioItemTitle' => 'Stockholm Fashion',
                         // 'PortfolioItemCategory' => 'Illustrations / Graphics',
-                        'PortfolioItemLink' => 'portfolio-page-grid-gallery.html', // Lien de la page
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page
                         // 'PortfolioDescription' => false, // Choix de l'affichage au survol. Pictos liens (1) ou texte (2)
                     ]);
                     ?>

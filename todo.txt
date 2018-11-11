@@ -31,23 +31,13 @@
 ===== A DEVELOPPER ======
 =========================
 
--   Versionning de CSS
-    # David
+-   David : Modifier design du thème + création logo "Ma Vitrine"
 
--   Création page type portfolio single
-    # David
+-   Axel : Gestion du fil d'ariane pour le blog et le portfolio
 
--   Création page gallerie photos
-    # David
+-   Axel : Renommer l'URL "/index/" par "/accueil/"
 
--   Modifier design du thème + création logo "Ma Vitrine"
-    # David
-
--   Renommer l'URL "/index/" par "/accueil/"
-    # Axel
-
--   Helpers html (image, css, lien, ...)
-    # Axel
+-   Axel : Helpers html (image, css, lien, ...)
 
 -   Vues : Permettre d'appeler des variables en fonction de page, qui ne seront utilisées que dans le thème
 
@@ -83,26 +73,35 @@
 ===== FAIT - BUG CORRIGE ======
 ===============================
 
--   OK - David : Création page de blog + diverses pages d'affiche d'actualité
+-   David : Versionning de CSS
+    ## Fait le 11/11/2018
+
+-   David : Création page type portfolio single
+    ## Fait le 11/11/2018
+
+-   David : Création page gallerie photos
+    ## Fait le 11/11/2018
+
+-   David : Création page de blog + diverses pages d'affiche d'actualité
     ## Fait du 6 au 10/11/2018
 
--   OK - David : Création page portfolio
+-   David : Création page portfolio
     ## Fait du 9 au 10/11/2018
 
--   OK - David : Ajouter une class dans le body, correspondant à la page (pour les styles spécifiques). Ex.: <body class="accueil">
+-   David : Ajouter une class dans le body, correspondant à la page (pour les styles spécifiques). Ex.: <body class="accueil">
     Ajouter "$this->set('BodyPage', 'accueil');" dans "PagesController.php", puis appeler $BodyPage ?
     ## Assigné à David.
     ## Fait le 06/10/2018
 
--   OK - David : Dans app.php (paramétrage du site), ajouter    "     'Viadeo'  => '',     "
+-   David : Dans app.php (paramétrage du site), ajouter    "     'Viadeo'  => '',     "
     ## Assigné à David.
     ## Fait le 06/10/2018
 
--   OK - David : Bug sur le survol d'un élément du sous menu du menu principal.
+-   David : Bug sur le survol d'un élément du sous menu du menu principal.
     Tous les liens changent de couleur (fichier style.css du thème, ligne 1301 : A commenter ou supprimer)
     ## Assigné à David.
     ## Pas de problème si li a utilisé correctement
 
--   OK - David : Dans "base.ctp" et "footer.php", mettre en variable le theme -> <?php echo Configure::read('theme'); ?>
+-   David : Dans "base.ctp" et "footer.php", mettre en variable le theme -> <?php echo Configure::read('theme'); ?>
     ## Assigné à David.
     ## Fait le 06/10/2018
