@@ -183,6 +183,16 @@ return [
 
 
     /**
+     * Système Galerie Photos
+     */
+    'Gallery' => [
+        // Paramètres de la galerie
+        'GalleryColumn' => '3', // Nombre de colonne du blog : 1 à 6
+        'GalleryWidthContainer' => 'container', // 'container' | 'container-fluid',
+        'GalleryBorder' => '20', // Espace entre les photos, en pixels
+    ],
+
+    /**
      * Système Blog / Articles
      */
     'Blog' => [

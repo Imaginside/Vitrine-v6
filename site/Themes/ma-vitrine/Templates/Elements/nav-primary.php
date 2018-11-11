@@ -8,7 +8,6 @@
         <nav>
             <ul>
                 <li><a href="/">Accueil</a></li>
-                <li><a href="/contact/">Contact</a></li>
                 <li class="dropdown">
                     <a href="#">Modules</a>
                     <ul class="dropdown-menu">
@@ -24,11 +23,11 @@
                             </li>
 
                         </li>
-                        <li>
-                            <a href="/portfolio/"><i class="fa fa-book"></i>Réalisations</a>
-                        </li>
+                        <li><a href="/portfolio/"><i class="fa fa-book"></i>Réalisations</a></li>
+                        <li><a href="/gallery/"><i class="fa fa-picture-o"></i>Galerie Photos</a></li>
                     </ul>
                 </li>
+                <li><a href="/contact/">Contact</a></li>
                 <li class="dropdown">
                     <a href="#">Features</a>
                     <ul class="dropdown-menu">

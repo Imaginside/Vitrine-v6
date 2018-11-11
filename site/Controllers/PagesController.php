@@ -149,6 +149,14 @@ class PagesController extends Controllers
         ]);
     }
 
+    
+    public function gallery()
+    {
+        $this->set('NamePage', 'Galerie Photos');
+        $this->set('DescPage', 'Galerie Photos');
+        $this->set('ClassesBody', 'gallery-photos');
+    }
+
     public function mentionsLegales()
     {
         $this->set('MetaRobot', 'noindex, nofollow');
@@ -156,7 +164,6 @@ class PagesController extends Controllers
         $this->set('DescPage', 'Mentions légales');
         $this->set('ClassesBody', 'mentions-legales');
     }
-
     public function cookies()
     {
         $this->set('MetaRobot', 'noindex, nofollow');
