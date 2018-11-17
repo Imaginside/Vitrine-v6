@@ -70,7 +70,17 @@ $this->set('page_title', [
                     // Affichage default
                     echo $this->element('Portfolio/portfolio-default.php', [
                         'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-uielements', 'pf-media'),
-                        'PortfolioItemClass' => 'img-zoom',
+                        'PortfolioItemPicture' => '60.jpg', // Possible sans image, laisser vide
+                        'PortfolioItemTitle' => 'Paper Pouch !',
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
+                        'PortfolioItemCategory' => 'Illustrations / Graphics',
+                        'PortfolioItemLarge' => false, // true = grande image | false = petite image
+                        
+                        /**
+                         * Ci-dessous, les variables par défault sont définies dans app.php
+                         * Possibilité d'écraser les variables par défault en les redéfinissant ici
+                         */  
+                        // 'PortfolioItemClass' => 'img-zoom',
                             // Style d'affiche
                                 // large-width
                                 // img-zoom | img-zoom-out | img-rotate
@@ -78,20 +88,26 @@ $this->set('page_title', [
                                 // text-bottom
                                 // shadow
                                 // outline
-                        'PortfolioItemClass3d' => true,
+                        // 'PortfolioItemClass3d' => true,
                             // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
                             // Ne fonctionnera pas si un lien est renseigné
-                        'PortfolioItemPicture' => '60.jpg', // Possible sans image, laisser vide
-                        'PortfolioItemTitle' => 'Paper Pouch !',
-                        'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
-                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
-                        'PortfolioItemCategory' => 'Illustrations / Graphics',
+                        // 'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
                     ]);
                     
                     // Affichage picto
                     echo $this->element('Portfolio/portfolio-pictos.php', [
                         'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-uielements', 'pf-media'),
-                        'PortfolioItemClass' => 'img-zoom overlay-light overlay-padding',
+                        'PortfolioItemPicture' => '71.jpg', // Possible sans image, laisser vide
+                        'PortfolioItemTitle' => 'Paper Pouch !',
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page
+                        'PortfolioItemVideo' => 'https://www.youtube.com/watch?v=k6Kly58LYzY', // Laissé vide si pas de vidéo
+                        'PortfolioItemLarge' => false, // true = grande image | false = petite image
+
+                        /**
+                         * Ci-dessous, les variables par défault sont définies dans app.php
+                         * Possibilité d'écraser les variables par défault en les redéfinissant ici
+                         */ 
+                        // 'PortfolioItemClass' => 'img-zoom overlay-light overlay-padding',
                             // Style d'affiche
                                 // large-width
                                 // img-zoom | img-zoom-out | img-rotate
@@ -99,26 +115,25 @@ $this->set('page_title', [
                                 // text-bottom
                                 // shadow
                                 // outline
-                        'PortfolioItemClass3d' => false, // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
-                        'PortfolioItemPicture' => '71.jpg', // Possible sans image, laisser vide
-                        'PortfolioItemTitle' => 'Paper Pouch !',
-                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page
-                        'PortfolioItemVideo' => 'https://www.youtube.com/watch?v=k6Kly58LYzY',
-                        
-                        // Affichage Picto
-                        'PortfolioItemAffichPictoImage' => true,
-                        'PortfolioItemAffichPictoLink' => true,
-                        'PortfolioItemAffichPictoVideo' => true,
-                        // Type Picto
-                        'PortfolioItemClassPictoImage' => 'fa-expand', // defaut : fa-expand
-                        'PortfolioItemClassPictoLink' => 'fa-link', // defaut : fa-link
-                        'PortfolioItemClassPictoVideo' => 'fa-play', // defaut : fa-play
+                        // Style Picto
+                        // 'PortfolioItemClassPictoImage' => 'fa-expand', // defaut : fa-expand
+                        // 'PortfolioItemClassPictoLink' => 'fa-link', // defaut : fa-link
+                        // 'PortfolioItemClassPictoVideo' => 'fa-play', // defaut : fa-play
                     ]);
                     
                     // Affichage boutons
                     echo $this->element('Portfolio/portfolio-boutons.php', [
                         'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-uielements', 'pf-media'),
-                        'PortfolioItemClass' => 'img-zoom-out',
+                        'PortfolioItemPicture' => '72.jpg', // Possible sans image, laisser vide
+                        'PortfolioItemTitle' => 'Paper Pouch !',
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page
+                        'PortfolioItemVideo' => 'https://www.youtube.com/watch?v=k6Kly58LYzY', // Laissé vide si pas de vidéo
+
+                        /**
+                         * Ci-dessous, les variables par défault sont définies dans app.php
+                         * Possibilité d'écraser les variables par défault en les redéfinissant ici
+                         */ 
+                        // 'PortfolioItemClass' => 'img-zoom-out',
                             // Style d'affiche
                                 // large-width
                                 // img-zoom | img-zoom-out | img-rotate
@@ -126,61 +141,34 @@ $this->set('page_title', [
                                 // text-bottom
                                 // shadow
                                 // outline
-                        'PortfolioItemPicture' => '72.jpg', // Possible sans image, laisser vide
-                        'PortfolioItemTitle' => 'Paper Pouch !',
-                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page
-                        'PortfolioItemVideo' => 'https://www.youtube.com/watch?v=k6Kly58LYzY',
                         
-                        // Affichage BTN
-                        'PortfolioItemAffichBtnImage' => true,
-                        'PortfolioItemAffichBtnLink' => true,
-                        'PortfolioItemAffichBtnVideo' => true,
                         // Class BTN
                         // btn btn-xxs btn-outline btn-light
-                        'PortfolioItemClassBtnImage' => 'btn',
-                        'PortfolioItemClassBtnLink' => 'btn btn-xxs btn-outline btn-light',
-                        'PortfolioItemClassBtnVideo' => 'btn btn-light btn-rounded',
+                        // 'PortfolioItemClassBtnImage' => 'btn',
+                        // 'PortfolioItemClassBtnLink' => 'btn btn-xxs btn-outline btn-light',
+                        // 'PortfolioItemClassBtnVideo' => 'btn btn-light btn-rounded',
                         // Text BTN
-                        'PortfolioItemClassTxtBtnImage' => 'Zoom',
-                        'PortfolioItemClassTxtBtnLink' => 'Voir',
-                        'PortfolioItemClassTxtBtnVideo' => 'Vidéo',
+                        // 'PortfolioItemClassTxtBtnImage' => 'Zoom',
+                        // 'PortfolioItemClassTxtBtnLink' => 'Voir',
+                        // 'PortfolioItemClassTxtBtnVideo' => 'Vidéo',
                     ]);
 
                     // Affichage slider
                     echo $this->element('Portfolio/portfolio-slider.php', [
                         'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-media', 'pf-icons', 'pf-Media', 'pf-graphics'),
-                        'PortfolioItemClass' => '',
-                            // Style d'affiche
-                                // large-width
-                                // img-zoom | img-zoom-out | img-rotate
-                                // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
-                                // text-bottom
-                                // shadow
-                                // outline
-                        'PortfolioItemClassCarousel' => 'dots-inside dots-dark arrows-light',
-                            // Style d'affichage carousel
-                                // dots-inside
-                                // dots-dark | dots-grey | dots-light | dots-primary | dots-secondary | dots-creative
-                                // arrows-light | arrows-dark | arrows-grey | arrows-primary | arrows-secondary
-                                // arrows-visibile
-                        'PortfolioItemFade' => false, // Animation en fade du carousel. true = activé, false = translate par défaut
-                        'PortfolioItemAutoplayTimeout' => '', // Animation en milliseconde. défaut : 2000. Peut-être laissé vide
-                        'PortfolioItemAutoplay' => true, // Lecture automatique : true | false
                         'PortfolioItemPictures' => [
                             '65.jpg' => 'test slider 1',
                             '66.jpg' => 'test slider 2',
                             '67.jpg' => 'test slider 3',
                         ],
-                        // 'PortfolioItemTitle' => 'Stockholm Fashion',
-                        // 'PortfolioItemCategory' => 'Illustrations / Graphics',
                         'PortfolioItemLink' => 'portfolio-default', // Lien de la page
-                        // 'PortfolioDescription' => false, // Choix de l'affichage au survol. Pictos liens (1) ou texte (2)
-                    ]);
+                        'PortfolioItemLarge' => false, // true = grande image | false = petite image
 
-                    // Affichage default
-                    echo $this->element('Portfolio/portfolio-default.php', [
-                        'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-uielements', 'pf-media'),
-                        'PortfolioItemClass' => 'text-bottom img-zoom',
+                        /**
+                         * Ci-dessous, les variables par défault sont définies dans app.php
+                         * Possibilité d'écraser les variables par défault en les redéfinissant ici
+                         */ 
+                        // 'PortfolioItemClass' => '',
                             // Style d'affiche
                                 // large-width
                                 // img-zoom | img-zoom-out | img-rotate
@@ -188,51 +176,60 @@ $this->set('page_title', [
                                 // text-bottom
                                 // shadow
                                 // outline
-                        'PortfolioItemClass3d' => false,
-                            // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
-                            // Ne fonctionnera pas si un lien est renseigné
-                        'PortfolioItemPicture' => '60.jpg', // Possible sans image, laisser vide
-                        'PortfolioItemTitle' => 'Paper Pouch !',
-                        'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
-                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
-                        'PortfolioItemCategory' => 'Illustrations / Graphics',
-                    ]);
-
-                    // Affichage slider
-                    echo $this->element('Portfolio/portfolio-slider.php', [
-                        'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-media', 'pf-icons', 'pf-Media', 'pf-graphics'),
-                        'PortfolioItemClass' => 'large-width', 
-                            // Style d'affiche
-                                // large-width
-                                // img-zoom | img-zoom-out | img-rotate
-                                // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
-                                // text-bottom
-                                // shadow
-                                // outline
-                        'PortfolioItemClassCarousel' => 'dots-outside dots-creative arrows-secondary arrows-visibile', 
+                        // 'PortfolioItemClassCarousel' => 'dots-inside dots-dark arrows-light',
                             // Style d'affichage carousel
                                 // dots-inside
                                 // dots-dark | dots-grey | dots-light | dots-primary | dots-secondary | dots-creative
                                 // arrows-light | arrows-dark | arrows-grey | arrows-primary | arrows-secondary
                                 // arrows-visibile
-                        'PortfolioItemFade' => true, // Animation en fade du carousel. true = activé, false = translate par défaut
-                        'PortfolioItemAutoplayTimeout' => '', // Animation en milliseconde. défaut : 2000. Peut-être laissé vide
-                        'PortfolioItemAutoplay' => true, // Lecture automatique : true | false
+                        // 'PortfolioItemFade' => false, // Animation en fade du carousel. true = activé, false = translate par défaut
+                        // 'PortfolioItemAutoplayTimeout' => '', // Animation en milliseconde. défaut : 2000. Peut-être laissé vide
+                        // 'PortfolioItemAutoplay' => true, // Lecture automatique : true | false
+                    ]);
+
+                    // Affichage default
+                    echo $this->element('Portfolio/portfolio-default.php', [
+                        'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-uielements', 'pf-media'),
+                        'PortfolioItemPicture' => '60.jpg', // Possible sans image, laisser vide
+                        'PortfolioItemTitle' => 'Paper Pouch !',
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
+                        'PortfolioItemCategory' => 'Illustrations / Graphics',
+                        'PortfolioItemLarge' => false, // true = grande image | false = petite image
+
+                        /**
+                         * Ci-dessous, les variables par défault sont définies dans app.php
+                         * Possibilité d'écraser les variables par défault en les redéfinissant ici
+                         */  
+                        // 'PortfolioItemClass' => 'text-bottom img-zoom',
+                            // Style d'affiche
+                                // large-width
+                                // img-zoom | img-zoom-out | img-rotate
+                                // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
+                                // text-bottom
+                                // shadow
+                                // outline
+                        // 'PortfolioItemClass3d' => false,
+                            // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
+                            // Ne fonctionnera pas si un lien est renseigné
+                        // 'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
+                    ]);
+
+                    // Affichage slider
+                    echo $this->element('Portfolio/portfolio-slider.php', [
+                        'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-media', 'pf-icons', 'pf-Media', 'pf-graphics'),
                         'PortfolioItemPictures' => [
                             '62.jpg' => 'test slider 1',
                             '63.jpg' => 'test slider 2',
                             '64.jpg' => 'test slider 3',
                         ],
-                        // 'PortfolioItemTitle' => 'Stockholm Fashion',
-                        // 'PortfolioItemCategory' => 'Illustrations / Graphics',
                         'PortfolioItemLink' => 'portfolio-default', // Lien de la page
-                        // 'PortfolioDescription' => false, // Choix de l'affichage au survol. Pictos liens (1) ou texte (2)
-                    ]);
-
-                    // Affichage default
-                    echo $this->element('Portfolio/portfolio-default.php', [
-                        'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-uielements', 'pf-media'),
-                        'PortfolioItemClass' => 'overlay-primary img-rotate overlay-padding',
+                        'PortfolioItemLarge' => false, // true = grande image | false = petite image
+                        
+                        /**
+                         * Ci-dessous, les variables par défault sont définies dans app.php
+                         * Possibilité d'écraser les variables par défault en les redéfinissant ici
+                         */  
+                        // 'PortfolioItemClass' => 'large-width', 
                             // Style d'affiche
                                 // large-width
                                 // img-zoom | img-zoom-out | img-rotate
@@ -240,87 +237,158 @@ $this->set('page_title', [
                                 // text-bottom
                                 // shadow
                                 // outline
-                        'PortfolioItemClass3d' => false,
-                            // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
-                            // Ne fonctionnera pas si un lien est renseigné
-                        'PortfolioItemPicture' => '23.jpg', // Possible sans image, laisser vide
-                        'PortfolioItemTitle' => 'Paper Pouch !',
-                        'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
-                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
-                        'PortfolioItemCategory' => 'Illustrations / Graphics',
-                    ]);
-
-                    // Affichage default
-                    echo $this->element('Portfolio/portfolio-default.php', [
-                        'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-uielements', 'pf-media'),
-                        'PortfolioItemClass' => 'img-zoom-out overlay-secondary overlay-padding',
-                            // Style d'affiche
-                                // large-width
-                                // img-zoom | img-zoom-out | img-rotate
-                                // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
-                                // text-bottom
-                                // shadow
-                                // outline
-                        'PortfolioItemClass3d' => false,
-                            // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
-                            // Ne fonctionnera pas si un lien est renseigné
-                        'PortfolioItemPicture' => '73.jpg', // Possible sans image, laisser vide
-                        'PortfolioItemTitle' => 'Paper Pouch !',
-                        'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
-                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
-                        'PortfolioItemCategory' => 'Illustrations / Graphics',
-                    ]);
-
-                    // Affichage default
-                    echo $this->element('Portfolio/portfolio-default.php', [
-                        'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-uielements', 'pf-media'),
-                        'PortfolioItemClass' => 'overlay-primary img-zoom',
-                            // Style d'affiche
-                                // large-width
-                                // img-zoom | img-zoom-out | img-rotate
-                                // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
-                                // text-bottom
-                                // shadow
-                                // outline
-                        'PortfolioItemClass3d' => true,
-                            // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
-                            // Ne fonctionnera pas si un lien est renseigné
-                        'PortfolioItemPicture' => '40.png', // Possible sans image, laisser vide
-                        'PortfolioItemTitle' => 'Paper Pouch !',
-                        'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
-                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
-                        'PortfolioItemCategory' => 'Illustrations / Graphics',
-                    ]);
-
-                    // Affichage slider
-                    echo $this->element('Portfolio/portfolio-slider.php', [
-                        'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-media', 'pf-icons', 'pf-Media', 'pf-graphics'),
-                        'PortfolioItemClass' => 'large-width',
-                            // Style d'affiche
-                                // large-width
-                                // img-zoom | img-zoom-out | img-rotate
-                                // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
-                                // text-bottom
-                                // shadow
-                                // outline
-                        'PortfolioItemClassCarousel' => 'dots-inside dots-secondary arrows-primary',
+                        // 'PortfolioItemClassCarousel' => 'dots-outside dots-creative arrows-secondary arrows-visibile', 
                             // Style d'affichage carousel
                                 // dots-inside
                                 // dots-dark | dots-grey | dots-light | dots-primary | dots-secondary | dots-creative
                                 // arrows-light | arrows-dark | arrows-grey | arrows-primary | arrows-secondary
                                 // arrows-visibile
-                        'PortfolioItemFade' => false, // Animation en fade du carousel. true = activé, false = translate par défaut
-                        'PortfolioItemAutoplayTimeout' => '', // Animation en milliseconde. défaut : 2000. Peut-être laissé vide
-                        'PortfolioItemAutoplay' => true, // Lecture automatique : true | false
+                        // 'PortfolioItemFade' => true, // Animation en fade du carousel. true = activé, false = translate par défaut
+                        // 'PortfolioItemAutoplayTimeout' => '', // Animation en milliseconde. défaut : 2000. Peut-être laissé vide
+                        // 'PortfolioItemAutoplay' => true, // Lecture automatique : true | false
+                    ]);
+
+                    // Affichage default
+                    echo $this->element('Portfolio/portfolio-default.php', [
+
+                        'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-uielements', 'pf-media'),
+                        'PortfolioItemPicture' => '23.jpg', // Possible sans image, laisser vide
+                        'PortfolioItemTitle' => 'Paper Pouch !',
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
+                        'PortfolioItemCategory' => 'Illustrations / Graphics',
+                        'PortfolioItemLarge' => false, // true = grande image | false = petite image
+
+                        /**
+                         * Ci-dessous, les variables par défault sont définies dans app.php
+                         * Possibilité d'écraser les variables par défault en les redéfinissant ici
+                         */  
+                        // 'PortfolioItemClass' => 'overlay-primary img-rotate overlay-padding',
+                            // Style d'affiche
+                                // large-width
+                                // img-zoom | img-zoom-out | img-rotate
+                                // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
+                                // text-bottom
+                                // shadow
+                                // outline
+                        // 'PortfolioItemClass3d' => false,
+                            // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
+                            // Ne fonctionnera pas si un lien est renseigné
+                        // 'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
+                    ]);
+
+                    // Affichage default
+                    echo $this->element('Portfolio/portfolio-default.php', [
+                        'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-uielements', 'pf-media'),
+                        'PortfolioItemPicture' => '73.jpg', // Possible sans image, laisser vide
+                        'PortfolioItemTitle' => 'Paper Pouch !',
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
+                        'PortfolioItemCategory' => 'Illustrations / Graphics',
+                        'PortfolioItemLarge' => false, // true = grande image | false = petite image
+
+                        /**
+                         * Ci-dessous, les variables par défault sont définies dans app.php
+                         * Possibilité d'écraser les variables par défault en les redéfinissant ici
+                         */  
+                        // 'PortfolioItemClass' => 'img-zoom-out overlay-secondary overlay-padding',
+                            // Style d'affiche
+                                // large-width
+                                // img-zoom | img-zoom-out | img-rotate
+                                // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
+                                // text-bottom
+                                // shadow
+                                // outline
+                        // 'PortfolioItemClass3d' => false,
+                            // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
+                            // Ne fonctionnera pas si un lien est renseigné
+                        // 'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
+                    ]);
+
+                    // Affichage default
+                    echo $this->element('Portfolio/portfolio-default.php', [
+                        'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-uielements', 'pf-media'),
+                        'PortfolioItemPicture' => '60.jpg', // Possible sans image, laisser vide
+                        'PortfolioItemTitle' => 'Paper Pouch !',
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
+                        'PortfolioItemCategory' => 'Illustrations / Graphics',
+                        'PortfolioItemLarge' => false, // true = grande image | false = petite image
+
+                        /**
+                         * Ci-dessous, les variables par défault sont définies dans app.php
+                         * Possibilité d'écraser les variables par défault en les redéfinissant ici
+                         */  
+                        // 'PortfolioItemClass' => 'text-bottom img-zoom',
+                            // Style d'affiche
+                                // large-width
+                                // img-zoom | img-zoom-out | img-rotate
+                                // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
+                                // text-bottom
+                                // shadow
+                                // outline
+                        // 'PortfolioItemClass3d' => false,
+                            // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
+                            // Ne fonctionnera pas si un lien est renseigné
+                        // 'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
+                    ]);
+
+                    // Affichage default
+                    echo $this->element('Portfolio/portfolio-default.php', [
+                        'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-uielements', 'pf-media'),
+                        'PortfolioItemPicture' => '40.png', // Possible sans image, laisser vide
+                        'PortfolioItemTitle' => 'Paper Pouch !',
+                        'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
+                        'PortfolioItemCategory' => 'Illustrations / Graphics',
+                        'PortfolioItemLarge' => false, // true = grande image | false = petite image
+
+                        /**
+                         * Ci-dessous, les variables par défault sont définies dans app.php
+                         * Possibilité d'écraser les variables par défault en les redéfinissant ici
+                         */  
+                        // 'PortfolioItemClass' => 'overlay-primary img-zoom',
+                            // Style d'affiche
+                                // large-width
+                                // img-zoom | img-zoom-out | img-rotate
+                                // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
+                                // text-bottom
+                                // shadow
+                                // outline
+                        // 'PortfolioItemClass3d' => true,
+                            // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
+                            // Ne fonctionnera pas si un lien est renseigné
+                        // 'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
+                    ]);
+
+                    // Affichage slider
+                    echo $this->element('Portfolio/portfolio-slider.php', [
+                        'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-media', 'pf-icons', 'pf-Media', 'pf-graphics'),
                         'PortfolioItemPictures' => [
                             '80l.jpg' => 'test slider 1',
                             '81l.jpg' => 'test slider 2',
                             '82l.jpg' => 'test slider 3',
                         ],
-                        // 'PortfolioItemTitle' => 'Stockholm Fashion',
-                        // 'PortfolioItemCategory' => 'Illustrations / Graphics',
                         'PortfolioItemLink' => 'portfolio-default', // Lien de la page
-                        // 'PortfolioDescription' => false, // Choix de l'affichage au survol. Pictos liens (1) ou texte (2)
+                        'PortfolioItemLarge' => false, // true = grande image | false = petite image
+                        
+                        /**
+                         * Ci-dessous, les variables par défault sont définies dans app.php
+                         * Possibilité d'écraser les variables par défault en les redéfinissant ici
+                         */  
+                        // 'PortfolioItemClass' => 'large-width',
+                            // Style d'affiche
+                                // large-width
+                                // img-zoom | img-zoom-out | img-rotate
+                                // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
+                                // text-bottom
+                                // shadow
+                                // outline
+                        // 'PortfolioItemClassCarousel' => 'dots-inside dots-secondary arrows-primary',
+                            // Style d'affichage carousel
+                                // dots-inside
+                                // dots-dark | dots-grey | dots-light | dots-primary | dots-secondary | dots-creative
+                                // arrows-light | arrows-dark | arrows-grey | arrows-primary | arrows-secondary
+                                // arrows-visibile
+                        // 'PortfolioItemFade' => false, // Animation en fade du carousel. true = activé, false = translate par défaut
+                        // 'PortfolioItemAutoplayTimeout' => '', // Animation en milliseconde. défaut : 2000. Peut-être laissé vide
+                        // 'PortfolioItemAutoplay' => true, // Lecture automatique : true | false
                     ]);
                     ?>
 

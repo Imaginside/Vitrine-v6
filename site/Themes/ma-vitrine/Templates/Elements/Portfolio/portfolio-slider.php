@@ -34,8 +34,25 @@ use II\Utilities\Configure;
 //     // 'PortfolioDescription' => false, // Choix de l'affichage au survol. Pictos liens (1) ou texte (2)
 // ]);
 
+if(isset($PortfolioItemClass) && $PortfolioItemClass !== '') $PortfolioItemClass = $PortfolioItemClass;
+else $PortfolioItemClass = Configure::read('Portfolio.PortfolioElemSlider.PortfolioItemClass');
+
+if(isset($PortfolioItemClassCarousel) && $PortfolioItemClassCarousel !== '') $PortfolioItemClassCarousel = $PortfolioItemClassCarousel;
+else $PortfolioItemClassCarousel = Configure::read('Portfolio.PortfolioElemSlider.PortfolioItemClassCarousel');
+
+if(isset($PortfolioItemFade) && $PortfolioItemFade !== '') $PortfolioItemFade = $PortfolioItemFade;
+else $PortfolioItemFade = Configure::read('Portfolio.PortfolioElemSlider.PortfolioItemFade');
+
+if(isset($PortfolioItemAutoplayTimeout) && $PortfolioItemAutoplayTimeout !== '') $PortfolioItemAutoplayTimeout = $PortfolioItemAutoplayTimeout;
+else $PortfolioItemAutoplayTimeout = Configure::read('Portfolio.PortfolioElemSlider.PortfolioItemAutoplayTimeout');
+
+if(isset($PortfolioItemAutoplay) && $PortfolioItemAutoplay !== '') $PortfolioItemAutoplay = $PortfolioItemAutoplay;
+else $PortfolioItemAutoplay = Configure::read('Portfolio.PortfolioElemSlider.PortfolioItemAutoplay');
+
+
 echo '
 <div class="portfolio-item no-overlay ';
+if(isset($PortfolioItemLarge) && $PortfolioItemLarge === true) echo ' large-width ';
     echo ' ' .$PortfolioItemClass . ' ' . implode(' ',$PortfolioItemCategoriesFilter) . '">
     <div class="portfolio-item-wrap">
         <div class="portfolio-slider">
@@ -44,11 +61,7 @@ echo '
                 echo '
                 data-animate-in="fadeIn" data-animate-out="fadeOut" ';
             }
-            echo 'data-autoplay-timeout="';
-            if($PortfolioItemAutoplayTimeout !== '')
-                echo $PortfolioItemAutoplayTimeout;
-            else echo '2000';
-            echo '" data-lightbox="gallery">';
+            echo 'data-autoplay-timeout="' . $PortfolioItemAutoplayTimeout . '" data-lightbox="gallery">';
                 foreach ($PortfolioItemPictures as $picture => $titlePicture) {
                 echo '
                 <a title="'. $titlePicture . '" data-lightbox="gallery-item" href="/site/Medias/img/portfolio/' . $picture . '"><img src="/site/Medias/img/portfolio/' . $picture . '" alt="' . $titlePicture . '"></a>';

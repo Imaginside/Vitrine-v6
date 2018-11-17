@@ -16,7 +16,6 @@ use II\Utilities\Configure;
 //             // text-bottom
 //             // shadow
 //             // outline
-//     'PortfolioItemClass3d' => false, // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
 //     'PortfolioItemPicture' => '71.jpg', // Possible sans image, laisser vide
 //     'PortfolioItemTitle' => 'Paper Pouch !',
 //     'PortfolioItemLink' => 'portfolio-page-grid-gallery.html', // Lien de la page
@@ -32,8 +31,13 @@ use II\Utilities\Configure;
 //     'PortfolioItemClassPictoVideo' => 'fa-play', // defaut : fa-play
 // ]);
 
+if(isset($PortfolioItemClass) && $PortfolioItemClass !== '') $PortfolioItemClass = $PortfolioItemClass;
+else $PortfolioItemClass = Configure::read('Portfolio.PortfolioElemPictos.PortfolioItemClass');
+
+
 echo '
 <div class="portfolio-item ';
+    if(isset($PortfolioItemLarge) && $PortfolioItemLarge === true) echo ' large-width ';
     echo ' ' .$PortfolioItemClass . ' ' . implode(' ',$PortfolioItemCategoriesFilter) . '">
     <div class="portfolio-item-wrap">
         <div class="portfolio-image">
@@ -42,18 +46,15 @@ echo '
 
         // Affichage des pictos
         echo '
-        <div class="portfolio-description">';
+        <div class="portfolio-description">
+            <a title="' . $PortfolioItemTitle . '" data-lightbox="image" href="/site/Medias/img/portfolio/' . $PortfolioItemPicture . '"><i class="fa fa-expand"></i></a>';
             
-            if($PortfolioItemAffichPictoImage === true)
+            if(isset($PortfolioItemLink) !== '')
             echo '
-            <a title="' . $PortfolioItemTitle . '" data-lightbox="image" href="/site/Medias/img/portfolio/' . $PortfolioItemPicture . '"><i class="fa ' . $PortfolioItemClassPictoImage . '"></i></a>';
-            
-            if($PortfolioItemAffichPictoLink === true && $PortfolioItemLink !== '')
-            echo '
-            <a href="/portfolio/' . $PortfolioItemLink . '"><i class="fa ' . $PortfolioItemClassPictoLink . '"></i></a>';
+            <a href="/portfolio/' . $PortfolioItemLink . '"><i class="fa fa-link"></i></a>';
 
-            if($PortfolioItemAffichPictoVideo === true && $PortfolioItemVideo !== '') {
-            echo '<a data-lightbox="iframe" href="' . $PortfolioItemVideo . '" class="' . $PortfolioItemClassBtnVideo . '"><i class="fa ' . $PortfolioItemClassPictoVideo . '"></i></a>';
+            if($PortfolioItemVideo !== '') {
+            echo '<a data-lightbox="iframe" href="' . $PortfolioItemVideo . '" class="' . $PortfolioItemClassBtnVideo . '"><i class="fa fa-play"></i></a>';
             }
 
         echo '

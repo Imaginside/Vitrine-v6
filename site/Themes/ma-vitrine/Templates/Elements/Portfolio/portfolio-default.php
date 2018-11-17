@@ -8,27 +8,40 @@ use II\Utilities\Configure;
 
 // echo $this->element('Portfolio/portfolio-default.php', [
 //     'PortfolioItemCategoriesFilter' => array('pf-illustrations', 'pf-uielements', 'pf-media'),
-//     'PortfolioItemClass' => 'img-zoom',
-//         // Style d'affiche
-//             // large-width
-//             // img-zoom | img-zoom-out | img-rotate
-//             // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
-//             // text-bottom
-//             // shadow
-//             // outline
-//     'PortfolioItemClass3d' => true,
-//         // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
-//         // Ne fonctionnera pas si un lien est renseigné
-//     'PortfolioItemPicture' => '60.jpg', // Possible sans image, laisser vide
-//     'PortfolioItemTitle' => 'Paper Pouch !',
-//     'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
-//     'PortfolioItemLink' => 'portfolio-page-grid-gallery.html', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-page-grid-gallery.html'
-//     'PortfolioItemCategory' => 'Illustrations / Graphics',
+//      'PortfolioItemPicture' => '60.jpg', // Possible sans image, laisser vide
+//      'PortfolioItemTitle' => 'Paper Pouch !',
+//      'PortfolioItemLink' => 'portfolio-default', // Lien de la page. Peut-être laissé vide // ex. : 'portfolio-default'
+//      'PortfolioItemCategory' => 'Illustrations / Graphics',
+
+//      /* Ci-dessous, les variables par défault sont définies dans app.php */
+//      // 'PortfolioItemClass' => 'img-zoom',
+//          // Style d'affiche
+//              // large-width
+//              // img-zoom | img-zoom-out | img-rotate
+//              // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
+//              // text-bottom
+//              // shadow
+//              // outline
+//      // 'PortfolioItemClass3d' => true,
+//          // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
+//          // Ne fonctionnera pas si un lien est renseigné
+//      // 'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
 // ]);
+
+if(isset($PortfolioItemClass) && $PortfolioItemClass !== '') $PortfolioItemClass = $PortfolioItemClass;
+else $PortfolioItemClass = Configure::read('Portfolio.PortfolioElemDefault.PortfolioItemClass');
+
+if(isset($PortfolioItemClass3d) && $PortfolioItemClass3d !== '') $PortfolioItemClass3d = $PortfolioItemClass3d;
+else $PortfolioItemClass3d = Configure::read('Portfolio.PortfolioElemDefault.PortfolioItemClass3d');
+
+if(isset($PortfolioItemDescription) && $PortfolioItemDescription !== '') $PortfolioItemDescription = $PortfolioItemDescription;
+else $PortfolioItemDescription = Configure::read('Portfolio.PortfolioElemDefault.PortfolioItemDescription');
+
 
 echo '
 <div class="portfolio-item ';
     if($PortfolioItemLink === '' && $PortfolioDescription !== 1 && $PortfolioItemClass3d === true) { echo ' hover-3d '; }
+    if(isset($PortfolioItemLarge) && $PortfolioItemLarge === true) echo ' large-width ';
     echo ' ' .$PortfolioItemClass . ' ' . implode(' ',$PortfolioItemCategoriesFilter) . '">
     <div class="portfolio-item-wrap">
         <div class="portfolio-image">';

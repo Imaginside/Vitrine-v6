@@ -43,7 +43,7 @@ return [
     /**
      * Logos
      */
-    'logo-default' => BASE_URL . IMAGES . 'logo-imaginside.png',
+    'logo-default'  => BASE_URL . IMAGES . 'logo-imaginside.png',
     'logo-dark'     => BASE_URL . IMAGES . 'logo-imaginside-dark.png',
     'logo-light'    => BASE_URL . IMAGES . 'logo-imaginside.png',
     'logo-mail'     => BASE_URL . IMAGES . 'logo-imaginside.png',
@@ -168,10 +168,10 @@ return [
             'template'      => 'default.php', // Template mail pour internaute
         ],
         'gestionnaire' => [
-            'From'      => 'contact@ma-vitrine.pro',
-            'FromName'  => 'Imag\'Inside - Ma Vitrine',
-            'template'  => 'gestionnaire.php',
-            'to'        => 'contact@ma-vitrine.pro' // Mail pour le gestionnaire // dvd.chester@gmail.com // farkas.axel@gmail.com // hello@imaginside.com
+            'From'          => 'contact@ma-vitrine.pro',
+            'FromName'      => 'Imag\'Inside - Ma Vitrine',
+            'template'      => 'gestionnaire.php',
+            'to'            => 'contact@ma-vitrine.pro' // Mail pour le gestionnaire // dvd.chester@gmail.com // farkas.axel@gmail.com // hello@imaginside.com
         ],
         'internaute' => [
             'template'      => 'internaute.php',
@@ -191,6 +191,7 @@ return [
         'GalleryWidthContainer' => 'container', // 'container' | 'container-fluid',
         'GalleryBorder' => '20', // Espace entre les photos, en pixels
     ],
+
 
     /**
      * Système Blog / Articles
@@ -277,6 +278,75 @@ return [
         'SidebarPortfolioModalBox' => true, // Affichage bloc contact (adresse, tél, mail). true = activé | false = désactivé
             'SidebarPortfolioModalBoxStart' => '1541026800', // Date de début - timestamp
             'SidebarPortfolioModalBoxEnd' => '1577833200', // Date de fin - timestamp // Si vide, durée illimité
+        
+        // Paramètres affichage Element type default
+        'PortfolioElemDefault' => [
+            'PortfolioItemClass' => 'img-zoom overlay-light overlay-padding',
+                // Style d'affiche
+                    // large-width
+                    // img-zoom | img-zoom-out | img-rotate
+                    // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
+                    // text-bottom
+                    // shadow
+                    // outline
+            'PortfolioItemClass3d' => true,
+                // Ajoute la class "hover-3d". true | false. NON COMPATIBLE AVEC AFFICHE LIENS AU SURVOLE
+                // Ne fonctionnera pas si un lien est renseigné
+            'PortfolioItemDescription' => true, // Affiche du pavé description : true | false
+        ],
+
+        // Paramètres affichage Element type slider
+        'PortfolioElemSlider' => [
+            'PortfolioItemClass' => 'img-rotate overlay-light overlay-padding',
+                // Style d'affiche
+                    // large-width
+                    // img-zoom | img-zoom-out | img-rotate
+                    // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
+                    // text-bottom
+                    // shadow
+                    // outline
+            'PortfolioItemClassCarousel' => 'dots-inside dots-secondary arrows-primary',
+                // Style d'affichage carousel
+                    // dots-inside
+                    // dots-dark | dots-grey | dots-light | dots-primary | dots-secondary | dots-creative
+                    // arrows-light | arrows-dark | arrows-grey | arrows-primary | arrows-secondary
+                    // arrows-visibile
+            'PortfolioItemFade' => false, // Animation en fade du carousel. true = activé, false = translate par défaut
+            'PortfolioItemAutoplayTimeout' => '2000', // Animation en milliseconde. défaut : 2000.
+            'PortfolioItemAutoplay' => true, // Lecture automatique : true | false
+        ],
+
+        // Paramètres affichage Element type pictos
+        'PortfolioElemPictos' => [
+            'PortfolioItemClass' => 'img-zoom overlay-light overlay-padding',
+                // Style d'affiche
+                    // img-zoom | img-zoom-out | img-rotate
+                    // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
+                    // text-bottom
+                    // shadow
+                    // outline
+        ],
+
+        // Paramètres affichage Element type boutons
+        'PortfolioElemBoutons' => [
+            'PortfolioItemClass' => 'img-zoom-out overlay-light overlay-padding',
+                // Style d'affiche
+                    // large-width
+                    // img-zoom | img-zoom-out | img-rotate
+                    // no-overlay | overlay-[light|dark|grey|white|primary|secondary] | overlay-padding
+                    // text-bottom
+                    // shadow
+                    // outline
+            // Class BTN
+            // btn btn-xxs btn-outline btn-light btn-rounded
+            'PortfolioItemClassBtnImage' => 'btn',
+            'PortfolioItemClassBtnLink' => 'btn btn-xxs btn-outline',
+            'PortfolioItemClassBtnVideo' => 'btn btn-rounded',
+            // Text BTN
+            'PortfolioItemClassTxtBtnImage' => 'Zoom',
+            'PortfolioItemClassTxtBtnLink' => 'Voir',
+            'PortfolioItemClassTxtBtnVideo' => 'Vidéo',
+        ],
     ],
 ];
 
