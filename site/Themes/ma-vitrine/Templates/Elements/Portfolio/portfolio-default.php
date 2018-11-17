@@ -36,22 +36,25 @@ else $PortfolioItemClass3d = Configure::read('Portfolio.PortfolioElemDefault.Por
 
 if(isset($PortfolioItemDescription) && $PortfolioItemDescription !== '') $PortfolioItemDescription = $PortfolioItemDescription;
 else $PortfolioItemDescription = Configure::read('Portfolio.PortfolioElemDefault.PortfolioItemDescription');
+?>
 
-
-echo '
-<div class="portfolio-item ';
+<div class="portfolio-item 
+    <?php
     if($PortfolioItemLink === '' && $PortfolioDescription !== 1 && $PortfolioItemClass3d === true) { echo ' hover-3d '; }
     if(isset($PortfolioItemLarge) && $PortfolioItemLarge === true) echo ' large-width ';
-    echo ' ' .$PortfolioItemClass . ' ' . implode(' ',$PortfolioItemCategoriesFilter) . '">
+    echo ' ' .$PortfolioItemClass . ' ' . implode(' ',$PortfolioItemCategoriesFilter); ?>
+    ">
     <div class="portfolio-item-wrap">
-        <div class="portfolio-image">';
+        <div class="portfolio-image">
+            <?php
             if($PortfolioItemLink !== '')
             echo '<a href="/portfolio/' . $PortfolioItemLink . '"><img src="/site/Medias/img/portfolio/' . $PortfolioItemPicture . '" alt="' . $PortfolioItemTitle . ' ' . $PortfolioItemCategory . '"></a>';
             else 
             echo '<img src="/site/Medias/img/portfolio/' . $PortfolioItemPicture . '"  alt="' . $PortfolioItemTitle . ' ' . $PortfolioItemCategory . '">';
-        echo '
-        </div>';
+            ?>
+        </div>
         
+        <?php
         if($PortfolioItemDescription === true) {
         echo '
         <div class="portfolio-description">';
@@ -73,7 +76,6 @@ echo '
         echo '
         </div>';
         }
-        
-    echo '
+        ?>
     </div>
-</div>';
+</div>

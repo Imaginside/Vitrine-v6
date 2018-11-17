@@ -56,30 +56,27 @@ else $PortfolioItemClassTxtBtnLink = Configure::read('Portfolio.PortfolioElemBou
 
 if(isset($PortfolioItemClassTxtBtnVideo) && $PortfolioItemClassTxtBtnVideo !== '') $PortfolioItemClassTxtBtnVideo = $PortfolioItemClassTxtBtnVideo;
 else $PortfolioItemClassTxtBtnVideo = Configure::read('Portfolio.PortfolioElemBoutons.PortfolioItemClassTxtBtnVideo');
+?>
 
-
-echo '
-<div class="portfolio-item ';
-    echo ' ' .$PortfolioItemClass . ' ' . implode(' ',$PortfolioItemCategoriesFilter) . '">
+<div class="portfolio-item 
+    <?= $PortfolioItemClass . ' ' . implode(' ',$PortfolioItemCategoriesFilter) ?> ">
     <div class="portfolio-item-wrap">
         <div class="portfolio-image">
-            <a href="/portfolio/' . $PortfolioItemLink . '"><img src="/site/Medias/img/portfolio/' . $PortfolioItemPicture . '" alt=""></a>
-        </div>';
+            <a href="/portfolio/<?= $PortfolioItemLink ?>"><img src="/site/Medias/img/portfolio/<?= $PortfolioItemPicture ?>" alt=""></a>
+        </div>
 
-        // Affichage des boutons
-        echo '
         <div class="portfolio-description">
-            <a title="' . $PortfolioItemTitle . '" data-lightbox="image" href="/site/Medias/img/portfolio/' . $PortfolioItemPicture . '" class="' . $PortfolioItemClassBtnImage . '">' . $PortfolioItemClassTxtBtnImage . '</a>';
-
+            <a title="<?= $PortfolioItemTitle ?>" data-lightbox="image" href="/site/Medias/img/portfolio/<?= $PortfolioItemPicture ?>" class="<?= $PortfolioItemClassBtnImage ?>"><?= $PortfolioItemClassTxtBtnImage ?></a>
+            
+            <?php
             if($PortfolioItemLink !== '')
             echo '
             <a href="/portfolio/' . $PortfolioItemLink . '" class="' . $PortfolioItemClassBtnLink . '">' . $PortfolioItemClassTxtBtnLink . '</a>';
 
-            if($PortfolioItemVideo !== '') {
+            if($PortfolioItemVideo !== '')
             echo '<a data-lightbox="iframe" href="' . $PortfolioItemVideo . '" class="' . $PortfolioItemClassBtnVideo . '">' . $PortfolioItemClassTxtBtnVideo . '</a>';
-            }
-        echo '
+            ?>
         </div>
 
     </div>
-</div>';
+</div>

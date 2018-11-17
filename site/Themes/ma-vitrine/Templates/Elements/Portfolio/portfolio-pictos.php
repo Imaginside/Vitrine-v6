@@ -33,22 +33,22 @@ use II\Utilities\Configure;
 
 if(isset($PortfolioItemClass) && $PortfolioItemClass !== '') $PortfolioItemClass = $PortfolioItemClass;
 else $PortfolioItemClass = Configure::read('Portfolio.PortfolioElemPictos.PortfolioItemClass');
+?>
 
-
-echo '
-<div class="portfolio-item ';
+<div class="portfolio-item 
+    <?php
     if(isset($PortfolioItemLarge) && $PortfolioItemLarge === true) echo ' large-width ';
-    echo ' ' .$PortfolioItemClass . ' ' . implode(' ',$PortfolioItemCategoriesFilter) . '">
+    echo ' ' .$PortfolioItemClass . ' ' . implode(' ',$PortfolioItemCategoriesFilter); ?>
+    ">
     <div class="portfolio-item-wrap">
         <div class="portfolio-image">
-            <a href="/portfolio/' . $PortfolioItemLink . '"><img src="/site/Medias/img/portfolio/' . $PortfolioItemPicture . '" alt=""></a>
-        </div>';
+            <a href="/portfolio/<?= $PortfolioItemLink ?>"><img src="/site/Medias/img/portfolio/<?= $PortfolioItemPicture ?>" alt=""></a>
+        </div>
 
-        // Affichage des pictos
-        echo '
         <div class="portfolio-description">
-            <a title="' . $PortfolioItemTitle . '" data-lightbox="image" href="/site/Medias/img/portfolio/' . $PortfolioItemPicture . '"><i class="fa fa-expand"></i></a>';
+            <a title="<?= $PortfolioItemTitle ?>" data-lightbox="image" href="/site/Medias/img/portfolio/<?= $PortfolioItemPicture ?>"><i class="fa fa-expand"></i></a>
             
+            <?php
             if(isset($PortfolioItemLink) !== '')
             echo '
             <a href="/portfolio/' . $PortfolioItemLink . '"><i class="fa fa-link"></i></a>';
@@ -56,8 +56,7 @@ echo '
             if($PortfolioItemVideo !== '') {
             echo '<a data-lightbox="iframe" href="' . $PortfolioItemVideo . '" class="' . $PortfolioItemClassBtnVideo . '"><i class="fa fa-play"></i></a>';
             }
-
-        echo '
+            ?>
         </div>
     </div>
-</div>';
+</div>

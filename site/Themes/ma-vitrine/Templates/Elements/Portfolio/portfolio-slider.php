@@ -48,36 +48,28 @@ else $PortfolioItemAutoplayTimeout = Configure::read('Portfolio.PortfolioElemSli
 
 if(isset($PortfolioItemAutoplay) && $PortfolioItemAutoplay !== '') $PortfolioItemAutoplay = $PortfolioItemAutoplay;
 else $PortfolioItemAutoplay = Configure::read('Portfolio.PortfolioElemSlider.PortfolioItemAutoplay');
+?>
 
 
-echo '
-<div class="portfolio-item no-overlay ';
-if(isset($PortfolioItemLarge) && $PortfolioItemLarge === true) echo ' large-width ';
-    echo ' ' .$PortfolioItemClass . ' ' . implode(' ',$PortfolioItemCategoriesFilter) . '">
+<div class="portfolio-item no-overlay 
+    <?php
+    if(isset($PortfolioItemLarge) && $PortfolioItemLarge === true) echo ' large-width ';
+    echo ' ' .$PortfolioItemClass . ' ' . implode(' ',$PortfolioItemCategoriesFilter) ?>
+    ">
     <div class="portfolio-item-wrap">
         <div class="portfolio-slider">
-            <div class="carousel ' . $PortfolioItemClassCarousel . '" data-items="1" data-loop="true" data-autoplay="' . $PortfolioItemAutoplay . '" ';
-            if($PortfolioItemFade === true) {
-                echo '
-                data-animate-in="fadeIn" data-animate-out="fadeOut" ';
-            }
-            echo 'data-autoplay-timeout="' . $PortfolioItemAutoplayTimeout . '" data-lightbox="gallery">';
+            <div class="carousel <?= $PortfolioItemClassCarousel ?>" data-items="1" data-loop="true" data-autoplay="<?= $PortfolioItemAutoplay ?>" data-autoplay-timeout="<?= $PortfolioItemAutoplayTimeout ?>" data-lightbox="gallery"
+                <?php
+                if($PortfolioItemFade === true) echo ' data-animate-in="fadeIn" data-animate-out="fadeOut"';
+                ?>
+                >
+                <?php
                 foreach ($PortfolioItemPictures as $picture => $titlePicture) {
                 echo '
                 <a title="'. $titlePicture . '" data-lightbox="gallery-item" href="/site/Medias/img/portfolio/' . $picture . '"><img src="/site/Medias/img/portfolio/' . $picture . '" alt="' . $titlePicture . '"></a>';
                 }
-            echo '
+                ?>
             </div>
-        </div>';
-        // if($PortfolioDescription === true) {
-        // echo '
-        // <div class="portfolio-description">
-        //     <a href="' . $PortfolioItemLink . '">
-        //         <h3>' . $PortfolioItemTitle . '</h3>
-        //         <span>' . $PortfolioItemCategory . '</span>
-        //     </a>
-        // </div>';
-        // }
-    echo '
+        </div>
     </div>
-</div>';
+</div>
