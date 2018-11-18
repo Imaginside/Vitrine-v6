@@ -3,7 +3,9 @@
 ===== BUG A CORRIGER ======
 ===========================
 
--   David : Dans Bubble Best, j'ai un problème avec la vidéo en bg dans le title. Elle n'est pas 100%
+-   Axel : 2 problème en 1. Lorsque le formulaire est renseigné, le mail "gestionnaires" part, mais pas le mail "internaute". Aussi, il va récupérer le "default.php", alors qu'il devrait récuperer le "internaute.php".
+
+-   David : Dans Bubble Best, problème avec la vidéo en bg dans le title. Elle n'est pas 100%
 
 -   Axel : La page 404 ne passant pas par le controller, les variables ne sont pas appelées = mauvais affichage de la topbar et du header :
             $this->set('ClassesTopBar' , 'topbar-colored topbar-fullwidth dark visible-md visible-lg');
