@@ -37,13 +37,13 @@ use II\Utilities\Configure;
                 <ul class="top-menu right">
                     <?php
                     if(Configure::read('Society.Mail') != '') {
-                        echo '<li><a href="mailto:' . Configure::read('Society.Mail') . '">' . Configure::read('Society.Mail') . '</a></li><span>|</span>';
+                        echo '<li><a href="mailto:' . Configure::read('Society.Mail') . '">' . Configure::read('Society.Mail') . '</a></li>';
                     }
                     if(Configure::read('Society.Phone1') != '') {
-                        echo '<li><a href="tel:' . Configure::read('Society.Phone1Link') . '">' . Configure::read('Society.Phone1') . '</a></li><span>|</span>';
+                        echo '<span>|</span><li><a href="tel:' . Configure::read('Society.Phone1Link') . '">' . Configure::read('Society.Phone1') . '</a></li>';
                     }
                     if(Configure::read('Society.Phone2') != '') {
-                        echo '<li><a href="tel:' . Configure::read('Society.Phone2Link') . '">' . Configure::read('Society.Phone2') . '</a></li><span>|</span>';
+                        echo '<span>|</span><li><a href="tel:' . Configure::read('Society.Phone2Link') . '">' . Configure::read('Society.Phone2') . '</a></li>';
                     }
                     ?>
                 </ul>
