@@ -10,7 +10,7 @@ use II\Utilities\Configure;
             <!--Logo-->
             <div id="logo">
                 <a href="/" class="logo" data-dark-logo="<?= Configure::read('logo-dark'); ?>">
-                    <img src="<?= Configure::read('logo-default'); ?>" alt="Polo Logo">
+                    <img src="<?= Configure::read('logo-default'); ?>" alt="<?= Configure::read('Society.Name'); ?>" title="<?= Configure::read('Society.Name'); ?>">
                 </a>
             </div>
             <!--End: Logo-->
